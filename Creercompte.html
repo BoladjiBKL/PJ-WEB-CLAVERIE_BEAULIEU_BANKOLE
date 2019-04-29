@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Creer compte</title>
+
+</head>
+<body>
+	<h3> <em>Creer un compte</em></h3>
+	<form action="Creercompte.php" method="post">
+		
+		<table id="maTable">
+			<tr>
+				<td>E-mail :</td>
+				<td><input type="text" name="Email"></td>
+			</tr>
+
+
+			<tr>
+				<td>Mot de passe :</td>
+				<td><input type="text" name="Mdp"></td>
+			</tr>
+
+			<tr>
+				<td>Nom :</td>
+				<td><input type="text" name="Nom"></td>
+			</tr>
+
+			<tr>
+				<td>Prenom :</td>
+				<td><input type="text" name="Prenom"></td>
+			</tr>
+
+			<tr>
+				<td>Adresse :</td>
+				<td><input type="text" name="Adresse"></td>
+			</tr>
+
+			<tr>
+				<td>Code postal :</td>
+				<td><input type="int" name="CP"></td>
+			</tr>
+
+			<tr>
+				<td>Ville :</td>
+				<td><input type="text" name="Ville"></td>
+			</tr>
+
+			<tr>
+				<td>Pays :</td>
+				<td><input type="text" name="Pays"></td>
+			</tr>
+
+			</table>
+
+            <h2> Informations de paiement :</h2>
+
+            <table id="maTable2">
+			<tr>
+				<tr>
+				<td>Type de carte :</td>
+				<td><input type="checkbox" id="Tdc" value="Visa">Visa
+				<input type="checkbox" id="Tdc" value="Mastercard">MasterCard
+				<input type="checkbox" id="Tdc" value="American express">American Express
+				<input type="checkbox" id="Tdc" value="Paypal">Paypal
+			</td>
+			</tr>
+			</tr>
+
+			<tr>
+				<td>Numero de la carte :</td>
+				<td><input type="int" name="NumCarte"></td>
+			</tr>
+
+			<tr>
+				<td>Titulaire de la carte :</td>
+				<td><input type="text" name="Tit"></td>
+			</tr>
+
+			<tr>
+				<td>Date d'expiration</td>
+				<td><input type="text" name="Exp"></td>
+				
+			</tr> 
+
+			<tr>
+				<td>Code de securité :</td> 
+				<td><input type="int" name="CodeSecu"></td>
+			</tr> 
+
+
+            <tr colspan="2">
+					<td><input type="button" value="Creer mon compte">
+					</td>
+		    </tr>
+		</table>
+	</form>
+
+
+</body>
+</html>
