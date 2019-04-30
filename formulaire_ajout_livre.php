@@ -1,28 +1,28 @@
 <!DOCTYPE html>
 <html>
 	<head>
-			<title>The Music Adder</title>
+			<title>The Book Adder</title>
 			<meta charset="utf-8">
 	</head>
 	<body>
-			<h2>L'Additioneur de musiques</h2>
-			<form action="ajouter_musique.php" method="post">
+			<h2>L'Additioneur de livres</h2>
+			<form action="ajouter_livre.php" method="post">
 					<table>
 							<tr>
 								<td>Titre:</td>
 								<td><input type="text" name="titre"></td>
 							</tr>
 							<tr>
-								<td>Artiste:</td>
-								<td><input type="text" name="artiste"></td>
+								<td>Auteur:</td>
+								<td><input type="text" name="auteur"></td>
 							</tr>
 							<tr>
 								<td>Année:</td>
 								<td><input type="number" name="annee"></td>
 							</tr>
 							<tr>
-								<td>Label:</td>
-								<td><input type="text" name="label"></td>
+								<td>Edition:</td>
+								<td><input type="text" name="edition"></td>
 							</tr>
 							<tr>
 								<td>Description:</td>
@@ -34,7 +34,7 @@
 							</tr>
 							<tr>
 								<td>Mail:</td>
-								<td><input type="email" name="mail"></td>
+								<td><input type="text" name="mail"></td>
 							</tr>
 							<tr>
 								<td colspan="2" align="center">
