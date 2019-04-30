@@ -1,12 +1,11 @@
 
-
 <?php
 //recuperer les données venant de la page HTML
 //le parametre de $_POST = "name" de <input> de votre page HTML
 $titre = isset($_POST["titre"])? $_POST["titre"] : "";
-$artiste = isset($_POST["artiste"])? $_POST["artiste"] : "";
+$auteur = isset($_POST["auteur"])? $_POST["auteur"] : "";
 $annee = isset($_POST["annee"])? $_POST["annee"] : "";
-$label = isset($_POST["label"])? $_POST["label"] : "";
+$edition = isset($_POST["edition"])? $_POST["edition"] : "";
 $prix = isset($_POST["prix"])? $_POST["prix"] : "";
 $mail = isset($_POST["mail"])? $_POST["mail"] : "";
 $description = isset($_POST["description"])? $_POST["description"] : "";
@@ -14,14 +13,12 @@ $description = isset($_POST["description"])? $_POST["description"] : "";
 $bdd = new PDO('mysql:host=localhost;dbname=ECEAmazon;charset=utf8', 'root', 'root');
 
 
-
-
-$req = $bdd->prepare('INSERT INTO musique(titre, artiste, annee, label,description, prix, mail) VALUES(:titre, :artiste, :annee, :label, :description, :prix, :mail)');
+$req = $bdd->prepare('INSERT INTO livre(titre, auteur, annee, edition, description, prix, mail) VALUES(:titre, :auteur, :annee, :edition, :description, :prix, :mail)');
 $req->execute(array(
 	'titre' => $titre,
-	'artiste' => $artiste,
+	'auteur' => $auteur,
 	'annee' => $annee,
-	'label' => $label,
+	'edition' => $edition,
 	'description'=> $description,
 	'prix' => $prix,
 	'mail' => $mail,

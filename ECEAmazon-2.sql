@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8889
--- Generation Time: Apr 30, 2019 at 12:08 PM
+-- Generation Time: Apr 30, 2019 at 02:45 PM
 -- Server version: 5.7.25
 -- PHP Version: 7.3.1
 
@@ -35,6 +35,7 @@ CREATE TABLE `Acheteur` (
   `adresse2` varchar(100) NOT NULL,
   `ville` varchar(100) NOT NULL,
   `codepost` int(11) NOT NULL,
+  `pays` varchar(100) NOT NULL,
   `tel` int(11) NOT NULL,
   `typepaie` varchar(100) NOT NULL,
   `numcarte` bigint(20) NOT NULL,
@@ -64,6 +65,7 @@ CREATE TABLE `Livre` (
   `id` int(11) NOT NULL,
   `titre` varchar(100) NOT NULL,
   `auteur` varchar(100) NOT NULL,
+  `annee` int(11) NOT NULL,
   `edition` varchar(100) NOT NULL,
   `description` text NOT NULL,
   `prix` float NOT NULL,
@@ -82,6 +84,7 @@ CREATE TABLE `Musique` (
   `artiste` varchar(100) NOT NULL,
   `annee` int(11) NOT NULL,
   `label` varchar(100) NOT NULL,
+  `description` text NOT NULL,
   `prix` float NOT NULL,
   `mail` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -90,8 +93,8 @@ CREATE TABLE `Musique` (
 -- Dumping data for table `Musique`
 --
 
-INSERT INTO `Musique` (`id`, `titre`, `artiste`, `annee`, `label`, `prix`, `mail`) VALUES
-(3, 'BOLADJI EST MOCHE', 'Mathieu', 2019, 'NoiseECE', 1, 'claveriemathieu@hotmail.fr');
+INSERT INTO `Musique` (`id`, `titre`, `artiste`, `annee`, `label`, `description`, `prix`, `mail`) VALUES
+(10, 'zefarz', 'moi', 4555, 'MOO', 'super', 1.23, 'hrbhb@hotmail.fr');
 
 -- --------------------------------------------------------
 
@@ -102,8 +105,9 @@ INSERT INTO `Musique` (`id`, `titre`, `artiste`, `annee`, `label`, `prix`, `mail
 CREATE TABLE `SportetLoisir` (
   `id` int(11) NOT NULL,
   `nom` varchar(100) NOT NULL,
-  `prix` float NOT NULL,
   `taille` int(11) NOT NULL,
+  `description` text NOT NULL,
+  `prix` float NOT NULL,
   `mail` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -128,9 +132,9 @@ CREATE TABLE `Vendeur` (
 CREATE TABLE `Vetement` (
   `id` int(11) NOT NULL,
   `nom` varchar(100) NOT NULL,
-  `prix` float NOT NULL,
-  `couleur` varchar(100) NOT NULL,
   `taille` int(11) NOT NULL,
+  `description` text NOT NULL,
+  `prix` float NOT NULL,
   `mail` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -188,13 +192,13 @@ ALTER TABLE `Vetement`
 -- AUTO_INCREMENT for table `Livre`
 --
 ALTER TABLE `Livre`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `Musique`
 --
 ALTER TABLE `Musique`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `SportetLoisir`
