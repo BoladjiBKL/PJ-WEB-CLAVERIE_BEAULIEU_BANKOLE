@@ -29,6 +29,20 @@ html {
 }
 
 .nav-item {
-	color: blue;
+	color: #007971;
 
+}
+.btn{
+    color: #f89c33;
+}
+.nav-link {
+    color: #f89c33;
+
+}
+
+.navbar  {
+    background-color: white;
+}
+ .dropdown-item {
+   color: #007971;
 }
