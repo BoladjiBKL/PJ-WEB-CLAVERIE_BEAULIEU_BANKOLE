@@ -3,8 +3,15 @@
 html {
     position: relative;
     min-height: 100%;
+
 }
  
+#global{
+	margin-top: 20px;
+	margin-left: 100px;
+	
+}
+
 .head_carousel{
 	text-align: center;
 }
@@ -17,4 +24,9 @@ html {
     height: 60px;
     background: #000000;
     color: #FFFFFF;
+}
+
+.nav-item {
+	color: blue;
+
 }
