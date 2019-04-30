@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Sport&Loisir</title>
+	<meta charset="utf-8">
+	<title>Creer compte Vendeur</title>
+
 	<!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -10,9 +12,10 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <link rel="stylesheet" type="text/css" href="tous.css">
+
 </head>
 <body>
-    <!-- barre de navigation -->
+	<!-- barre de navigation -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <a class="navbar-brand" href="Accueil.html">Logo</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -55,7 +58,29 @@
   </div>
 </nav>
 
-<p>Sport&Loisir a éditer</p>
+
+	<h3> <em>Creer un compte</em></h3>
+	<form action="CreercompteVendeur.php" method="post">
+		
+		<table id="maTable">
+
+
+			<tr>
+				<td>Pseudo :</td>
+				<td><input type="text" name="Pseudo"></td>
+			</tr>
+
+			<tr>
+				<td>E-mail :</td>
+				<td><input type="text" name="Email"></td>
+			</tr>
+
+            <tr colspan="2">
+					<td><input type="button" value="Creer mon compte Vendeur">
+					</td>
+		    </tr>
+		</table>
+	</form>
 
 
  <footer class="footer">
