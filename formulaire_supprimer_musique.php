@@ -6,7 +6,7 @@
 	</head>
 	<body>
 			<h2>Le supprimeur de musiques</h2>
-			<form action="Supprimer_musique.php" method="post">
+			<form action="supprimer_musique.php" method="post">
 					<table>
 							<tr>
 								<td>Titre:</td>
