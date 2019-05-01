@@ -31,7 +31,7 @@ echo($error);
 
 
 
-if ($error="" && $donnees) 
+if ($donnees) 
 {   
 	 header('Location: Compte_admin.php');
 	
