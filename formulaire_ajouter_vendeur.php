@@ -14,7 +14,7 @@
 							</tr>
 							<tr>
 								<td>Pseudo:</td>
-								<td><input type="number" name="pseudo"></td>
+								<td><input type="text" name="pseudo"></td>
 							</tr>
 							<tr>
 								<td>Nom:</td>
