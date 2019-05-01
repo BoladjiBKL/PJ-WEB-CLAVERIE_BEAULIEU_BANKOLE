@@ -1,6 +1,8 @@
 
 
 
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,9 +17,11 @@
     <link rel="stylesheet" type="text/css" href="tous.css">
     <link rel="stylesheet" type="text/css" href="Vetements.css">
 </head>
+
+
 <body>
     <!-- barre de navigation -->
-       <nav class="navbar navbar navbar-expand-lg navbar-lightgreen bg-lightgreen">
+    <nav class="navbar navbar navbar-expand-lg navbar-lightgreen bg-lightgreen">
 
   <a class="navbar-brand" href="Accueil.php"><img src="eceamazon.png" height="60px"></a>
 
@@ -31,9 +35,9 @@
     <ul class="navbar-nav">
       <li class="nav-item active">
         
-
+        
         <div class="dropdown">
-          <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <a class="btn btn-secondary dropdown-toggle"  role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Catégories
           </a>
 
@@ -65,28 +69,66 @@
   </div>
   
   <a class="nav-link" href="Panier.php"><img src="panier.png"></a>
+
 </nav>
 
 <br>
 
 <br>
+
 <div id="global">
-
-
-<p>Vetement a éditer</p>
-
-   
-   
-
-
-
-
-
-
+  <p>Vetement a éditer</p>
 </div>
 
 
+
+
+
+  <?php
+
+  $bdd = new PDO('mysql:host=localhost;dbname=ECEAmazon;charset=utf8', 'root', 'root');
+
+  $reponse = $bdd->query('SELECT * FROM vetement');
+
+  ?>
+
+  <?php  
+     // On affiche chaque entrée une à une
+  while ($donnees = $reponse->fetch())
+  {
+    ?>
+
+     <div class="objet">
+
+      <strong>Nom</strong> : <?php echo $donnees['nom']; ?><br /><br />
+
+
+      <img class='image' src="<?php echo $donnees['urlimg'];?>" /> <br><br>
+
+      Taille : <?php echo $donnees['taille']; ?><br />
+
+      Description : <em><?php echo $donnees['description']; ?></em> <br />
+
+      Prix : <?php echo $donnees['prix']; ?> &euro;<br />
+
+      Mail du vendeur : <?php echo $donnees['mail']; ?><br /><br /><br />
+
+      <a href="#" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Ajouter au Panier</a>
+
+
+      </div>
+    
+
+
+
+
+
+
+
+
+
  <footer class="footer">
+
 
     <!-- Copyright -->
     <div class="footer-copyright text-center py-3">© 2019 Copyright:
@@ -95,6 +137,9 @@
     <!-- Copyright -->
 
   </footer>
+
+
+
   <!-- Footer -->
 <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -106,7 +151,13 @@
 
 
 
-   
+  
 
 
 
+<?php
+}
+
+$reponse->closeCursor(); // Termine le traitement de la requête
+
+?>

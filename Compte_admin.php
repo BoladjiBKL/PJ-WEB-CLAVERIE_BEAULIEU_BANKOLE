@@ -82,7 +82,7 @@
 
 
          Gerer les vendeurs: <br/> <br/>
-               <td colspan="1"><input type="button" value="Ajouter vendeur"> <input type="button" value="Supprimer vendeur"><br/> <br/>
+               <td colspan="1"> <a href="formulaire_ajouter_vendeur.php"><input type="button" value="Ajouter vendeur"></a> <a href="formulaire_supprimer_vendeur.php"> <input type="button" value="Supprimer vendeur"><a/><br/> <br/>
            
          
     </form>
