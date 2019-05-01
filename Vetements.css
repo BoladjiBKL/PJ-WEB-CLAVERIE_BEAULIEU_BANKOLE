@@ -1,4 +1,10 @@
 .objet{
-	text-align: left;
+	text-align: center;
 	size: 50px;
+}
+
+
+.image{
+	text-align: top;
+	height: 100px;
 }

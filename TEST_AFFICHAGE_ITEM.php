@@ -5,21 +5,15 @@ $bdd = new PDO('mysql:host=localhost;dbname=ECEAmazon;charset=utf8', 'root', 'ro
 
 $reponse = $bdd->query('SELECT * FROM vetement');
 
-// On affiche chaque entrée une à une
-while ($donnees = $reponse->fetch())
-{
 ?>
-
-
-
 
 
 
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Vetements</title>
-	<!-- Required meta tags -->
+  <title>Vetements</title>
+  <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -33,7 +27,7 @@ while ($donnees = $reponse->fetch())
     <!-- barre de navigation -->
        <nav class="navbar navbar navbar-expand-lg navbar-lightgreen bg-lightgreen">
 
-  <a class="navbar-brand" href="Accueil.html"><img src="eceamazon.png" height="60px"></a>
+  <a class="navbar-brand" href="Accueil.php"><img src="eceamazon.png" height="60px"></a>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -52,25 +46,25 @@ while ($donnees = $reponse->fetch())
           </a>
 
             <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                <a class="dropdown-item" href="Livres.html" >Livres</a>
-                <a class="dropdown-item" href="Vetements.html">Vétements</a>
-                <a class="dropdown-item" href="Sport&Loisir.html">Sports et Loisir</a>
-                <a class="dropdown-item" href="Musique.html">Musique</a>
+                <a class="dropdown-item" href="Livres.php" >Livres</a>
+                <a class="dropdown-item" href="Vetements.php">Vétements</a>
+                <a class="dropdown-item" href="Sport&Loisir.php">Sports et Loisir</a>
+                <a class="dropdown-item" href="Musique.php">Musique</a>
                </div>
         </div>
       </li>
 
       <li class="nav-item">
-        <a class="nav-link" href="Ventes_Flash.html">Ventes Flash</a>
+        <a class="nav-link" href="Ventes_Flash.php">Ventes Flash</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="Co_vendeur.html">Vendre</a>
+        <a class="nav-link" href="Co_vendeur.php">Vendre</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="Co_mon_compte.html">Mon Compte</a>
+        <a class="nav-link" href="Co_mon_compte.php">Mon Compte</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="Co_admin.html">Admin</a>
+        <a class="nav-link" href="Co_admin.php">Admin</a>
       </li>
      
 
@@ -78,7 +72,7 @@ while ($donnees = $reponse->fetch())
     </ul>
   </div>
   
-  <a class="nav-link" href="Panier.html"><img src="panier.png"></a>
+  <a class="nav-link" href="Panier.php"><img src="panier.png"></a>
 </nav>
 
 <br>
@@ -89,15 +83,30 @@ while ($donnees = $reponse->fetch())
 
 <p>Vetement a éditer</p>
 
- <div class="objet1">   
- 	 <strong>Nom</strong> : <?php echo $donnees['nom']; ?><br />
-    Taille : <?php echo $donnees['taille']; ?><br />
-    Description : <em><?php echo $donnees['description']; ?></em> <br />
-    <img src="<?php echo $donnees['urlimg'];?>" /><br />
-    Prix : <?php echo $donnees['prix']; ?><br />
-    Mail du vendeur : <?php echo $donnees['mail']; ?><br />
 
-   </div>
+  <?php  
+     // On affiche chaque entrée une à une
+  while ($donnees = $reponse->fetch())
+  {
+    ?>
+
+     <div class="objet">
+   <strong>Nom</strong> : <?php echo $donnees['nom']; ?><br />
+
+      Taille : <?php echo $donnees['taille']; ?><br />
+
+      Description : <em><?php echo $donnees['description']; ?></em> <br />
+
+      <img class='image' src="<?php echo $donnees['urlimg'];?>" /><br />
+
+      Prix : <?php echo $donnees['prix']; ?> &euro;<br />
+
+      Mail du vendeur : <?php echo $donnees['mail']; ?><br />
+      <br><br><br><br><br>
+
+      </div>
+
+</div>
 
 
 
@@ -110,7 +119,7 @@ while ($donnees = $reponse->fetch())
 
     <!-- Copyright -->
     <div class="footer-copyright text-center py-3">© 2019 Copyright:
-      <a href="Accueil.html"> ECE-Amazon.com</a>
+      <a href="Accueil.php"> ECE-Amazon.com</a>
     </div>
     <!-- Copyright -->
 
@@ -127,6 +136,16 @@ while ($donnees = $reponse->fetch())
 
 
    
+
+
+
+
+
+
+  
+ 	
+
+
 
 
 
