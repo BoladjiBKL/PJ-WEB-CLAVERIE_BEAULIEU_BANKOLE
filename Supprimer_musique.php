@@ -9,4 +9,7 @@ $bdd = new PDO('mysql:host=localhost;dbname=ECEAmazon;charset=utf8', 'root', 'ro
 
 $bdd->exec("DELETE FROM musique WHERE titre LIKE '%$titre%' AND artiste LIKE '%$artiste%' AND mail LIKE '%$mail%' ");
 
+header('Location: formulaire_supprimer_musique.php');
+
+
 ?>
