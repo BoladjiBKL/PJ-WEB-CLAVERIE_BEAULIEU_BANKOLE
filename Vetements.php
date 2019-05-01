@@ -123,6 +123,7 @@
       <input type="hidden" name="urlimg" value="<?php echo $donnees['urlimg'];?>">
       <input type="submit" name="button2" value="Ajouter au panier">
     </form>
+    <br>
 
 
       </div>
