@@ -21,6 +21,10 @@
 								<td><textarea name="description"></textarea></td>
 							</tr>
 							<tr>
+								<td>URL image:</td>
+								<td><input type="text" name="urlimg"></td>
+							</tr>
+							<tr>
 								<td>Prix:</td>
 								<td><input type="number" step="any" name="prix"></td>
 							</tr>
@@ -30,8 +34,10 @@
 								<td><input type="text" name="mail"></td>
 							</tr>
 							<tr>
-								<td colspan="2" align="center">
- 								<input type="submit" name="button2" value="Ajouter"></td>
+								<td>
+ 								<input type="submit" name="button2" value="Ajouter" style="width:100px;padding:7px;height:30px;background-color:AliceBlue;border-radius:20px"></td>
+								<td>
+									<input type="reset" name="button3" value="Vider le formulaire" style="width:130px;padding:7px;height:30px;background-color:AliceBlue;border-radius:20px"></td>
 							</tr>
 					</table>
 				</form>
