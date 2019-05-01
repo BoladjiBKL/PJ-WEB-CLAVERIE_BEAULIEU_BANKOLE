@@ -1,22 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Livres</title>
+	<meta charset="utf-8">
+	<title>Creer compte Vendeur</title>
+
 	<!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" type="text/css" href="Accueil.css">
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <link rel="stylesheet" type="text/css" href="tous.css">
+
 </head>
 <body>
-	<!-- barre de navigation -->
-       <nav class="navbar navbar navbar-expand-lg navbar-lightgreen bg-lightgreen">
+	    <nav class="navbar navbar navbar-expand-lg navbar-lightgreen bg-lightgreen">
 
-  <a class="navbar-brand" href="Accueil.html"><img src="eceamazon.png" height="60px"></a>
+  <a class="navbar-brand" href="Accueil.php"><img src="eceamazon.png" height="60px"></a>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -35,25 +36,25 @@
           </a>
 
             <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                <a class="dropdown-item" href="Livres.html" >Livres</a>
-                <a class="dropdown-item" href="Vetements.html">Vétements</a>
-                <a class="dropdown-item" href="Sport&Loisir.html">Sports et Loisir</a>
-                <a class="dropdown-item" href="Musique.html">Musique</a>
+                <a class="dropdown-item" href="Livres.php" >Livres</a>
+                <a class="dropdown-item" href="Vetements.php">Vétements</a>
+                <a class="dropdown-item" href="Sport&Loisir.php">Sports et Loisir</a>
+                <a class="dropdown-item" href="Musique.php">Musique</a>
                </div>
         </div>
       </li>
 
       <li class="nav-item">
-        <a class="nav-link" href="Ventes_Flash.html">Ventes Flash</a>
+        <a class="nav-link" href="Ventes_Flash.php">Ventes Flash</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="Co_vendeur.html">Vendre</a>
+        <a class="nav-link" href="Co_vendeur.php">Vendre</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="Co_mon_compte.html">Mon Compte</a>
+        <a class="nav-link" href="Co_mon_compte.php">Mon Compte</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="Co_admin.html">Admin</a>
+        <a class="nav-link" href="Co_admin.php">Admin</a>
       </li>
      
 
@@ -61,58 +62,50 @@
     </ul>
   </div>
   
-  <a class="nav-link" href="Panier.html"><img src="panier.png"></a>
+  <a class="nav-link" href="Panier.php"><img src="panier.png"></a>
 </nav>
 
 <br>
 
 <br>
 
-
-<!-- Caroussel -->
-
-<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-  <ol class="carousel-indicators">
-    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-    
-  </ol>
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img src="bandeau_livre1.PNG" class="d-block w-75 "  alt="...">
-    </div>
-    <div class="carousel-item">
-      <img src="bandeau_livre2.PNG" class="d-block w-75" alt="...">
-    </div>
-    
-  </div>
-  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
-</div>
-
 <div id="global">
-<p>livres a éditer</p>
-</div>
 
+
+	<h3> <em>Creer un compte</em></h3>
+	<form action="CreercompteVendeur.php" method="post">
+		
+		<table id="maTable">
+
+
+			<tr>
+				<td>Pseudo :</td>
+				<td><input type="text" name="Pseudo"></td>
+			</tr>
+
+			<tr>
+				<td>E-mail :</td>
+				<td><input type="text" name="Email"></td>
+			</tr>
+
+            <tr colspan="2">
+					<td><input type="button" value="Creer mon compte Vendeur">
+					</td>
+		    </tr>
+		</table>
+	</form>
+</div>
 
  <footer class="footer">
 
     <!-- Copyright -->
     <div class="footer-copyright text-center py-3">© 2019 Copyright:
-      <a href="Accueil.html"> ECE-Amazon.com</a>
+      <a href="Accueil.php"> ECE-Amazon.com</a>
     </div>
     <!-- Copyright -->
 
   </footer>
   <!-- Footer -->
-
-
 <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
