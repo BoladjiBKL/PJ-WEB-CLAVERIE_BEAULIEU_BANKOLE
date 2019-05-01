@@ -1,4 +1,15 @@
 .objet{
 	text-align: left;
-	size: 50px;
+	margin-left: 100px;
+	margin-right: 150px;
+	float: left;
+}
+
+
+.image{
+	text-align: top;
+	height: 150px;
+	padding-right: 30px;
+	
+
 }
