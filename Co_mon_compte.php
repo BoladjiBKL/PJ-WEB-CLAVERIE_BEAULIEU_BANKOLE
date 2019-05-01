@@ -72,13 +72,13 @@
 
 
 <h3> <em>Connexion Compte</em></h3>
-  <form action="ConnexionCompte.php" method="post">
+  <form action="verif_co_compte.php" method="post">
     
     <table id="maTable">
 
 
       <tr>
-        <td> Login :</td>
+        <td> Login (email):</td>
         <td><input type="text" name="Log"></td>
       </tr>
 
@@ -95,7 +95,7 @@
             <tr >
           <td>  
              <!--bouton connexion compte client -->
-  <a href="Compte_client.php" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Connexion</a>
+  <input type="submit" name="Connexion"> 
           </td>
         </tr>
     </table>
