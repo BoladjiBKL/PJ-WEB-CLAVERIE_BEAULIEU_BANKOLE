@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8889
--- Generation Time: Apr 30, 2019 at 02:45 PM
+-- Generation Time: May 01, 2019 at 01:18 PM
 -- Server version: 5.7.25
 -- PHP Version: 7.3.1
 
@@ -68,6 +68,7 @@ CREATE TABLE `Livre` (
   `annee` int(11) NOT NULL,
   `edition` varchar(100) NOT NULL,
   `description` text NOT NULL,
+  `urlimg` mediumtext NOT NULL,
   `prix` float NOT NULL,
   `mail` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -85,6 +86,7 @@ CREATE TABLE `Musique` (
   `annee` int(11) NOT NULL,
   `label` varchar(100) NOT NULL,
   `description` text NOT NULL,
+  `urlimg` mediumtext NOT NULL,
   `prix` float NOT NULL,
   `mail` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -93,8 +95,8 @@ CREATE TABLE `Musique` (
 -- Dumping data for table `Musique`
 --
 
-INSERT INTO `Musique` (`id`, `titre`, `artiste`, `annee`, `label`, `description`, `prix`, `mail`) VALUES
-(10, 'zefarz', 'moi', 4555, 'MOO', 'super', 1.23, 'hrbhb@hotmail.fr');
+INSERT INTO `Musique` (`id`, `titre`, `artiste`, `annee`, `label`, `description`, `urlimg`, `prix`, `mail`) VALUES
+(10, 'zefarz', 'moi', 4555, 'MOO', 'super', '', 1.23, 'hrbhb@hotmail.fr');
 
 -- --------------------------------------------------------
 
@@ -107,9 +109,17 @@ CREATE TABLE `SportetLoisir` (
   `nom` varchar(100) NOT NULL,
   `taille` int(11) NOT NULL,
   `description` text NOT NULL,
+  `urlimg` mediumtext NOT NULL,
   `prix` float NOT NULL,
   `mail` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `SportetLoisir`
+--
+
+INSERT INTO `SportetLoisir` (`id`, `nom`, `taille`, `description`, `urlimg`, `prix`, `mail`) VALUES
+(2, 'ballon', 3, 'handball', '', 1.23, 'lol@hotmail.fr');
 
 -- --------------------------------------------------------
 
@@ -134,9 +144,17 @@ CREATE TABLE `Vetement` (
   `nom` varchar(100) NOT NULL,
   `taille` int(11) NOT NULL,
   `description` text NOT NULL,
+  `urlimg` mediumtext NOT NULL,
   `prix` float NOT NULL,
   `mail` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `Vetement`
+--
+
+INSERT INTO `Vetement` (`id`, `nom`, `taille`, `description`, `urlimg`, `prix`, `mail`) VALUES
+(8, 'Jeans', 32, 'Resistant', 'https://d2ci88w16yaf6n.cloudfront.net/p/assets/animations/hurricane_1e8e060c71635d9c72b776820991d419.png', 25.99, 'claveriemathieu@hotmail.fr');
 
 --
 -- Indexes for dumped tables
@@ -192,7 +210,7 @@ ALTER TABLE `Vetement`
 -- AUTO_INCREMENT for table `Livre`
 --
 ALTER TABLE `Livre`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `Musique`
@@ -204,13 +222,13 @@ ALTER TABLE `Musique`
 -- AUTO_INCREMENT for table `SportetLoisir`
 --
 ALTER TABLE `SportetLoisir`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `Vetement`
 --
 ALTER TABLE `Vetement`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
