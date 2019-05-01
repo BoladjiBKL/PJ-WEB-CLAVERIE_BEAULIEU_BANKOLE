@@ -6,7 +6,7 @@
 	</head>
 	<body>
 			<h2>Suppression de vendeur</h2>
-			<form action="ajouter_vendeur.php" method="post">
+			<form action="supprimer_vendeur.php" method="post">
 					<table>
 							<tr>
 								<td>Email:</td>

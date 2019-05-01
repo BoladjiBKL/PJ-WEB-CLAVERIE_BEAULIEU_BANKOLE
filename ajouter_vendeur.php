@@ -15,5 +15,5 @@ $req->execute(array(
 	'nom' => $nom,
 	
 	));
-header('Location: formulaire_ajout_vendeur.php');
+header('Location: formulaire_ajouter_vendeur.php');
 ?>
