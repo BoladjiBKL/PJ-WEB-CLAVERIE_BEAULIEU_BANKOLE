@@ -73,7 +73,7 @@
 
 
   <h3> <em>Connexion Admin</em></h3>
-  <form action="CreercompteAdmin.php" method="post">
+  <form action="verif_co_admin.php" method="post">
 
     <table id="maTable">
 
@@ -89,7 +89,9 @@
       </tr>
 
             <tr >
-          <td><a  href="Compte_admin.php" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Connexion</a>
+          
+               <td> <input type="submit" name="Connexion">  
+
           </td>
         </tr>
     </table>

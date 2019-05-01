@@ -73,7 +73,7 @@
 
 
 	<h3> <em>Connexion Vendeur</em></h3>
-  <form action="ConnexionVendeur.php" method="post">
+  <form action="verif_co_vendeur.php" method="post">
     
     <table id="maTable">
 
@@ -88,8 +88,8 @@
 
     
 
-               <td>  
-  <a href="Compte_vendeur.php" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Connexion</a>
+               <td> <input type="submit" name="Connexion">  
+ <!-- class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Connexion -->
           </td>
         </tr>
     </table>
