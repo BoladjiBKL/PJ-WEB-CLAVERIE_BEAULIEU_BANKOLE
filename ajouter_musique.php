@@ -26,5 +26,5 @@ $req->execute(array(
 	'prix' => $prix,
 	'mail' => $mail,
 	));
-header('Location: formulaire_ajouter_musique.php');
+header('Location: formulaire_ajout_musique.php');
 ?>

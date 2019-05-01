@@ -9,4 +9,6 @@ $bdd = new PDO('mysql:host=localhost;dbname=ECEAmazon;charset=utf8', 'root', 'ro
 
 $bdd->exec("DELETE FROM livre WHERE titre LIKE '%$titre%' AND auteur LIKE '%$auteur%' AND mail LIKE '%$mail%' ");
 
+header('Location: formulaire_supprimer_livre.php');
+
 ?>
