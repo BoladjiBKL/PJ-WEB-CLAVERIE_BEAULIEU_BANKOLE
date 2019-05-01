@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <link rel="stylesheet" type="text/css" href="tous.css">
+    <link rel="stylesheet" type="text/css" href="Creercompte.css">
 
 </head>
 <body>
@@ -74,6 +75,7 @@
 
 
 	<h3> <em>Creer un compte</em></h3>
+	<br>
 	<form action="Creercompte.php" method="post">
 		
 		<table id="maTable">
@@ -131,8 +133,9 @@
 			</tr>
 
 			</table>
-
+			<br><br>
             <h2> Informations de paiement :</h2>
+            
 
             <table id="maTable2">
 			<tr>
@@ -167,7 +170,7 @@
 				<td><input type="int" name="codecarte"></td>
 			</tr> 
 
-
+			<br>
             <tr colspan="2">
 					<td><input type="button" value="Creer mon compte">
 					</td>
@@ -175,7 +178,7 @@
 		</table>
 	</form>
 
-	<br> <br><br><br>
+	<br> <br><br><br><<br>><br><br>
 
 
 </div>

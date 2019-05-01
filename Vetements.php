@@ -77,7 +77,8 @@
 <br>
 
 <div id="global">
-  <p>Vetement a éditer</p>
+  <h2> Vêtements :</h2>
+  <br><br>
 </div>
 
 

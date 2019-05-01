@@ -17,8 +17,9 @@
 
 
 .image{
-	text-align: top;
+	
 	height: 150px;
+	max-width: 275px;
 	padding-right: 30px;
 	padding-left: 20px;
 
