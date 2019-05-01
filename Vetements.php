@@ -111,13 +111,13 @@
 
       Prix : <?php echo $donnees['prix']; ?> &euro;<br />
 
-      Mail du vendeur : <?php echo $donnees['mail']; ?><br />
+      Mail du vendeur : <?php echo $donnees['mail']; ?><br /><br /><br />
 
-      Ajouter au panier
-      <br><br><br><br><br>
-      
+      <a href="#" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Ajouter au Panier</a>
+
 
       </div>
+    
 
 
 
@@ -129,6 +129,7 @@
 
  <footer class="footer">
 
+
     <!-- Copyright -->
     <div class="footer-copyright text-center py-3">© 2019 Copyright:
       <a href="Accueil.php"> ECE-Amazon.com</a>
@@ -136,6 +137,9 @@
     <!-- Copyright -->
 
   </footer>
+
+
+
   <!-- Footer -->
 <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
