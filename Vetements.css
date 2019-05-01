@@ -1,10 +1,15 @@
 .objet{
-	text-align: center;
-	size: 50px;
+	text-align: left;
+	margin-left: 100px;
+	margin-right: 150px;
+	float: left;
 }
 
 
 .image{
 	text-align: top;
-	height: 100px;
+	height: 150px;
+	padding-right: 30px;
+	
+
 }

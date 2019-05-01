@@ -1,11 +1,5 @@
 
-<?php
 
-$bdd = new PDO('mysql:host=localhost;dbname=ECEAmazon;charset=utf8', 'root', 'root');
-
-$reponse = $bdd->query('SELECT * FROM vetement');
-
-?>
 
 
 
@@ -78,11 +72,22 @@ $reponse = $bdd->query('SELECT * FROM vetement');
 <br>
 
 <br>
+
 <div id="global">
+  <p>Vetement a éditer</p>
+</div>
 
 
-<p>Vetement a éditer</p>
 
+
+
+  <?php
+
+  $bdd = new PDO('mysql:host=localhost;dbname=ECEAmazon;charset=utf8', 'root', 'root');
+
+  $reponse = $bdd->query('SELECT * FROM vetement');
+
+  ?>
 
   <?php  
      // On affiche chaque entrée une à une
@@ -91,28 +96,32 @@ $reponse = $bdd->query('SELECT * FROM vetement');
     ?>
 
      <div class="objet">
-   <strong>Nom</strong> : <?php echo $donnees['nom']; ?><br />
+
+      <strong>Nom</strong> : <?php echo $donnees['nom']; ?><br /><br />
+
+
+      <img class='image' src="<?php echo $donnees['urlimg'];?>" /> <br><br>
 
       Taille : <?php echo $donnees['taille']; ?><br />
 
       Description : <em><?php echo $donnees['description']; ?></em> <br />
 
-      <img class='image' src="<?php echo $donnees['urlimg'];?>" /><br />
-
       Prix : <?php echo $donnees['prix']; ?> &euro;<br />
 
       Mail du vendeur : <?php echo $donnees['mail']; ?><br />
+
+      Ajouter au panier
       <br><br><br><br><br>
+      
 
       </div>
 
-</div>
 
 
 
 
 
-</div>
+
 
 
  <footer class="footer">
