@@ -6,6 +6,7 @@ $titre = isset($_POST["titre"])? $_POST["titre"] : "";
 $auteur = isset($_POST["auteur"])? $_POST["auteur"] : "";
 $annee = isset($_POST["annee"])? $_POST["annee"] : "";
 $edition = isset($_POST["edition"])? $_POST["edition"] : "";
+$urlimg = isset($_POST["urlimg"])? $_POST["urlimg"] : "";
 $prix = isset($_POST["prix"])? $_POST["prix"] : "";
 $mail = isset($_POST["mail"])? $_POST["mail"] : "";
 $description = isset($_POST["description"])? $_POST["description"] : "";
