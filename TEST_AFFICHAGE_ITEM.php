@@ -66,7 +66,9 @@
     </ul>
   </div>
 
+
   <a class="nav-link" href="Panier.php"><img src="panier.png"></a>
+
 </nav>
 
 <br>
@@ -110,7 +112,9 @@
 
       Mail du vendeur : <?php echo $donnees['mail']; ?><br />
 
-			<form action="ajouter_panier_vetement.php" method="post">
+      
+      <form action="ajouter_panier_vetement.php" method="post">
+
 			<input type="hidden" name="nom" value="<?php echo $donnees['nom'];?>">
 			<input type="hidden" name="taille" value="<?php echo $donnees['taille'];?>">
 			<input type="hidden" name="description" value="<?php echo $donnees['description'];?>">
@@ -123,6 +127,7 @@
 
 
       </div>
+
 
 
 
@@ -149,6 +154,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
 </html>
+
 
 
 
