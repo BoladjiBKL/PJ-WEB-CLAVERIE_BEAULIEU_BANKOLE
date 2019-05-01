@@ -44,7 +44,7 @@ while ($donnees = $reponse->fetch())
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav">
       <li class="nav-item active">
-        
+
 
         <div class="dropdown">
           <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -72,12 +72,12 @@ while ($donnees = $reponse->fetch())
       <li class="nav-item">
         <a class="nav-link" href="Co_admin.html">Admin</a>
       </li>
-     
 
-      
+
+
     </ul>
   </div>
-  
+
   <a class="nav-link" href="Panier.html"><img src="panier.png"></a>
 </nav>
 
@@ -89,14 +89,22 @@ while ($donnees = $reponse->fetch())
 
 <p>Vetement a éditer</p>
 
- <div class="objet1">   
+ <div class="objet1">
  	 <strong>Nom</strong> : <?php echo $donnees['nom']; ?><br />
     Taille : <?php echo $donnees['taille']; ?><br />
     Description : <em><?php echo $donnees['description']; ?></em> <br />
     <img src="<?php echo $donnees['urlimg'];?>" /><br />
     Prix : <?php echo $donnees['prix']; ?><br />
     Mail du vendeur : <?php echo $donnees['mail']; ?><br />
-
+		<form action="ajouter_panier_vetement.php" method="post">
+			<input type="hidden" name="nom" value="<?php echo $donnees['nom'];?>">
+			<input type="hidden" name="taille" value="<?php echo $donnees['taille'];?>">
+			<input type="hidden" name="description" value="<?php echo $donnees['description'];?>">
+			<input type="hidden" name="prix" value="<?php echo $donnees['prix'];?>">
+			<input type="hidden" name="mail" value="<?php echo $donnees['mail'];?>">
+			<input type="hidden" name="urlimg" value="<?php echo $donnees['urlimg'];?>">
+			<input type="submit" name="button2" value="Ajouter au panier">
+		</form>
    </div>
 
 
@@ -126,7 +134,7 @@ while ($donnees = $reponse->fetch())
 
 
 
-   
+
 
 
 
