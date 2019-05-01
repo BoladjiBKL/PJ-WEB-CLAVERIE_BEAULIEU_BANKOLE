@@ -9,4 +9,6 @@ $bdd = new PDO('mysql:host=localhost;dbname=ECEAmazon;charset=utf8', 'root', 'ro
 
 $bdd->exec("DELETE FROM vetement WHERE nom LIKE '%$nom%' AND taille LIKE '%$taille%' AND mail LIKE '%$mail%' ");
 
+header('Location: formulaire_ajouter_vetement.php');
+
 ?>
