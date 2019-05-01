@@ -23,6 +23,8 @@ $req->execute(array(
 
 ));
 
+
 $bdd->exec("DELETE FROM vetement WHERE id LIKE '%$id%'");
+
 header('Location:Vetements.php');
 ?>

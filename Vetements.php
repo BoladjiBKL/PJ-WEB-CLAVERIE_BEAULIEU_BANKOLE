@@ -123,6 +123,7 @@
         <input type="hidden" name="id" value="<?php echo $donnees['id'];?>">
         <input type="submit" name="button2" value="Ajouter au panier">
     </form>
+    <br>
 
 
       </div>

@@ -21,12 +21,12 @@ $Action=isset($_POST["Action"])?$_POST["Action"]:"";
 
     if ($Type=="Vetements" && $Action=="Ajouter") 
     {
-    header('Location: formulaire_ajouter_vetements.php');
+    header('Location: formulaire_ajouter_vetement.php');
     }
 
     if ($Type=="Vetements" && $Action=="Supprimer") 
     {
-    header('Location: formulaire_supprimer_vetements.php');
+    header('Location: formulaire_supprimer_vetement.php');
     }
 
     if ($Type=="Sport et Loisir" && $Action=="Ajouter") 
