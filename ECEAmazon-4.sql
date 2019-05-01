@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8889
--- Generation Time: May 01, 2019 at 01:18 PM
+-- Generation Time: May 01, 2019 at 05:52 PM
 -- Server version: 5.7.25
 -- PHP Version: 7.3.1
 
@@ -101,6 +101,37 @@ INSERT INTO `Musique` (`id`, `titre`, `artiste`, `annee`, `label`, `description`
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `panier`
+--
+
+CREATE TABLE `panier` (
+  `id` int(11) NOT NULL,
+  `nom` varchar(100) DEFAULT NULL,
+  `taille` int(11) DEFAULT NULL,
+  `titre` varchar(100) DEFAULT NULL,
+  `auteur` varchar(100) DEFAULT NULL,
+  `edition` varchar(100) DEFAULT NULL,
+  `artiste` varchar(100) DEFAULT NULL,
+  `annee` int(11) DEFAULT NULL,
+  `label` varchar(100) DEFAULT NULL,
+  `description` mediumtext,
+  `urlimg` mediumtext,
+  `prix` float DEFAULT NULL,
+  `mail` varchar(100) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `panier`
+--
+
+INSERT INTO `panier` (`id`, `nom`, `taille`, `titre`, `auteur`, `edition`, `artiste`, `annee`, `label`, `description`, `urlimg`, `prix`, `mail`) VALUES
+(3, 'robe', 45, NULL, NULL, NULL, NULL, NULL, NULL, 'HOLOL', 'LLLL.jpeg', NULL, 'LLL@gmail.com'),
+(4, 'robe', 45, NULL, NULL, NULL, NULL, NULL, NULL, 'HOLOL', 'LLLL.jpeg', NULL, 'LLL@gmail.com'),
+(5, 'Tong', 45, NULL, NULL, NULL, NULL, NULL, NULL, 'GRANDE', 'KKK.jpeg', 21.22, 'HH@gmail.com');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `SportetLoisir`
 --
 
@@ -150,13 +181,6 @@ CREATE TABLE `Vetement` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `Vetement`
---
-
-INSERT INTO `Vetement` (`id`, `nom`, `taille`, `description`, `urlimg`, `prix`, `mail`) VALUES
-(8, 'Jeans', 32, 'Resistant', 'https://d2ci88w16yaf6n.cloudfront.net/p/assets/animations/hurricane_1e8e060c71635d9c72b776820991d419.png', 25.99, 'claveriemathieu@hotmail.fr');
-
---
 -- Indexes for dumped tables
 --
 
@@ -182,6 +206,12 @@ ALTER TABLE `Livre`
 -- Indexes for table `Musique`
 --
 ALTER TABLE `Musique`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `panier`
+--
+ALTER TABLE `panier`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -219,6 +249,12 @@ ALTER TABLE `Musique`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
+-- AUTO_INCREMENT for table `panier`
+--
+ALTER TABLE `panier`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
 -- AUTO_INCREMENT for table `SportetLoisir`
 --
 ALTER TABLE `SportetLoisir`
@@ -228,7 +264,7 @@ ALTER TABLE `SportetLoisir`
 -- AUTO_INCREMENT for table `Vetement`
 --
 ALTER TABLE `Vetement`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

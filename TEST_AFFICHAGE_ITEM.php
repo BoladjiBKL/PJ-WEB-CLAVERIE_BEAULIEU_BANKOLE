@@ -66,7 +66,7 @@
     </ul>
   </div>
 
-  
+
   <a class="nav-link" href="Panier.php"><img src="panier.png"></a>
 
 </nav>
@@ -91,7 +91,7 @@
 
   ?>
 
-  <?php  
+  <?php
      // On affiche chaque entrée une à une
   while ($donnees = $reponse->fetch())
   {
@@ -111,8 +111,10 @@
       Prix : <?php echo $donnees['prix']; ?> &euro;<br />
 
       Mail du vendeur : <?php echo $donnees['mail']; ?><br />
+
       
       <form action="ajouter_panier_vetement.php" method="post">
+
 			<input type="hidden" name="nom" value="<?php echo $donnees['nom'];?>">
 			<input type="hidden" name="taille" value="<?php echo $donnees['taille'];?>">
 			<input type="hidden" name="description" value="<?php echo $donnees['description'];?>">
@@ -122,7 +124,7 @@
 			<input type="submit" name="button2" value="Ajouter au panier">
 		</form>
       <br><br><br><br><br>
-      
+
 
       </div>
 
@@ -162,8 +164,9 @@
 
 
 
-  
- 	
+
+
+
 
 
 
