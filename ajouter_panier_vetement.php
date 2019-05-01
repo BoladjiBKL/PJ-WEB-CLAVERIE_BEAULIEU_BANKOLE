@@ -23,5 +23,5 @@ $req->execute(array(
 ));
 
 $bdd->exec("DELETE FROM vetement WHERE prix LIKE '%$prix%' AND mail LIKE '%$mail%' ");
-header('Location: TEST_AFFICHAGE_ITEM.php');
+header('Location:Vetement.php');
 ?>

@@ -113,7 +113,16 @@
 
       Mail du vendeur : <?php echo $donnees['mail']; ?><br /><br /><br />
 
-      <a href="#" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Ajouter au Panier</a>
+      <form action="ajouter_panier_vetement.php" method="post">
+
+      <input type="hidden" name="nom" value="<?php echo $donnees['nom'];?>">
+      <input type="hidden" name="taille" value="<?php echo $donnees['taille'];?>">
+      <input type="hidden" name="description" value="<?php echo $donnees['description'];?>">
+      <input type="hidden" name="prix" value="<?php echo $donnees['prix'];?>">
+      <input type="hidden" name="mail" value="<?php echo $donnees['mail'];?>">
+      <input type="hidden" name="urlimg" value="<?php echo $donnees['urlimg'];?>">
+      <input type="submit" name="button2" value="Ajouter au panier">
+    </form>
 
 
       </div>
