@@ -21,6 +21,10 @@
 								<td><textarea name="description"></textarea></td>
 							</tr>
 							<tr>
+								<td>URL image:</td>
+								<td><input type="text" name="urlimg"></td>
+							</tr>
+							<tr>
 								<td>Prix:</td>
 								<td><input type="number" step="any" name="prix"></td>
 							</tr>

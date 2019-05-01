@@ -25,6 +25,10 @@
 								<td><input type="text" name="label"></td>
 							</tr>
 							<tr>
+								<td>URL image:</td>
+								<td><input type="text" name="urlimg"></td>
+							</tr>
+							<tr>
 								<td>Description:</td>
 								<td><textarea name="description"></textarea> </td>
 							</tr>
