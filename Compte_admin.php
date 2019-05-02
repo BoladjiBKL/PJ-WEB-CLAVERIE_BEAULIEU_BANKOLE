@@ -85,21 +85,43 @@
                <td colspan="1"> <a href="formulaire_ajouter_vendeur.php"><input type="button" value="Ajouter vendeur"></a> <a href="formulaire_supprimer_vendeur.php"> <input type="button" value="Supprimer vendeur"><a/><br/> <br/>
            
          
-    </form>
+  
 
 
     <!--boutons d'ajjout et de supression de toutes les items -->
 
    Gerer les articles: <br/> <br/>
-         <td colspan="1"><a href="formulaire_ajout_livre.php"><input type="button" value="Ajouter Livre"></a> <a href="formulaire_supprimer_livre.php"><input type="button" value="Supprimer Livre"></a> <br/> <br/>
+      <td> Type d'article   <br><select name="Type" size="1">
+              <option value="Livres"> Livres</option>
 
-        <td colspan="1"><a href="formulaire_ajouter_vetement.php"><input type="button" value="Ajouter Vetement"></a> <a href="formulaire_supprimer_vetement.php"><input type="button" value="Supprimer Vetement"></a> <br/> <br/>
+              <option value="Vetements"> Vetements </option>
+              <option value="Sport et Loisir"> Sport et Loisir </option>
+              <option value="Musique"> Musique </option>
+              </select> <br><br>
+              </td>
+      </tr> 
 
-        <td colspan="1"><a href="formulaire_ajouter_sportetloisir.php"><input type="button" value="Ajouter Sport et Loisir"></a> <a href="formulaire_supprimer_sportetloisir.php"><input type="button" value="Supprimer Vetement"></a> <br/> <br/>
+      <tr>
 
-        <td colspan="1"><a href="formulaire_ajout_musique.php"><input type="button" value="Ajouter Musique"></a> <a href="formulaire_supprimer_musique.php"><input type="button" value="Supprimer Vetement"></a> <br/> <br/>
+        <td> Action à réaliser  <br><select name="Action" size="1">
+              <option value="Ajouter"> Ajouter</option>
+
+              <option value="Supprimer"> Supprimer</option>
+            
+              </select> <br><br>
+              </td> <br/> <br/>
 
 
+
+          <td> Lien d'image photo de profil <input type="text" name="urlprofil"></td>
+          <td> <input type="submit" name="Ajouterprofil"></td>
+
+          
+
+          <td> Lien d'image photo de fond <input type="text" name="urlfond"></td>
+          <td> <input type="submit" name="Ajouterfond"></td>
+
+       </form>
 </div>
 
 
