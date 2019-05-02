@@ -91,9 +91,7 @@
 
   $reponse = $bdd->query('SELECT DISTINCT * FROM vetement');
 
-  ?>
-
-  <?php
+  
      // On affiche chaque entrée une à une
   while ($donnees = $reponse->fetch())
   {
