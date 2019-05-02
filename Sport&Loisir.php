@@ -1,8 +1,13 @@
+
+
+
+
+
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Sport&Loisir</title>
-	<!-- Required meta tags -->
+  <title>Sports et Loisirs  </title>
+  <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -10,10 +15,13 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <link rel="stylesheet" type="text/css" href="tous.css">
+    <link rel="stylesheet" type="text/css" href="Vetements.css">
 </head>
+
+
 <body>
     <!-- barre de navigation -->
-       <nav class="navbar navbar navbar-expand-lg navbar-lightgreen bg-lightgreen">
+    <nav class="navbar navbar navbar-expand-lg navbar-lightgreen bg-lightgreen">
 
   <a class="navbar-brand" href="Accueil.php"><img src="eceamazon.png" height="60px"></a>
 
@@ -26,10 +34,10 @@
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav">
       <li class="nav-item active">
-        
+
 
         <div class="dropdown">
-          <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <a class="btn btn-secondary dropdown-toggle"  role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Catégories
           </a>
 
@@ -54,27 +62,83 @@
       <li class="nav-item">
         <a class="nav-link" href="Co_admin.php">Admin</a>
       </li>
-     
 
-      
+
+
     </ul>
   </div>
-  
+
   <a class="nav-link" href="Panier.php"><img src="panier.png"></a>
+
 </nav>
 
 <br>
 
 <br>
+
 <div id="global">
-
-
-<p>Sport&Loisir a éditer</p>
-
+  <h2> Sports et Loisirs  :</h2>
+  <br><br>
 </div>
 
 
+
+
+<?php
+
+$bdd = new PDO('mysql:host=localhost;dbname=ECEAmazon;charset=utf8', 'root', 'root');
+
+$reponse = $bdd->query('SELECT DISTINCT * FROM sportetloisir');
+
+
+   // On affiche chaque entrée une à une
+while ($donnees = $reponse->fetch())
+{
+  ?>
+
+   <div class="objet">
+
+    <strong>Nom</strong> : <?php echo $donnees['nom']; ?><br /><br />
+
+
+    <img class='image' src="<?php echo $donnees['urlimg'];?>" /> <br><br>
+
+    Taille : <?php echo $donnees['taille']; ?><br />
+
+    Description : <em><?php echo $donnees['description']; ?></em> <br />
+
+    Prix : <?php echo $donnees['prix']; ?> &euro;<br />
+
+    Mail du vendeur : <?php echo $donnees['mail']; ?><br /><br /><br />
+
+    <form action="ajouter_panier_sportetloisir.php" method="post">
+      <input type="hidden" name="nom" value="<?php echo $donnees['nom'];?>">
+      <input type="hidden" name="taille" value="<?php echo $donnees['taille'];?>">
+      <input type="hidden" name="description" value="<?php echo $donnees['description'];?>">
+      <input type="hidden" name="prix" value="<?php echo $donnees['prix'];?>">
+      <input type="hidden" name="mail" value="<?php echo $donnees['mail'];?>">
+      <input type="hidden" name="urlimg" value="<?php echo $donnees['urlimg'];?>">
+      <input type="hidden" name="id" value="<?php echo $donnees['id'];?>">
+      <input type="submit" name="button2" value="Ajouter au panier">
+  </form>
+
+    <br>
+
+
+      </div>
+
+
+
+
+
+<div class='barre_blanche'>
+</div>
+
+
+
+
  <footer class="footer">
+
 
     <!-- Copyright -->
     <div class="footer-copyright text-center py-3">© 2019 Copyright:
@@ -83,6 +147,9 @@
     <!-- Copyright -->
 
   </footer>
+
+
+
   <!-- Footer -->
 <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -91,3 +158,16 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
 </html>
+
+
+
+
+
+
+
+<?php
+}
+
+$reponse->closeCursor(); // Termine le traitement de la requête
+
+?>

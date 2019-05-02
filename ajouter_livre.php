@@ -14,13 +14,14 @@ $description = isset($_POST["description"])? $_POST["description"] : "";
 $bdd = new PDO('mysql:host=localhost;dbname=ECEAmazon;charset=utf8', 'root', 'root');
 
 
-$req = $bdd->prepare('INSERT INTO livre(titre, auteur, annee, edition, description, prix, mail) VALUES(:titre, :auteur, :annee, :edition, :description, :prix, :mail)');
+$req = $bdd->prepare('INSERT INTO livre(titre, auteur, annee, edition, description,urlimg, prix, mail) VALUES(:titre, :auteur, :annee, :edition, :description, :urlimg, :prix, :mail)');
 $req->execute(array(
 	'titre' => $titre,
 	'auteur' => $auteur,
 	'annee' => $annee,
 	'edition' => $edition,
 	'description'=> $description,
+	'urlimg'=> $urlimg,
 	'prix' => $prix,
 	'mail' => $mail,
 	));

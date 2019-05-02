@@ -1,20 +1,27 @@
+
+
+
+
+
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Livres</title>
-	<!-- Required meta tags -->
+  <title>Livres</title>
+  <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" type="text/css" href="Accueil.css">
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <link rel="stylesheet" type="text/css" href="tous.css">
+    <link rel="stylesheet" type="text/css" href="Vetements.css">
 </head>
+
+
 <body>
-	<!-- barre de navigation -->
-       <nav class="navbar navbar navbar-expand-lg navbar-lightgreen bg-lightgreen">
+    <!-- barre de navigation -->
+    <nav class="navbar navbar navbar-expand-lg navbar-lightgreen bg-lightgreen">
 
   <a class="navbar-brand" href="Accueil.php"><img src="eceamazon.png" height="60px"></a>
 
@@ -27,10 +34,10 @@
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav">
       <li class="nav-item active">
-        
+
 
         <div class="dropdown">
-          <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <a class="btn btn-secondary dropdown-toggle"  role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Catégories
           </a>
 
@@ -55,53 +62,92 @@
       <li class="nav-item">
         <a class="nav-link" href="Co_admin.php">Admin</a>
       </li>
-     
 
-      
+
+
     </ul>
   </div>
-  
+
   <a class="nav-link" href="Panier.php"><img src="panier.png"></a>
+
 </nav>
 
 <br>
 
 <br>
 
-
-<!-- Caroussel -->
-
-<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-  <ol class="carousel-indicators">
-    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-    
-  </ol>
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img src="bandeau_livre1.PNG" class="d-block w-75 "  alt="...">
-    </div>
-    <div class="carousel-item">
-      <img src="bandeau_livre2.PNG" class="d-block w-75" alt="...">
-    </div>
-    
-  </div>
-  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
-</div>
-
 <div id="global">
-<p>livres a éditer</p>
+  <h2> Livres :</h2>
+  <br><br>
 </div>
+
+
+
+
+
+
+  <?php
+
+
+
+  $bdd = new PDO('mysql:host=localhost;dbname=ECEAmazon;charset=utf8', 'root', 'root');
+
+  $reponse = $bdd->query('SELECT DISTINCT * FROM livre');
+
+
+     // On affiche chaque entrée une à une
+  while ($donnees = $reponse->fetch())
+  {
+    ?>
+
+     <div class="objet">
+
+      <strong>Titre</strong> : <?php echo $donnees['titre']; ?><br /><br />
+
+
+      <img class='image' src="<?php echo $donnees['urlimg'];?>" /> <br><br>
+
+      Auteur : <?php echo $donnees['auteur']; ?><br />
+
+      Année : <?php echo $donnees['annee']; ?><br />
+
+      Edition: <?php echo $donnees['edition']; ?><br />
+
+      Description : <em><?php echo $donnees['description']; ?></em> <br />
+
+      Prix : <?php echo $donnees['prix']; ?> &euro;<br />
+
+      Mail du vendeur : <?php echo $donnees['mail']; ?><br /><br /><br />
+
+      <form action="ajouter_panier_livre.php" method="post">
+        <input type="hidden" name="titre" value="<?php echo $donnees['titre'];?>">
+        <input type="hidden" name="auteur" value="<?php echo $donnees['auteur'];?>">
+        <input type="hidden" name="description" value="<?php echo $donnees['description'];?>">
+        <input type="hidden" name="prix" value="<?php echo $donnees['prix'];?>">
+        <input type="hidden" name="mail" value="<?php echo $donnees['mail'];?>">
+        <input type="hidden" name="annee" value="<?php echo $donnees['annee'];?>">
+        <input type="hidden" name="edition" value="<?php echo $donnees['edition'];?>">
+        <input type="hidden" name="urlimg" value="<?php echo $donnees['urlimg'];?>">
+        <input type="hidden" name="id" value="<?php echo $donnees['id'];?>">
+        <input type="submit" name="button2" value="Ajouter au panier">
+        </form>
+    <br>
+
+
+      </div>
+
+
+
+
+
+<div class='barre_blanche'>
+</div>
+
+
 
 
  <footer class="footer">
+
 
     <!-- Copyright -->
     <div class="footer-copyright text-center py-3">© 2019 Copyright:
@@ -110,9 +156,10 @@
     <!-- Copyright -->
 
   </footer>
+
+
+
   <!-- Footer -->
-
-
 <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -120,3 +167,16 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
 </html>
+
+
+
+
+
+
+
+<?php
+}
+
+$reponse->closeCursor(); // Termine le traitement de la requête
+
+?>
