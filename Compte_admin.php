@@ -76,7 +76,7 @@
 <div id="global">
 
   <h3 class=""> <em>Compte Admin</em></h3>
-    <form action="GestionCompteAdmin.php" method="post">
+  
       
       
 
@@ -87,11 +87,14 @@
          
   
 
+  <form action="GestionCompteVendeur.php" method="post">
+    
+  
+  
 
-    <!--boutons d'ajjout et de supression de toutes les items -->
+      <tr>
 
-   Gerer les articles: <br/> <br/>
-      <td> Type d'article   <br><select name="Type" size="1">
+        <td> Type d'article   <br><select name="Type" size="1">
               <option value="Livres"> Livres</option>
 
               <option value="Vetements"> Vetements </option>
@@ -108,20 +111,21 @@
 
               <option value="Supprimer"> Supprimer</option>
             
-              </select> <br><br>
-              </td> <br/> <br/>
+              </select> 
+              </td> <br><br>
+      </tr> 
+  
+     
+            <tr colspan="2">
+          <td> <input type="submit" name="Soumettre">
+          </td>
+
+        </tr>
 
 
-
-          <td> Lien d'image photo de profil <input type="text" name="urlprofil"></td>
-          <td> <input type="submit" name="Ajouterprofil"></td>
-
-          
-
-          <td> Lien d'image photo de fond <input type="text" name="urlfond"></td>
-          <td> <input type="submit" name="Ajouterfond"></td>
-
-       </form>
+      <tr>
+        
+          </form>
 </div>
 
 
