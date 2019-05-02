@@ -95,6 +95,7 @@ else {
 		</body>
 		</html>
 <?php
+}
 
 
 
