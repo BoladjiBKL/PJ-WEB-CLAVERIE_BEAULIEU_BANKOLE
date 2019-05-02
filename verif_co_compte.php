@@ -80,7 +80,23 @@ if($donnees)
 	header('Location: Compte_client.php');
 }
 
-
+else
+{
+	?>
+<!DOCTYPE html>
+		<html>
+		<head>
+			<title>redirection</title>
+			<script type="text/javascript">
+			alert("Votre compte n'existe pas");
+			document.location.href="Co_mon_compte.php";
+		</script>
+		</head>
+		<body onLoad="setTimeout('RedirectionJavascript()', 200)">
+		</body>
+		</html>
+<?php
+}
 
 
 ?>

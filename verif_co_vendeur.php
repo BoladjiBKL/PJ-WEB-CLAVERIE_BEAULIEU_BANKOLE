@@ -83,7 +83,11 @@ if($donnees)
 	header('Location: Compte_vendeur.php');
 }
 
-
+else
+{
+	header('Location: Co_vendeur.php');
+}
+}
 
 
 
