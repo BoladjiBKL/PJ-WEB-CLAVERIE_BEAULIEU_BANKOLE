@@ -7,6 +7,8 @@ $nom= isset($_POST["nom"])? $_POST["nom"] : "";
 $error  ="";
 $drapeau =0;
 
+
+
 $bdd = new PDO('mysql:host=localhost;dbname=ECEAmazon;charset=utf8', 'root', 'root');
 $verf= $bdd->prepare('SELECT * FROM vendeur WHERE mailvend= :mailvend AND pseudo= :pseudo');
 $verf->execute(array(
@@ -16,18 +18,64 @@ $verf->execute(array(
 
 $donnees= $verf->fetch();
 
+if ($pseudo=="" && $mailvend=="")
+{ 
+		?>
+<!DOCTYPE html>
+		<html>
+		<head>
+			<title>redirection</title>
+			<script type="text/javascript">
+			alert("Mail et pseudo vides"); 
+			document.location.href="Co_vendeur.php";
+		</script>
+		</head>
+		<body onLoad="setTimeout('RedirectionJavascript()', 200)">
+		</body>
+		</html>
+<?php
+
+}
+
 
 if ($mailvend=="") {
-	$error .= "Champ mail vide <br>";
-	$drapeau+=1;
+	?>
+<!DOCTYPE html>
+		<html>
+		<head>
+			<title>redirection</title>
+			<script type="text/javascript">
+			alert("Mail vide");
+			document.location.href="Co_vendeur.php";
+		</script>
+		</head>
+		<body onLoad="setTimeout('RedirectionJavascript()', 200)">
+		</body>
+		</html>
+<?php
+	
 }
 
 if ($pseudo =="") {
-	$error .= "Champ pseudo vide <br>";
-	$drapeau+=1;
+	
+	?>
+<!DOCTYPE html>
+		<html>
+		<head>
+			<title>redirection</title>
+			<script type="text/javascript">
+			alert("pseudo vide");
+			document.location.href="Co_vendeur.php";
+		</script>
+		</head>
+		<body onLoad="setTimeout('RedirectionJavascript()', 200)">
+		</body>
+		</html>
+<?php
 
 }
-echo($error);
+
+
 
 
 
@@ -37,11 +85,7 @@ if ( $donnees)
 	
 
 }
- else
- {
-  header('Location: Co_vendeur.php');
- }
- 
+
 
 
 
