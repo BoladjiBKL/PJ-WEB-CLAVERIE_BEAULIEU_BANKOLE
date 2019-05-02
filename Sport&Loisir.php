@@ -98,7 +98,7 @@ while ($donnees = $reponse->fetch())
 
    <div class="objet">
 
-    <strong>Nom</strong> : <?php echo $donnees['nom']; ?><br /><br />
+    <strong><?php echo $donnees['nom']; ?> </strong>  <br /><br />
 
 
     <img class='image' src="<?php echo $donnees['urlimg'];?>" /> <br><br>

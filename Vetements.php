@@ -99,7 +99,7 @@
 
      <div class="objet">
 
-      <strong>Nom</strong> : <?php echo $donnees['nom']; ?><br /><br />
+      <strong><?php echo $donnees['nom']; ?></strong> <br /><br />
 
 
       <img class='image' src="<?php echo $donnees['urlimg'];?>" /> <br><br>
@@ -121,6 +121,7 @@
         <input type="hidden" name="urlimg" value="<?php echo $donnees['urlimg'];?>">
         <input type="hidden" name="id" value="<?php echo $donnees['id'];?>">
         <input type="submit" name="button2" value="Ajouter au panier">
+        
     </form>
     <br>
 

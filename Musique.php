@@ -100,7 +100,7 @@ while ($donnees = $reponse->fetch())
 
    <div class="objet">
 
-    <strong>Titre de l'album</strong> : <?php echo $donnees['titre']; ?><br /><br />
+    <strong> <?php echo $donnees['titre']; ?> </strong><br /><br />
 
 
     <img class='image' src="<?php echo $donnees['urlimg'];?>" /> <br><br>
