@@ -87,7 +87,7 @@ else
 {
 	header('Location: Co_vendeur.php');
 }
-}
+
 
 
 
