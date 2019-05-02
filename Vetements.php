@@ -90,17 +90,16 @@
 
   $reponse = $bdd->query('SELECT DISTINCT * FROM vetement');
 
-  
+
      // On affiche chaque entrée une à une
   while ($donnees = $reponse->fetch())
   {
+
     ?>
-  
 
      <div class="objet">
 
-      <strong><?php echo $donnees['nom']; ?></strong> <br /><br />
-
+      <strong>Nom</strong> : <?php echo $donnees['nom']; ?><br /><br />
 
       <img class='image' src="<?php echo $donnees['urlimg'];?>" /> <br><br>
 
@@ -110,7 +109,7 @@
 
       Prix : <?php echo $donnees['prix']; ?> &euro;<br />
 
-       Mail du vendeur : <a href="mailto:<?php echo $donnees['mail']; ?>"> <?php echo $donnees['mail']; ?> </a><br /><br /><br />
+      Mail du vendeur : <?php echo $donnees['mail']; ?><br /><br /><br />
 
       <form action="ajouter_panier_vetement.php" method="post">
         <input type="hidden" name="nom" value="<?php echo $donnees['nom'];?>">
@@ -121,16 +120,9 @@
         <input type="hidden" name="urlimg" value="<?php echo $donnees['urlimg'];?>">
         <input type="hidden" name="id" value="<?php echo $donnees['id'];?>">
         <input type="submit" name="button2" value="Ajouter au panier">
-        
     </form>
-    <br><br><br><br><br>
+    <br>
 
-<?php
-}
-
-$reponse->closeCursor(); // Termine le traitement de la requête
-
-?>
 
       </div>
 
@@ -172,4 +164,9 @@ $reponse->closeCursor(); // Termine le traitement de la requête
 
 
 
+<?php
+}
 
+$reponse->closeCursor(); // Termine le traitement de la requête
+
+?>

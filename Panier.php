@@ -96,11 +96,13 @@ $reponse = $bdd->query('SELECT DISTINCT * FROM panier');
    // On affiche chaque entrée une à une
 while ($donnees = $reponse->fetch())
 {
+  $somme += $donnees['prix'];
+
   ?>
 
    <div class="objet_panier">
 
-    <strong> <?php echo $donnees['titre']; ?> </strong> <strong><?php echo $donnees['nom']; ?> </strong>  
+    <strong> <?php echo $donnees['titre']; ?> </strong> <strong><?php echo $donnees['nom']; ?> </strong>
     <br /><br />
 
     <img class='image' src="<?php echo $donnees['urlimg'];?>" /> <br><br>
@@ -108,7 +110,7 @@ while ($donnees = $reponse->fetch())
     <?php echo $donnees['artiste']; ?> <?php echo $donnees['auteur']; ?>
     <br />
 
-    
+
 
     <?php echo $donnees['label']; ?> <?php echo $donnees['taille']; ?> <?php echo $donnees['edition']; ?>
     <br />
@@ -118,11 +120,10 @@ while ($donnees = $reponse->fetch())
 
     Prix : <?php echo $donnees['prix']; ?> &euro;<br />
 
-    Année : <?php echo $donnees['annee']; ?> 
+    Année : <?php echo $donnees['annee']; ?>
     <br />
 
     Mail du vendeur : <a href="mailto:<?php echo $donnees['mail']; ?>"> <?php echo $donnees['mail']; ?> </a><br /><br /><br />
-
 
       </div>
 
@@ -163,10 +164,3 @@ $reponse->closeCursor(); // Termine le traitement de la requête
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
 </html>
-
-
-
-
-
-
-
