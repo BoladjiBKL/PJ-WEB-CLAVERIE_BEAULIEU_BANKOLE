@@ -110,7 +110,7 @@
 
       Prix : <?php echo $donnees['prix']; ?> &euro;<br />
 
-      Mail du vendeur : <?php echo $donnees['mail']; ?><br /><br /><br />
+       Mail du vendeur : <a href="mailto:<?php echo $donnees['mail']; ?>"> <?php echo $donnees['mail']; ?> </a><br /><br /><br />
 
       <form action="ajouter_panier_vetement.php" method="post">
         <input type="hidden" name="nom" value="<?php echo $donnees['nom'];?>">
