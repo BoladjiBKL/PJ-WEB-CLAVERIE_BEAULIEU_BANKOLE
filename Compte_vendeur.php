@@ -96,7 +96,7 @@
 
               <option value="Supprimer"> Supprimer</option>
             
-              </select> <br><br>
+              </select> 
               </td>
       </tr> 
 
@@ -104,8 +104,49 @@
           <td> <input type="submit" name="Soumettre">
           </td>
         </tr>
-    </table>
-  </form>
+
+
+      <tr>
+        </table>
+          </form>
+
+          
+          <form action="modifier_photo_profil.php" method="post">
+            <table>
+              <tr>
+        <td>Lien d'image photo de profil  :</td>
+        <td><input type="text" name="urlprofil"></td>
+             </tr>
+
+
+             <tr>
+        <td>Email :</td>
+        <td><input type="text" name="mailvend"></td>
+            </tr>
+        
+          <td> <input type="submit" name="Ajouterprofil" value="Ajouter photo profil">
+          </td>
+          </table>
+          </form>
+          
+          <form action="modifier_photo_fond.php" method="post">
+            <table>
+              <tr>
+        <td>Lien d'image photo de fond  :</td>
+        <td><input type="text" name="urlfond"></td>
+             </tr>
+
+
+             <tr>
+        <td>Email :</td>
+        <td><input type="text" name="mailvend"></td>
+            </tr>
+        
+          <td> <input type="submit" name="Ajouterfond" value="Ajouter photo fond">
+          </td>
+          </table>
+          </form>
+    
 
     
 
