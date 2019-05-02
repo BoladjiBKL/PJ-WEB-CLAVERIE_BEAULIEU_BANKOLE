@@ -29,21 +29,81 @@ $verf->execute(array(
 	'nom' => $nom,
 ));
 
+$verf2= $bdd->prepare('SELECT * FROM acheteur WHERE mailacheteur= :mailacheteur');
+$verf2->execute(array(
+	'mailacheteur' => $mailacheteur,
+));
 $donnees= $verf->fetch();
+$donnees2=$verf2->fetch();
 
 
 if ($mailacheteur=="") {
-	$error="Mail vide";
+	$error.="Mail vide";
 	$drapeau+=1;
 
 }
 
 if ($nom=="") {
-	$error=" Nom vide";
+	$error.=" Nom vide";
+	$drapeau+=1;
+}
+if ($prenom=="") {
+	$error.=" Prénom vide";
+	$drapeau+=1;
+}
+if ($mdp=="") {
+	$error.=" Mot de passe vide";
+	$drapeau+=1;
+}
+if ($adresse1=="") {
+	$error.=" Première adresse vide";
+	$drapeau+=1;
+}
+if ($adresse2=="") {
+	$error.=" Deuxième adresse vide";
+	$drapeau+=1;
+}
+if ($ville=="") {
+	$error.=" Ville vide";
+	$drapeau+=1;
+}
+if ($codepost=="") {
+	$error.=" Code postal vide";
+	$drapeau+=1;
+}
+if ($pays=="") {
+	$error.=" Pays vide";
+	$drapeau+=1;
+}
+if ($tel=="") {
+	$error.=" tel vide";
+	$drapeau+=1;
+}
+if ($typepaie=="") {
+	$error.=" Type de paye vide";
+	$drapeau+=1;
+}
+if ($numcarte=="") {
+	$error.=" Numcarte vide";
+	$drapeau+=1;
+}
+if ($nomcarte=="") {
+	$error.=" Nomcarte vide";
+	$drapeau+=1;
+}
+if ($datecarte=="") {
+	$error.=" datecarte vide";
+	$drapeau+=1;
+}
+if ($codecarte=="") {
+	$error.=" Codecarte vide";
 	$drapeau+=1;
 }
 
-
+if($donnees2)
+{
+	$error.="Ce mail est deja utilisé. Reprennez avec une autre adresse mail";
+}
 
 if($error=="" && $drapeau==0)
 {
@@ -58,7 +118,8 @@ else
 		<head>
 			<title>redirection</title>
 			<script type="text/javascript">
-			<?php echo $error ?>
+		    var msg='<?php echo $error; ?>';
+			alert(msg); 
 			document.location.href="Creercompte.php";
 		</script>
 		</head>
@@ -67,6 +128,7 @@ else
 		</html>
 <?php
 }
+
 
 
 

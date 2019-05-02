@@ -25,7 +25,7 @@ if ($mailadmin=="" && $mdpadmin=="")
 			<title>redirection</title>
 			<script type="text/javascript">
 			alert("Mail et mot de passe vides");
-			document.location.href="Co_vendeur.php";
+			document.location.href="Co_admin.php";
 		</script>
 		</head>
 		<body onLoad="setTimeout('RedirectionJavascript()', 200)">
@@ -44,7 +44,7 @@ if ($mailadmin=="") {
 			<title>redirection</title>
 			<script type="text/javascript">
 			alert("Mail vide");
-			document.location.href="Co_vendeur.php";
+			document.location.href="Co_admin.php";
 		</script>
 		</head>
 		<body onLoad="setTimeout('RedirectionJavascript()', 200)">
@@ -63,7 +63,7 @@ if ($mdpadmin =="") {
 			<title>redirection</title>
 			<script type="text/javascript">
 			alert("Mot de passe vide");
-			document.location.href="Co_vendeur.php";
+			document.location.href="Co_admin.php";
 		</script>
 		</head>
 		<body onLoad="setTimeout('RedirectionJavascript()', 200)">
@@ -75,6 +75,10 @@ if ($mdpadmin =="") {
 
  
 
+if($donnees)
+{
+	header('Location: Compte_admin.php');
+}
 
 
 

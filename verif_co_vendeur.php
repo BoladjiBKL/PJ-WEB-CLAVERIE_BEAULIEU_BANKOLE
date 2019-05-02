@@ -16,7 +16,9 @@ $verf->execute(array(
 	'pseudo' => $pseudo,
 ));
 
+
 $donnees= $verf->fetch();
+
 
 if ($pseudo=="" && $mailvend=="")
 { 
@@ -76,15 +78,13 @@ if ($pseudo =="") {
 }
 
 
-
-
-
-if ( $donnees) 
-{   
-	 header('Location: Compte_vendeur.php');
-	
-
+if($donnees)
+{
+	header('Location: Compte_vendeur.php');
 }
+
+
+
 
 
 
