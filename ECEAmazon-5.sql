@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8889
--- Generation Time: May 01, 2019 at 05:52 PM
+-- Generation Time: May 02, 2019 at 12:03 PM
 -- Server version: 5.7.25
 -- PHP Version: 7.3.1
 
@@ -53,6 +53,28 @@ CREATE TABLE `Acheteur` (
 CREATE TABLE `Administrateur` (
   `mailadmin` varchar(100) NOT NULL,
   `mdpadmin` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `bestsellers`
+--
+
+CREATE TABLE `bestsellers` (
+  `id` int(11) NOT NULL,
+  `nom` varchar(100) DEFAULT NULL,
+  `taille` int(11) DEFAULT NULL,
+  `titre` varchar(100) DEFAULT NULL,
+  `auteur` varchar(100) DEFAULT NULL,
+  `edition` varchar(100) DEFAULT NULL,
+  `artiste` varchar(100) DEFAULT NULL,
+  `annee` int(11) DEFAULT NULL,
+  `label` varchar(100) DEFAULT NULL,
+  `description` mediumtext,
+  `urlimg` mediumtext,
+  `prix` float DEFAULT NULL,
+  `mail` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -127,7 +149,13 @@ CREATE TABLE `panier` (
 INSERT INTO `panier` (`id`, `nom`, `taille`, `titre`, `auteur`, `edition`, `artiste`, `annee`, `label`, `description`, `urlimg`, `prix`, `mail`) VALUES
 (3, 'robe', 45, NULL, NULL, NULL, NULL, NULL, NULL, 'HOLOL', 'LLLL.jpeg', NULL, 'LLL@gmail.com'),
 (4, 'robe', 45, NULL, NULL, NULL, NULL, NULL, NULL, 'HOLOL', 'LLLL.jpeg', NULL, 'LLL@gmail.com'),
-(5, 'Tong', 45, NULL, NULL, NULL, NULL, NULL, NULL, 'GRANDE', 'KKK.jpeg', 21.22, 'HH@gmail.com');
+(5, 'Tong', 45, NULL, NULL, NULL, NULL, NULL, NULL, 'GRANDE', 'KKK.jpeg', 21.22, 'HH@gmail.com'),
+(6, 'robe', 23, NULL, NULL, NULL, NULL, NULL, NULL, 'jrqgnmeqngqs', 'hhhhh.jpeg', 23.33, 'jjjj@gmail.com'),
+(7, 'robe', 23, NULL, NULL, NULL, NULL, NULL, NULL, 'jrqgnmeqngqs', 'hhhhh.jpeg', 23.33, 'jjjj@gmail.com'),
+(8, 'robe', 33, NULL, NULL, NULL, NULL, NULL, NULL, 'rouge et bleue ', '', 11.11, 'hilol@gmail.com'),
+(9, 'robe', 33, NULL, NULL, NULL, NULL, NULL, NULL, 'rouge et bleue ', 'robe.jpeg', 11.11, 'hilol@gmail.com'),
+(10, 'robe', 33, NULL, NULL, NULL, NULL, NULL, NULL, 'rouge et bleue ', 'robe.jpeg', 11.11, 'hilol@gmail.com'),
+(11, 'jeans', 11, NULL, NULL, NULL, NULL, NULL, NULL, 'TRES RESISTANT', 'jean.jpeg', 44, 'glol@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -161,7 +189,9 @@ INSERT INTO `SportetLoisir` (`id`, `nom`, `taille`, `description`, `urlimg`, `pr
 CREATE TABLE `Vendeur` (
   `mailvend` varchar(100) NOT NULL,
   `pseudo` varchar(100) NOT NULL,
-  `nom` varchar(100) NOT NULL
+  `nom` varchar(100) NOT NULL,
+  `urlprofil` mediumtext,
+  `urlfond` mediumtext
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -179,6 +209,14 @@ CREATE TABLE `Vetement` (
   `prix` float NOT NULL,
   `mail` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `Vetement`
+--
+
+INSERT INTO `Vetement` (`id`, `nom`, `taille`, `description`, `urlimg`, `prix`, `mail`) VALUES
+(33, 'jeans', 11, 'TRES RESISTANT', 'jean.jpeg', 44, 'glol@gmail.com'),
+(34, 'jeans', 11, 'TRES RESISTANT', 'jean.jpeg', 44, 'glol@gmail.com');
 
 --
 -- Indexes for dumped tables
@@ -252,7 +290,7 @@ ALTER TABLE `Musique`
 -- AUTO_INCREMENT for table `panier`
 --
 ALTER TABLE `panier`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `SportetLoisir`
@@ -264,7 +302,7 @@ ALTER TABLE `SportetLoisir`
 -- AUTO_INCREMENT for table `Vetement`
 --
 ALTER TABLE `Vetement`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
