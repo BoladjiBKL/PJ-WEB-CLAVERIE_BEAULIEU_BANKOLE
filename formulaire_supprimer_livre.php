@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
 	<head>
-			<title>The Book Deleter</title>
+			<title>Supprimer un livre</title>
 			<meta charset="utf-8">
 	</head>
 	<body>
-			<h2>Le supprimeur de livres</h2>
+			<h2>Supprimer un livre</h2>
 			<form action="supprimer_livre.php" method="post">
 					<table>
 							<tr>
