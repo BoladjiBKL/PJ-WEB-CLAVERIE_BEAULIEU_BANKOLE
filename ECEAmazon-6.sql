@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8889
--- Generation Time: May 02, 2019 at 12:03 PM
+-- Generation Time: May 02, 2019 at 02:00 PM
 -- Server version: 5.7.25
 -- PHP Version: 7.3.1
 
@@ -86,13 +86,13 @@ CREATE TABLE `bestsellers` (
 CREATE TABLE `Livre` (
   `id` int(11) NOT NULL,
   `titre` varchar(100) NOT NULL,
-  `auteur` varchar(100) NOT NULL,
-  `annee` int(11) NOT NULL,
-  `edition` varchar(100) NOT NULL,
-  `description` text NOT NULL,
-  `urlimg` mediumtext NOT NULL,
-  `prix` float NOT NULL,
-  `mail` varchar(100) NOT NULL
+  `auteur` varchar(100) DEFAULT NULL,
+  `annee` int(11) DEFAULT NULL,
+  `edition` varchar(100) DEFAULT NULL,
+  `description` text,
+  `urlimg` mediumtext,
+  `prix` float DEFAULT NULL,
+  `mail` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -103,14 +103,14 @@ CREATE TABLE `Livre` (
 
 CREATE TABLE `Musique` (
   `id` int(11) NOT NULL,
-  `titre` varchar(100) NOT NULL,
-  `artiste` varchar(100) NOT NULL,
-  `annee` int(11) NOT NULL,
-  `label` varchar(100) NOT NULL,
-  `description` text NOT NULL,
-  `urlimg` mediumtext NOT NULL,
-  `prix` float NOT NULL,
-  `mail` varchar(100) NOT NULL
+  `titre` varchar(100) DEFAULT NULL,
+  `artiste` varchar(100) DEFAULT NULL,
+  `annee` int(11) DEFAULT NULL,
+  `label` varchar(100) DEFAULT NULL,
+  `description` text,
+  `urlimg` mediumtext,
+  `prix` float DEFAULT NULL,
+  `mail` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -165,12 +165,12 @@ INSERT INTO `panier` (`id`, `nom`, `taille`, `titre`, `auteur`, `edition`, `arti
 
 CREATE TABLE `SportetLoisir` (
   `id` int(11) NOT NULL,
-  `nom` varchar(100) NOT NULL,
-  `taille` int(11) NOT NULL,
-  `description` text NOT NULL,
-  `urlimg` mediumtext NOT NULL,
-  `prix` float NOT NULL,
-  `mail` varchar(100) NOT NULL
+  `nom` varchar(100) DEFAULT NULL,
+  `taille` int(11) DEFAULT NULL,
+  `description` text,
+  `urlimg` mediumtext,
+  `prix` float DEFAULT NULL,
+  `mail` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -202,12 +202,12 @@ CREATE TABLE `Vendeur` (
 
 CREATE TABLE `Vetement` (
   `id` int(11) NOT NULL,
-  `nom` varchar(100) NOT NULL,
-  `taille` int(11) NOT NULL,
-  `description` text NOT NULL,
-  `urlimg` mediumtext NOT NULL,
-  `prix` float NOT NULL,
-  `mail` varchar(100) NOT NULL
+  `nom` varchar(100) DEFAULT NULL,
+  `taille` int(11) DEFAULT NULL,
+  `description` text,
+  `urlimg` mediumtext,
+  `prix` float DEFAULT NULL,
+  `mail` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
