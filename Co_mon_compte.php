@@ -79,12 +79,12 @@
 
       <tr>
         <td> Login (email):</td>
-        <td><input type="text" name="Log"></td>
+        <td><input type="text" name="mailacheteur"></td>
       </tr>
 
       <tr>
         <td>Password :</td>
-        <td><input type="Password" name="Password"></td>
+        <td><input type="Password" name="mdp"></td>
       </tr>
 
       <tr>
