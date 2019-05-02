@@ -1,8 +1,13 @@
+
+
+
+
+
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Panier</title>
-	<!-- Required meta tags -->
+  <title>Panier</title>
+  <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -10,7 +15,10 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <link rel="stylesheet" type="text/css" href="tous.css">
+    <link rel="stylesheet" type="text/css" href="Vetements.css">
 </head>
+
+
 <body>
     <!-- barre de navigation -->
     <nav class="navbar navbar navbar-expand-lg navbar-lightgreen bg-lightgreen">
@@ -26,10 +34,10 @@
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav">
       <li class="nav-item active">
-        
+
 
         <div class="dropdown">
-          <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <a class="btn btn-secondary dropdown-toggle"  role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Catégories
           </a>
 
@@ -54,28 +62,88 @@
       <li class="nav-item">
         <a class="nav-link" href="Co_admin.php">Admin</a>
       </li>
-     
 
-      
+
+
     </ul>
   </div>
-  
+
   <a class="nav-link" href="Panier.php"><img src="panier.png"></a>
+
 </nav>
 
 <br>
 
 <br>
+
 <div id="global">
-
-
-
-<p>Panier a éditer</p>
-
+  <h2> Panier :</h2>
+  <br><br>
 </div>
 
 
+
+
+<?php
+
+//Panier
+
+$bdd = new PDO('mysql:host=localhost;dbname=ECEAmazon;charset=utf8', 'root', 'root');
+
+$reponse = $bdd->query('SELECT DISTINCT * FROM panier');
+
+
+   // On affiche chaque entrée une à une
+while ($donnees = $reponse->fetch())
+{
+  ?>
+
+   <div class="objet_panier">
+
+    <strong> <?php echo $donnees['titre']; ?> </strong> <strong><?php echo $donnees['nom']; ?> </strong>  
+    <br /><br />
+
+    <img class='image' src="<?php echo $donnees['urlimg'];?>" /> <br><br>
+
+    <?php echo $donnees['artiste']; ?> <?php echo $donnees['auteur']; ?>
+    <br />
+
+    
+
+    <?php echo $donnees['label']; ?> <?php echo $donnees['taille']; ?> <?php echo $donnees['edition']; ?>
+    <br />
+
+
+    Description : <em><?php echo $donnees['description']; ?></em> <br />
+
+    Prix : <?php echo $donnees['prix']; ?> &euro;<br />
+
+    Année : <?php echo $donnees['annee']; ?> 
+    <br />
+
+    Mail du vendeur : <a href="mailto:<?php echo $donnees['mail']; ?>"> <?php echo $donnees['mail']; ?> </a><br /><br /><br />
+
+
+      </div>
+
+<?php
+}
+
+$reponse->closeCursor(); // Termine le traitement de la requête
+
+?>
+
+
+
+
+<div class='barre_blanche'>
+</div>
+
+
+
+
  <footer class="footer">
+
 
     <!-- Copyright -->
     <div class="footer-copyright text-center py-3">© 2019 Copyright:
@@ -84,6 +152,9 @@
     <!-- Copyright -->
 
   </footer>
+
+
+
   <!-- Footer -->
 <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -92,3 +163,10 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
 </html>
+
+
+
+
+
+
+

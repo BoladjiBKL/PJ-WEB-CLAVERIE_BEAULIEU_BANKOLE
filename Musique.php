@@ -134,6 +134,12 @@ while ($donnees = $reponse->fetch())
 
       </div>
 
+<?php
+}
+
+$reponse->closeCursor(); // Termine le traitement de la requête
+
+?>
 
 
 
@@ -172,9 +178,3 @@ while ($donnees = $reponse->fetch())
 
 
 
-<?php
-}
-
-$reponse->closeCursor(); // Termine le traitement de la requête
-
-?>

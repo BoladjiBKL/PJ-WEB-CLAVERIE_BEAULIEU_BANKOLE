@@ -123,8 +123,14 @@
         <input type="submit" name="button2" value="Ajouter au panier">
         
     </form>
-    <br>
+    <br><br><br><br><br>
 
+<?php
+}
+
+$reponse->closeCursor(); // Termine le traitement de la requête
+
+?>
 
       </div>
 
@@ -166,9 +172,4 @@
 
 
 
-<?php
-}
 
-$reponse->closeCursor(); // Termine le traitement de la requête
-
-?>

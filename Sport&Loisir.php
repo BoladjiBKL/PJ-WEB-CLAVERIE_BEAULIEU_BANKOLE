@@ -123,16 +123,18 @@ while ($donnees = $reponse->fetch())
   </form>
 
     <br>
-
-
       </div>
+      <?php
+}
+
+$reponse->closeCursor(); // Termine le traitement de la requête
+
+?>
 
 
 
 
 
-<div class='barre_blanche'>
-</div>
 
 
 
@@ -165,9 +167,4 @@ while ($donnees = $reponse->fetch())
 
 
 
-<?php
-}
 
-$reponse->closeCursor(); // Termine le traitement de la requête
-
-?>

@@ -137,6 +137,13 @@
 
 
 
+<?php
+}
+
+$reponse->closeCursor(); // Termine le traitement de la requête
+
+?>
+
 
 
 
@@ -169,9 +176,4 @@
 
 
 
-<?php
-}
 
-$reponse->closeCursor(); // Termine le traitement de la requête
-
-?>
