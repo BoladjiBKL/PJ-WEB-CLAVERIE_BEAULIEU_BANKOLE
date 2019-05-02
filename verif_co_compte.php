@@ -16,37 +16,87 @@ $verf->execute(array(
 
 $donnees= $verf->fetch();
 
+if ($mailacheteur=="" && $mdp=="")
+{
+		?>
+<!DOCTYPE html>
+		<html>
+		<head>
+			<title>redirection</title>
+			<script type="text/javascript">
+			alert("Mail et mot de passe vides");
+			document.location.href="Co_mon_compte.php";
+		</script>
+		</head>
+		<body onLoad="setTimeout('RedirectionJavascript()', 200)">
+		</body>
+		</html>
+<?php
+
+}
+
 
 if ($mailacheteur=="") {
-	$error .= "Champ login vide <br>";
-	$drapeau+=1;
-}
-
-if ($mdp=="") {
-	$error .= "Champ password vide <br>";
-	$drapeau+=1;
-
-}
-echo($error);
-
-
-
-if ( $donnees) 
-{   
-	 header('Location: Compte_client.php');
+	?>
+<!DOCTYPE html>
+		<html>
+		<head>
+			<title>redirection</title>
+			<script type="text/javascript">
+			alert("Mail vide");
+			document.location.href="Co_mon_compte.php";
+		</script>
+		</head>
+		<body onLoad="setTimeout('RedirectionJavascript()', 200)">
+		</body>
+		</html>
+<?php
 	
+}
+
+if ($mdp =="") {
+	
+	?>
+<!DOCTYPE html>
+		<html>
+		<head>
+			<title>redirection</title>
+			<script type="text/javascript">
+			alert("Mot de passe vide");
+			document.location.href="Co_mon_compte.php";
+		</script>
+		</head>
+		<body onLoad="setTimeout('RedirectionJavascript()', 200)">
+		</body>
+		</html>
+<?php
 
 }
- else
- {
-  header('Location: Co_mon_compte.php');
- }
- 
 
 
 
+if($donnees)
+{
+	header('Location: Compte_client.php');
+}
 
-
+else
+{
+	?>
+<!DOCTYPE html>
+		<html>
+		<head>
+			<title>redirection</title>
+			<script type="text/javascript">
+			alert("Votre compte n'existe pas");
+			document.location.href="Co_mon_compte.php";
+		</script>
+		</head>
+		<body onLoad="setTimeout('RedirectionJavascript()', 200)">
+		</body>
+		</html>
+<?php
+}
 
 
 ?>

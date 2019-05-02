@@ -76,7 +76,7 @@
 
 	<h3> <em>Creer un compte</em></h3>
 	<br>
-	<form action="Creercompte.php" method="post">
+	<form action="verif_creer_compte.php" method="post">
 		
 		<table id="maTable">
 			<tr>
@@ -172,7 +172,7 @@
 
 			<br>
             <tr colspan="2">
-					<td><input type="button" value="Creer mon compte">
+					<td><input type="submit" value="Creer mon compte">
 					</td>
 		    </tr>
 		</table>
