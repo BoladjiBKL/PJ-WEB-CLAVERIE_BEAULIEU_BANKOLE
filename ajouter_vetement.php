@@ -8,9 +8,18 @@ $description = isset($_POST["description"])? $_POST["description"] : "";
 $urlimg = isset($_POST["urlimg"])? $_POST["urlimg"] : "";
 $prix = isset($_POST["prix"])? $_POST["prix"] : "";
 $mail = isset($_POST["mail"])? $_POST["mail"] : "";
+$error  ="";
+$drapeau =0;
 
 
 $bdd = new PDO('mysql:host=localhost;dbname=ECEAmazon;charset=utf8', 'root', 'root');
+
+$verf= $bdd->prepare('SELECT * FROM vetement WHERE mail= :mail');
+$verf->execute(array(
+	'mail' => $mail,
+));
+
+$donnees=$verf->fetch();
 
 
 $req = $bdd->prepare('INSERT INTO vetement(nom, taille, description,urlimg, prix, mail) VALUES(:nom, :taille, :description,:urlimg, :prix, :mail)');
@@ -22,5 +31,84 @@ $req->execute(array(
 	'prix' => $prix,
 	'mail' => $mail,
 	));
-	header('Location: formulaire_ajouter_vetement.php');
+
+if ($nom=="") {
+	$error.="nom vide";
+	$drapeau+=1;
+
+}
+
+
+if ($taille=="") {
+	$error.=" taille vide";
+	$drapeau+=1;
+}
+
+
+if ($description=="") {
+	$error.=" description vide";
+	$drapeau+=1;
+
+}
+if ($urlimg=="") {
+	$error.=" urlimg vide";
+	$drapeau+=1;
+
+}
+if ($prix=="") {
+	$error.=" prix vide";
+	$drapeau+=1;
+
+}
+if ($mail=="") {
+	$error.=" mail vide";
+	$drapeau+=1;
+
+}
+if($donnees)
+{
+	
+$error.="Ce mail est deja utilisé. Reprennez avec une autre adresse mail";
+}
+
+
+if($error=="" && $drapeau==0)
+{
+	//header('Location: formulaire_ajouter_vetement.php');
+			?>
+<!DOCTYPE html>
+		<html>
+		<head>
+			<title>redirection</title>
+			<script type="text/javascript">
+		    
+			alert("vetement bien ajouté"); 
+			document.location.href="formulaire_ajouter_vetement.php";
+		</script>
+		</head>
+		<body onLoad="setTimeout('RedirectionJavascript()', 200)">
+		</body>
+		</html>
+<?php
+}
+
+else
+{
+		?>
+<!DOCTYPE html>
+		<html>
+		<head>
+			<title>redirection</title>
+			<script type="text/javascript">
+		    var msg='<?php echo $error; ?>';
+			alert(msg); 
+			document.location.href="formulaire_ajouter_vetement.php";
+		</script>
+		</head>
+		<body onLoad="setTimeout('RedirectionJavascript()', 200)">
+		</body>
+		</html>
+<?php
+}
 ?>
+
