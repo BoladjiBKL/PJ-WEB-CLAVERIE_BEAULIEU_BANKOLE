@@ -75,10 +75,7 @@ if ($adresse1=="") {
 	$error.=" Première adresse vide";
 	$drapeau+=1;
 }
-if ($adresse2=="") {
-	$error.=" Deuxième adresse vide";
-	$drapeau+=1;
-}
+
 
 if ($ville=="") {
 	$error.=" Ville vide";
@@ -155,7 +152,7 @@ if($donnees2)
 
 if($error=="" && $drapeau==0)
 {
-	 header('Location: Compte_client.php');
+	 header('Location: Co_mon_compte.php');
 }
 
 else
@@ -168,7 +165,7 @@ else
 			<script type="text/javascript">
 		    var msg='<?php echo $error; ?>';
 			alert(msg); 
-			document.location.href="Co_mon_compte.php";
+			document.location.href="Creercompte.php";
 		</script>
 		</head>
 		<body onLoad="setTimeout('RedirectionJavascript()', 200)">

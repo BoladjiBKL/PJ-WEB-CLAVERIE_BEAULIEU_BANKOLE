@@ -142,8 +142,8 @@
 				<tr>
 				<td>Type de carte :</td>
 				<td><input type="radio" name="typepaie" value="Visa" checked="checked">Visa
-				<input type="radio" name="typepaie" value="Mastercard">MasterCard
-				<input type="radio" name="typepaie" value="American express">American Express
+				<input type="radio" name="typepaie" value="Mastercard">Mastercard
+				<input type="radio" name="typepaie" value="American express">American express
 				<input type="radio" name="typepaie" value="Paypal">Paypal
 			</td>
 			</tr>
@@ -161,7 +161,7 @@
 
 			<tr>
 				<td>Date d'expiration</td>
-				<td><input type="month" name="datecarte"></td>
+				<td><input type="text" name="datecarte"></td>
 				
 			</tr> 
 
