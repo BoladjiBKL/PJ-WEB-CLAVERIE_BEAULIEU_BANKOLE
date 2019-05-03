@@ -77,10 +77,10 @@
 
 <br>
 
-<div id="global">
+
   <h2> Compte client :</h2>
-  <br><br>
-</div>
+  <br><br><br><br>
+
 
 
 
@@ -105,13 +105,14 @@
 
      <div class="info_client">
 
+      <h3> Informations de livraison :</h3>
+      <br /><br />
+
       <strong>Nom</strong> : <?php echo $donnees['nom']; ?> &nbsp;&nbsp; <strong>Prénom</strong> : <?php echo $donnees['prenom']; ?> <br /><br />
 
       Email : <?php echo $donnees['mailacheteur']; ?> <br /><br />
 
       Telephone : +(33) <?php echo $donnees['tel']; ?> <br /><br />
-
-      Mot de passe : **** <?php echo substr($donnees['mdp'],-1); ?> <br /> <br />
 
       Adresse 1 : <?php echo $donnees['adresse1']; ?> <br /><br />
 
@@ -123,35 +124,49 @@
 
       Pays : <?php echo $donnees['pays']; ?> <br /><br />
 
-      <h2> Informations de paiement :</h2>
-      <br /><br /><br /><br />
+    </div>
+
+
+
+    <div class="info_paiement">
+
+      <h3> Informations de paiement :</h3>
+      <br /><br />
 
 
       Type de paiment : <?php echo $donnees['typepaie']; ?> <br /><br />
 
-      Numero de la carte : <?php echo $donnees['numcarte']; ?>
+      Numero de la carte :  ************** <?php echo substr($donnees['numcarte'],-4); ?> <br /><br />
 
+      Titulaire de la carte : <?php echo $donnees['nomcarte']; ?> <br /><br />
 
+      Date d'expiration : <?php echo $donnees['datecarte']; ?> <br /><br />
 
+      
+   
 
-
+      </div>
 
 
 
       
-    <br>
-
-
-      </div>
 
 
       
       <?php
 
 
-$reponse->closeCursor(); // Termine le traitement de la requête
+  $reponse->closeCursor(); // Termine le traitement de la requête
 
-?>
+  ?>
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /> 
+   
+
+   
+
+
+
 
 
 
