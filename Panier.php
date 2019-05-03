@@ -139,8 +139,13 @@ $reponse->closeCursor(); // Termine le traitement de la requête
 ?>
 
 <div class="total_panier">
-<?php echo $somme;?>
+  Total du panier : <?php echo $somme;?> &euro;
+  <br><br>
+  <a href="Co_acheteur_panier.php" class="btn btn-outline-dark">Passer ma commande</a>
+  
+
 </div>
+<br><br><br><br><br><br><br><br><br><br><br><br><br>
 
 
 
