@@ -4,17 +4,17 @@
 
     error_reporting( E_ALL );
 
-    $from = "test@votredomaine.com";
+    $from = "admin@wampserver.invalid";
 
-    $to = "mathieu.claverie@edu.ece.fr";
+    $to = "beaulieu1paul@gmail.com";
 
     $subject = "PUTAIN CA MARCHE ";
 
     $message = "CEST TROP DINGUE QUE CA MARCHE AUSSI BIEN";
 
-    $headers = "From:" . $from;
+    $headers = "From:" .$from;
 
     mail($to,$subject,$message, $headers);
-    echo $to;
+
     echo "     L'email a été envoyé.";
 ?>
