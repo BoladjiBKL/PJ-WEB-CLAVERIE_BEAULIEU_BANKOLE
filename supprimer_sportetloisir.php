@@ -40,7 +40,7 @@ if ($mail=="") {
 
 
 
-if($error=="" && $drapeau==0 && $donnees==1)
+if($error=="" && $drapeau==0 && $donnees!=0)
 {
 	//header('Location: formulaire_ajouter_sportetloisir.php');
 			?>

@@ -9,18 +9,16 @@ $drapeau =0;
 $bdd = new PDO('mysql:host=localhost;dbname=ECEAmazon;charset=utf8', 'root', 'root');
 
 
-$bdd->exec("DELETE FROM vendeur WHERE mailvend LIKE '%$mailvend%' AND pseudo LIKE '%$pseudo%' AND nom LIKE '%$nom%' ");
 
-$verf= $bdd->prepare('SELECT count(*) FROM vendeur WHERE mailvend= :mailvend AND pseudo= :pseudo AND nom= :nom');
+
+$verf= $bdd->prepare('SELECT  * FROM vendeur WHERE mailvend= :mailvend');
 $verf->execute(array(
 	'mailvend' => $mailvend,
-	'pseudo'=> $pseudo,
-	'nom'=> $nom,
-));
+	));
 
 $donnees=$verf->fetch();
 
-
+$bdd->exec("DELETE FROM vendeur WHERE mailvend LIKE '%$mailvend%' AND pseudo LIKE '%$pseudo%' AND nom LIKE '%$nom%' ");
 if ($mailvend=="") {
 	$error.="Mail vide";
 	$drapeau+=1;
@@ -41,7 +39,7 @@ if ($nom=="") {
 
 
 
-if($error=="" && $drapeau==0 && $donnees==1)
+if($donnees!=0 && $error=="" && $drapeau==0 )
 {
 	//header('Location: formulaire_ajouter_vendeur.php');
 			?>
@@ -60,8 +58,8 @@ if($error=="" && $drapeau==0 && $donnees==1)
 		</html>
 <?php
 }
-
-else if($error=="" && $drapeau==0)
+ 
+elseif($error=="" && $drapeau==0)
 {
 	
 	
