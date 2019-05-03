@@ -1,6 +1,9 @@
 <?php
 
-$mailvend = isset($_POST["mailvend"])? $_POST["mailvend"] : "";
+session_start();
+
+
+$mailvend = $_SESSION["mailvendeur"];
 $urlprofil= isset($_POST["urlprofil"])? $_POST["urlprofil"] : "";
 
 

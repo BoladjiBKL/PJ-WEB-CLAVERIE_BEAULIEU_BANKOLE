@@ -80,7 +80,10 @@ if ($pseudo =="") {
 
 if($donnees)
 {
+	session_start();
+	$_SESSION["mailvendeur"]= $mailvend;
 	header('Location: Compte_vendeur.php');
+
 }
 
 else
@@ -100,6 +103,7 @@ else
 		</html>
 <?php
 }
+
 
 
 
