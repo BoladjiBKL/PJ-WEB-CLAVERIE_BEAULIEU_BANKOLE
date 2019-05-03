@@ -79,7 +79,9 @@
           <table>
               <tr>
                 <td>Nom:</td>
-                <td><input type="text" name="Nom" class="form-control"></td>
+
+                <td><input type="text" name="nom"></td>
+
               </tr>
               <tr>
                 <td>Taille:</td>

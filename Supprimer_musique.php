@@ -9,9 +9,9 @@ $drapeau =0;
 
 $bdd = new PDO('mysql:host=localhost;dbname=ECEAmazon;charset=utf8', 'root', 'root');
 
-$bdd->exec("DELETE FROM musique WHERE titre LIKE '%$titre%' AND artiste LIKE '%$artiste%' AND mail LIKE '%$mail%' ");
 
-$verf= $bdd->prepare('SELECT count(*) FROM musique WHERE titre= :titre AND artiste= :artiste AND mail= :mail');
+
+$verf= $bdd->prepare('SELECT * FROM musique WHERE titre= :titre AND artiste= :artiste AND mail= :mail');
 $verf->execute(array(
 	'titre' => $titre,
 	'artiste'=> $artiste,
@@ -41,7 +41,7 @@ if ($mail=="") {
 
 
 
-if($error=="" && $drapeau==0 && $donnees!=0)
+if($error=="" && $drapeau==0 && ($donnees))
 {
 	//header('Location: formulaire_ajouter_musique.php');
 			?>
@@ -59,9 +59,10 @@ if($error=="" && $drapeau==0 && $donnees!=0)
 		</body>
 		</html>
 <?php
+$bdd->exec("DELETE FROM musique WHERE titre LIKE '%$titre%' AND artiste LIKE '%$artiste%' AND mail LIKE '%$mail%' ");
 }
 
-else if($error=="" && $drapeau==0)
+else if($error=="" && $drapeau==0 && (!$donnees))
 {
 	
 	

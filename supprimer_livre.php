@@ -9,10 +9,10 @@ $drapeau =0;
 
 $bdd = new PDO('mysql:host=localhost;dbname=ECEAmazon;charset=utf8', 'root', 'root');
 
-$bdd->exec("DELETE FROM livre WHERE titre LIKE '%$titre%' AND auteur LIKE '%$auteur%' AND mail LIKE '%$mail%' ");
 
 
-$verf= $bdd->prepare('SELECT count(*) FROM livre WHERE titre= :titre AND auteur= :auteur AND mail= :mail');
+
+$verf= $bdd->prepare('SELECT * FROM livre WHERE titre= :titre AND auteur= :auteur AND mail= :mail');
 $verf->execute(array(
 	'titre' => $titre,
 	'auteur'=> $auteur,
@@ -42,7 +42,7 @@ if ($mail=="") {
 
 
 
-if($error=="" && $drapeau==0 && $donnees!=0)
+if($error=="" && $drapeau==0 && ($donnees))
 {
 	//header('Location: formulaire_ajouter_livre.php');
 			?>
@@ -60,9 +60,10 @@ if($error=="" && $drapeau==0 && $donnees!=0)
 		</body>
 		</html>
 <?php
+$bdd->exec("DELETE FROM livre WHERE titre LIKE '%$titre%' AND auteur LIKE '%$auteur%' AND mail LIKE '%$mail%' ");
 }
 
-else if($error=="" && $drapeau==0)
+else if($error=="" && $drapeau==0 && (!$donnees))
 {
 	
 	
