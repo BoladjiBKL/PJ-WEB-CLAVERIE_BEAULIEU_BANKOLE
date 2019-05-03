@@ -13,7 +13,29 @@
 
     <link rel="stylesheet" type="text/css" href="tous.css">
 </head>
-<body>
+
+
+
+<?php
+
+  session_start();
+  $_SESSION["mailvendeur"];
+
+
+ 
+ 
+
+  $bdd = new PDO('mysql:host=localhost;dbname=ECEAmazon;charset=utf8', 'root', 'root');
+
+  $reponse = $bdd->query('SELECT * FROM vendeur WHERE mailvend ="'.$_SESSION["mailvendeur"].'" ');
+
+  $donnees = $reponse->fetch();
+
+?>
+
+
+
+<body background="<?php echo $donnees['urlfond']; ?>">
 <!-- barre de navigation -->
        <nav class="navbar navbar navbar-expand-lg navbar-lightgreen bg-lightgreen">
 
@@ -68,10 +90,23 @@
 <br>
 
 <br>
-<div id="global">
 
+<div id="global"> 
 
   <h3> <em>Compte Vendeur</em></h3>
+  <br>
+
+  <div class="profil_vendeur">
+
+    <img class="photo_profil" src="<?php echo $donnees['urlprofil']; ?>" > <br>
+    <?php echo $donnees['nom']; ?>
+
+    
+  </div>
+
+
+
+  
   <form action="GestionCompteVendeur.php" method="post">
     
     <table id="maTable">
@@ -110,6 +145,11 @@
         </table>
           </form>
 
+
+          <br><br><br>
+
+
+          <!--formulaire modification image profil -->
           
           <form action="modifier_photo_profil.php" method="post">
             <table>
@@ -119,49 +159,38 @@
              </tr>
 
 
-             <tr>
-        <td>Email :</td>
-        <td><input type="text" name="mailvend"></td>
-            </tr>
         
           <td> <input type="submit" name="Ajouterprofil" value="Ajouter photo profil">
           </td>
           </table>
           </form>
+
+          <br><br>
+
+          <!--formulaire modification background -->
           
           <form action="modifier_photo_fond.php" method="post">
             <table>
               <tr>
         <td>Lien d'image photo de fond  :</td>
         <td><input type="text" name="urlfond"></td>
-             </tr>
-
-
-             <tr>
-        <td>Email :</td>
-        <td><input type="text" name="mailvend"></td>
-            </tr>
+             </tr>    
         
           <td> <input type="submit" name="Ajouterfond" value="Ajouter photo fond">
           </td>
           </table>
           </form>
+
+          <br><br><br>
+          <br><br><br>
+    
+   
     
 
-    
 
+ 
 
-<!--boutons d'ajjout et de supression de toutes les items -->
-
-  <!-- Gerer les articles: <br/> <br/>
-         <td colspan="1"><a href="formulaire_ajout_livre.php"><input type="button" value="Ajouter Livre"></a> <a href="formulaire_supprimer_livre.php"><input type="button" value="Supprimer Livre"></a> <br/> <br/>
-
-        <td colspan="1"><a href="formulaire_ajouter_vetement.php"><input type="button" value="Ajouter Vetement"></a> <a href="formulaire_supprimer_vetement.php"><input type="button" value="Supprimer Vetement"></a> <br/> <br/>
-
-        <td colspan="1"><a href="formulaire_ajouter_sportetloisir.php"><input type="button" value="Ajouter Sport et Loisir"></a> <a href="formulaire_supprimer_sportetloisir.php"><input type="button" value="Supprimer Sport et Loisir"></a> <br/> <br/>
-
-        <td colspan="1"><a href="formulaire_ajout_musique.php"><input type="button" value="Ajouter Musique"></a> <a href="formulaire_supprimer_musique.php"><input type="button" value="Supprimer Musique"></a> <br/> <br/>
-  -->
+  
 
 </div>
 

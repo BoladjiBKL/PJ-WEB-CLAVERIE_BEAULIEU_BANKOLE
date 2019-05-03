@@ -7,7 +7,6 @@ $nomcarte= isset($_POST["nomcarte"])? $_POST["nomcarte"] : "";
 $datecarte= isset($_POST["datecarte"])? $_POST["datecarte"] : "";
 $codecarte= isset($_POST["codecarte"])? $_POST["codecarte"] : "";
 
-
 $bdd = new PDO('mysql:host=localhost;dbname=ECEAmazon;charset=utf8', 'root', 'root');
 
 $verf= $bdd->prepare('SELECT * FROM acheteur WHERE mailacheteur= :mailacheteur AND typepaie= :typepaie AND numcarte= :numcarte AND nomcarte= :nomcarte AND datecarte= :datecarte AND codecarte= :codecarte');
@@ -65,6 +64,7 @@ if(strlen($codecarte)!=3)
 
 
 
+
 if($donnees)
 {
 $error.="ok";
@@ -93,4 +93,3 @@ else
 <?php
 }
 ?>
-

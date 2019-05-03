@@ -10,8 +10,10 @@ html {
 
 h2{
     text-align: center;
-    
+
 }
+
+
 
  
 /*css corps de chaque page*/
@@ -64,4 +66,55 @@ h2{
 
  .dropdown-item {
    color: #007971;
+}
+
+/*compte client*/
+
+.info_client{
+
+    
+    float: left;
+    margin-right: 200px;
+    margin-left: 50px;
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+
+    border: 3px double black;
+}
+
+.info_paiement {
+    
+    
+    float: left;
+    margin-bottom: 50px;
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    border: 3px double black;
+    
+}
+
+/*compte vendeur*/
+.profil_vendeur{
+    float: right;
+    
+    font-size: 2em;
+    text-align: center;
+    padding-right: 10px;
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-bottom: 20px;
+    margin-right: 100px;
+    border: 3px double black;
+
+
+    
+}
+
+.photo_profil{
+    height: 200px;
+    
 }
