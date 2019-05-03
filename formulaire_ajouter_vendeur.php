@@ -68,6 +68,9 @@
 
 </nav>
 
+<div id="global">
+</div>
+
 <br>
 
 <br>
@@ -76,33 +79,27 @@
           <table>
               <tr>
                 <td>Email:</td>
-                <td><input type="text" name="mailvend"></td>
+                <td><input type="text" name="mailvend" class="form-control"></td>
               </tr>
               <tr>
                 <td>Pseudo:</td>
-                <td><input type="text" name="pseudo"></td>
+                <td><input type="text" name="pseudo" class="form-control"></td>
               </tr>
               <tr>
                 <td>Nom:</td>
-                <td><input type="text" name="nom"></td>
+                <td><input type="text" name="nom" class="form-control"></td>
               </tr>
             
               <tr>
-                <td>
-                <input type="submit" name="button2" value="Ajouter">
+                <td> <br>
+                <input type="submit" name="button2" value="Ajouter" class="btn btn-secondary">
               </td>
 
-                <td>
-                  <input type="reset" name="button3" value="Vider le formulaire" ></td>
+                <td> <br>
+                  <input type="reset" name="button3" value="Vider le formulaire" class="btn btn-secondary"></td>
               </tr>
           </table>
         </form>
-
-
-
-
-
-
 
 
 
