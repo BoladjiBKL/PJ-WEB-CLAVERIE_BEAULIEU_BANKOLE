@@ -72,7 +72,9 @@
 
 
 <h3> <em>Connexion Compte</em></h3>
+
   <form action="verif_co_compte_panier.php" method="post">
+
 
     <table id="maTable">
 

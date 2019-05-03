@@ -98,6 +98,7 @@ $somme =0;
 while ($donnees = $reponse->fetch())
 {
 
+
   $somme += $donnees['prix']; /*<?php echo $somme;?>  */
 
   ?>
