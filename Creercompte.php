@@ -112,12 +112,12 @@
 
 			<tr>
 				<td>Code postal :</td>
-				<td><input type="int" name="codepost"></td>
+				<td><input type="number" name="codepost"></td>
 			</tr>
 
 				<tr>
 				<td>Telephone :</td>
-				<td><input type="tel" name="tel"></td>
+				<td><input type="number" name="tel"></td>
 			</tr>
 
 
@@ -151,7 +151,7 @@
 
 			<tr>
 				<td>Numero de la carte :</td>
-				<td><input type="int" name="numcarte"></td>
+				<td><input type="number" name="numcarte"></td>
 			</tr>
 
 			<tr>
@@ -161,13 +161,13 @@
 
 			<tr>
 				<td>Date d'expiration</td>
-				<td><input type="text" name="datecarte"></td>
+				<td><input type="month" name="datecarte"></td>
 				
 			</tr> 
 
 			<tr>
 				<td>Code de securité :</td> 
-				<td><input type="int" name="codecarte"></td>
+				<td><input type="number" name="codecarte"></td>
 			</tr> 
 
 			<br>

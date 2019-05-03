@@ -18,23 +18,39 @@ $datecarte= isset($_POST["datecarte"])? $_POST["datecarte"] : "";
 $codecarte= isset($_POST["codecarte"])? $_POST["codecarte"] : "";
 
 
+
 $error  ="";
 $drapeau =0;
 
 $bdd = new PDO('mysql:host=localhost;dbname=ECEAmazon;charset=utf8', 'root', 'root');
 
-$verf= $bdd->prepare('SELECT * FROM acheteur WHERE mailacheteur= :mailacheteur AND nom= :nom');
-$verf->execute(array(
-	'mailacheteur' => $mailacheteur,
-	'nom' => $nom,
-));
 
 $verf2= $bdd->prepare('SELECT * FROM acheteur WHERE mailacheteur= :mailacheteur');
 $verf2->execute(array(
 	'mailacheteur' => $mailacheteur,
 ));
-$donnees= $verf->fetch();
+
 $donnees2=$verf2->fetch();
+
+
+$req = $bdd->prepare('INSERT INTO acheteur(mailacheteur, nom, prenom, mdp, adresse1,adresse2, ville, codepost, pays, tel, typepaie, numcarte, nomcarte, datecarte, codecarte) VALUES(:mailacheteur, :nom, :prenom, :mdp, :adresse1, :adresse2, :ville, :codepost,  :pays, :tel, :typepaie, :numcarte, :nomcarte, :datecarte, :codecarte)');
+$req->execute(array(
+	'mailacheteur' => $mailacheteur,
+	'nom' => $nom,
+	'prenom' => $prenom,
+	'mdp' => $mdp,
+	'adresse1'=> $adresse1,
+	'adresse2'=> $adresse2,
+	'ville' => $ville,
+	'codepost' => $codepost,
+	'pays' => $pays,
+	'tel' => $tel,
+	'typepaie' => $typepaie,
+	'numcarte' => $numcarte,
+	'nomcarte' => $nomcarte,
+	'datecarte' => $datecarte,
+	'codecarte' => $codecarte,
+	));
 
 
 if ($mailacheteur=="") {
@@ -63,18 +79,35 @@ if ($adresse2=="") {
 	$error.=" Deuxième adresse vide";
 	$drapeau+=1;
 }
+
 if ($ville=="") {
 	$error.=" Ville vide";
 	$drapeau+=1;
 }
+
+if( !ctype_alpha($ville) && $ville!="")
+{
+	$error.="La ville doit avoir que des lettres";
+}
+
+
+
+
 if ($codepost=="") {
 	$error.=" Code postal vide";
 	$drapeau+=1;
 }
+
+
 if ($pays=="") {
 	$error.=" Pays vide";
 	$drapeau+=1;
 }
+if( !ctype_alpha($pays) && $pays!="")
+{
+	$error.="Le pays doit avoir que des lettres";
+}
+
 if ($tel=="") {
 	$error.=" tel vide";
 	$drapeau+=1;
@@ -87,17 +120,32 @@ if ($numcarte=="") {
 	$error.=" Numcarte vide";
 	$drapeau+=1;
 }
+if(strlen($numcarte)!=16)
+{
+	$error="Le numéro de carte doit contenir 16 chiffres";
+}
 if ($nomcarte=="") {
 	$error.=" Nomcarte vide";
 	$drapeau+=1;
+}
+
+if( !ctype_alpha($nomcarte) && $nomcarte!="")
+{
+	$error.="La nom de la carte doit avoir que des lettres";
 }
 if ($datecarte=="") {
 	$error.=" datecarte vide";
 	$drapeau+=1;
 }
+
+
 if ($codecarte=="") {
 	$error.=" Codecarte vide";
 	$drapeau+=1;
+}
+if(strlen($codecarte)!=3)
+{
+	$error="Le numéro de carte doit contenir 3 chiffres";
 }
 
 if($donnees2)
@@ -128,8 +176,6 @@ else
 		</html>
 <?php
 }
-
-
 
 
 
