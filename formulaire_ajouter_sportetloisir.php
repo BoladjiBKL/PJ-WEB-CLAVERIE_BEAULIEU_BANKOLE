@@ -72,8 +72,7 @@
 
   <div id="global">
 
-  <br>
-  <br><br>
+  
  
   <br>
 

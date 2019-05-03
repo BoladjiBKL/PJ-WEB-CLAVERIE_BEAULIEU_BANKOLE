@@ -69,6 +69,7 @@
 
 </nav>
 
+<div id="global">
 <br>
 
 <br>
@@ -78,26 +79,28 @@
           <table>
               <tr>
                 <td>Nom:</td>
-                <td><input type="text" name="Nom"></td>
+                <td><input type="text" name="Nom" class="form-control"></td>
               </tr>
               <tr>
                 <td>Taille:</td>
-                <td><input type="number" name="taille"></td>
+                <td><input type="number" name="taille" class="form-control"></td>
               </tr>
               <tr>
                 <td>Mail:</td>
-                <td><input type="text" name="mail"></td>
+                <td><input type="text" name="mail" class="form-control"></td>
               </tr>
                 <tr>
-                <td>
-                <input type="submit" name="button2" value="Supprimer"></td>
+                <td><br>
+                <input type="submit" name="button2" value="Supprimer" class="btn btn-secondary">&nbsp; </td>
 
-                <td>
-                  <input type="reset" name="button3" value="Vider le formulaire">
+                <td><br>
+                  <input type="reset" name="button3" value="Vider le formulaire" class="btn btn-secondary">
                 </td>
               </tr>
           </table>
         </form>
+
+        </div>
 
 
 
