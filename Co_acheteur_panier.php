@@ -1,27 +1,20 @@
-
-
-
-
-
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Panier</title>
-  <!-- Required meta tags -->
-    <meta charset="utf-8">
+	<title>Connexion compte client</title>
+
+	<meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <link rel="stylesheet" type="text/css" href="tous.css">
-    <link rel="stylesheet" type="text/css" href="Vetements.css">
 </head>
-
-
 <body>
-    <!-- barre de navigation -->
-    <nav class="navbar navbar navbar-expand-lg navbar-lightgreen bg-lightgreen">
+
+<!-- barre de navigation -->
+       <nav class="navbar navbar navbar-expand-lg navbar-lightgreen bg-lightgreen">
 
   <a class="navbar-brand" href="Accueil.php"><img src="eceamazon.png" height="60px"></a>
 
@@ -37,7 +30,7 @@
 
 
         <div class="dropdown">
-          <a class="btn btn-secondary dropdown-toggle"  role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Catégories
           </a>
 
@@ -69,7 +62,6 @@
   </div>
 
   <a class="nav-link" href="Panier.php"><img src="panier.png"></a>
-
 </nav>
 
 <br>
@@ -77,73 +69,48 @@
 <br>
 
 <div id="global">
-  <h2> Panier :</h2>
+
+
+<h3> <em>Connexion Compte</em></h3>
+  <form action="verif_co_compte.php" method="post">
+
+    <table id="maTable">
+
+
+      <tr>
+        <td> Login (email):</td>
+        <td><input type="text" name="mailacheteur"></td>
+      </tr>
+
+      <tr>
+        <td>Password :</td>
+        <td><input type="Password" name="mdp"></td>
+      </tr>
+
+      <tr>
+        <td>  </td>
+
+      </tr>
+
+            <tr >
+          <td>
+             <!--bouton connexion compte client -->
+  <input type="submit" name="Connexion">
+          </td>
+        </tr>
+    </table>
+  </form>
   <br><br>
+
+
+  <!-- bouton création de compte client -->
+
+<a href="Creercompte.php" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Créer mon compte</a>
 </div>
-
-
-
-
-<?php
-
-//Panier
-
-$bdd = new PDO('mysql:host=localhost;dbname=ECEAmazon;charset=utf8', 'root', 'root');
-
-$reponse = $bdd->query('SELECT DISTINCT * FROM panier');
-
-
-   // On affiche chaque entrée une à une
-while ($donnees = $reponse->fetch())
-{
-  $somme += $donnees['prix']; /* calcule de la somme des prix. Ecrire <?php echo $somme; ?> pour afficher la somme */
-  ?>
-
-   <div class="objet_panier">
-
-    <strong> <?php echo $donnees['titre']; ?> </strong> <strong><?php echo $donnees['nom']; ?> </strong>
-    <br /><br />
-
-    <img class='image' src="<?php echo $donnees['urlimg'];?>" /> <br><br>
-
-    <?php echo $donnees['artiste']; ?> <?php echo $donnees['auteur']; ?>
-    <br />
-
-
-
-    <?php echo $donnees['label']; ?> <?php echo $donnees['taille']; ?> <?php echo $donnees['edition']; ?>
-    <br />
-
-
-    Description : <em><?php echo $donnees['description']; ?></em> <br />
-
-    Prix : <?php echo $donnees['prix']; ?> &euro;<br />
-
-    Année : <?php echo $donnees['annee']; ?>
-    <br />
-
-    Mail du vendeur : <a href="mailto:<?php echo $donnees['mail']; ?>"> <?php echo $donnees['mail']; ?> </a><br /><br /><br />
-
-      </div>
-
-<?php
-}
-
-$reponse->closeCursor(); // Termine le traitement de la requête
-
-?>
-
-
-
-
-<div class='barre_blanche'>
-</div>
-
 
 
 
  <footer class="footer">
-
 
     <!-- Copyright -->
     <div class="footer-copyright text-center py-3">© 2019 Copyright:
@@ -152,10 +119,9 @@ $reponse->closeCursor(); // Termine le traitement de la requête
     <!-- Copyright -->
 
   </footer>
-
-
-
   <!-- Footer -->
+
+
 <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
