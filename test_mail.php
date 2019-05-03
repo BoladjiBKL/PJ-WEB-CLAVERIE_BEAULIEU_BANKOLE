@@ -1,21 +1,20 @@
 <?php
-  session_start();
-  $_SESSION["newsession"] = "mathieu.claverie@edu.ece.fr";
+
     ini_set( 'display_errors', 1 );
 
     error_reporting( E_ALL );
 
-    $from = "contact@eceamazon.com";
+    $from = "test@votredomaine.com";
 
-    $to = $_SESSION["newsession"];
-// ne pas mettre de caractère spéciaux !!!
-    $subject = "Confirmation de votre commande";
+    $to = "mathieu.claverie@edu.ece.fr";
 
-    $message = "PHP mail marche";
+    $subject = "PUTAIN CA MARCHE ";
+
+    $message = "CEST TROP DINGUE QUE CA MARCHE AUSSI BIEN";
 
     $headers = "From:" . $from;
 
     mail($to,$subject,$message, $headers);
-
-    echo "Un email de confirmation a été envoyé a ", $_SESSION["newsession"];
+    echo $to;
+    echo "     L'email a été envoyé.";
 ?>
