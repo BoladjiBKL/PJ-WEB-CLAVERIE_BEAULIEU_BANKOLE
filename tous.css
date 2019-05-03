@@ -138,3 +138,13 @@ h2{
 
 }
 
+/*creer compte */
+
+.info_pai_creer{
+    float: left;
+}
+
+.info_creer{
+    float: left;
+    margin-right: 300px;
+}

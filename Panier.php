@@ -76,7 +76,7 @@
 
 <div id="global">
   <h2> Panier :</h2>
-  <br><br>
+  <br><br><br><br><br><br>
 </div>
 
 
@@ -133,7 +133,7 @@ $reponse->closeCursor(); // Termine le traitement de la requête
 
 <div class="total_panier rounded border border-dark">
   Total du panier : <?php echo $somme;?> &euro;
-  <br><br>
+   <br><br>
   <a href="Co_acheteur_panier.php" class="btn btn-dark">Passer ma commande</a>
   
 

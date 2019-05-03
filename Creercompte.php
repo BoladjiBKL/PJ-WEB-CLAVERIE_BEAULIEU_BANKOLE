@@ -76,65 +76,73 @@
 
 	<h3> <em>Creer un compte</em></h3>
 	<br>
+
+	<div class="info_creer">
 	<form action="verif_creer_compte.php" method="post">
 		
 		<table id="maTable">
 			<tr>
 				<td>E-mail :</td>
-				<td><input type="text" name="mailacheteur"></td>
+				<td><input type="text" name="mailacheteur" class="form-control"></td>
 			</tr>
 
 
 			<tr>
 				<td>Mot de passe :</td>
-				<td><input type="Password" name="mdp"></td>
+				<td><input type="Password" name="mdp" class="form-control"></td>
 			</tr>
 
 			<tr>
 				<td>Nom :</td>
-				<td><input type="text" name="nom"></td>
+				<td><input type="text" name="nom" class="form-control"></td>
 			</tr>
 
 			<tr>
 				<td>Prenom :</td>
-				<td><input type="text" name="prenom"></td>
+				<td><input type="text" name="prenom" class="form-control"></td>
 			</tr>
 
 			<tr>
 				<td>Adresse 1:</td>
-				<td><input type="text" name="adresse1"></td>
+				<td><input type="text" name="adresse1" class="form-control"></td>
 			</tr>
 
 			<tr>
 				<td>Adresse 2:</td>
-				<td><input type="text" name="adresse2"></td>
+				<td><input type="text" name="adresse2" class="form-control"></td>
 			</tr>
 
 			<tr>
 				<td>Code postal :</td>
-				<td><input type="number" name="codepost"></td>
+				<td><input type="number" name="codepost" class="form-control"></td>
 			</tr>
 
 				<tr>
 				<td>Telephone :</td>
-				<td><input type="number" name="tel"></td>
+				<td><input type="number" name="tel" class="form-control"></td>
 			</tr>
 
 
 
 			<tr>
 				<td>Ville :</td>
-				<td><input type="text" name="ville"></td>
+				<td><input type="text" name="ville" class="form-control"></td>
 			</tr>
 
 			<tr>
 				<td>Pays :</td>
-				<td><input type="text" name="pays"></td>
+				<td><input type="text" name="pays" class="form-control"></td>
 			</tr>
 
 			</table>
-			<br><br>
-            <h2> Informations de paiement :</h2>
+
+			</div>
+
+			<div class="info_pai_creer">
+			<h4> Renseigner vos informations de paiement : </h4>
+            
+
+
             
 
             <table id="maTable2">
@@ -151,34 +159,37 @@
 
 			<tr>
 				<td>Numero de la carte :</td>
-				<td><input type="number" name="numcarte"></td>
+				<td><input type="number" name="numcarte" class="form-control"></td>
 			</tr>
 
 			<tr>
 				<td>Titulaire de la carte :</td>
-				<td><input type="text" name="nomcarte"></td>
+				<td><input type="text" name="nomcarte" class="form-control"></td>
 			</tr>
 
 			<tr>
 				<td>Date d'expiration</td>
-				<td><input type="text" name="datecarte"></td>
+				<td><input type="text" name="datecarte" class="form-control"></td>
 				
 			</tr> 
 
 			<tr>
 				<td>Code de securité :</td> 
-				<td><input type="number" name="codecarte"></td>
+				<td><input type="number" name="codecarte" class="form-control"></td>
 			</tr> 
 
 			<br>
             <tr colspan="2">
-					<td><input type="submit" value="Creer mon compte">
+					<td> <br><input type="submit" value="Creer mon compte" class="btn btn-secondary">
 					</td>
 		    </tr>
 		</table>
 	</form>
 
-	<br> <br><br><br><<br>><br><br>
+	</div>
+
+
+	<br> <br><br><br><br><br><br>
 
 
 </div>
