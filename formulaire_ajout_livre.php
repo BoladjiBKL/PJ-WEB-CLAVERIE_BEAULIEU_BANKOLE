@@ -68,50 +68,53 @@
 
 </nav>
 
+<div id="global">
+
 <br>
 
 <br>
-<h2>L'Additioneur de livres</h2>
+<h2>Ajouter un livre</h2>
       <form action="ajouter_livre.php" method="post">
           <table>
               <tr>
                 <td>Titre:</td>
-                <td><input type="text" name="titre"></td>
+                <td><input type="text" name="titre" class="form-control" ></td>
               </tr>
               <tr>
                 <td>Auteur:</td>
-                <td><input type="text" name="auteur"></td>
+                <td><input type="text" name="auteur" class="form-control"></td>
               </tr>
               <tr>
                 <td>Année:</td>
-                <td><input type="number" name="annee"></td>
+                <td><input type="number" name="annee" class="form-control"></td>
               </tr>
               <tr>
                 <td>Edition:</td>
-                <td><input type="text" name="edition"></td>
+                <td><input type="text" name="edition" class="form-control"></td>
               </tr>
               <tr>
                 <td>Description:</td>
-                <td><textarea name="description"></textarea> </td>
+                <td><textarea name="description" class="form-control"></textarea> </td>
               </tr>
               <tr>
                 <td>URL image:</td>
-                <td><input type="text" name="urlimg"></td>
+                <td><input type="text" name="urlimg" class="form-control"></td>
               </tr>
               <tr>
                 <td>Prix:</td>
-                <td><input type="number" step="any" name="prix"></td>
+                <td><input type="number" step="any" name="prix" class="form-control"></td>
               </tr>
               <tr>
                 <td>Mail:</td>
-                <td><input type="text" name="mail"></td>
+                <td><input type="text" name="mail" class="form-control"></td>
               </tr>
               <tr>
-                <td>
-                <input type="submit" name="button2" value="Ajouter" ></td>
+                <td> <br>
+                <input type="submit" name="button2" value="Ajouter" class="btn btn-secondary" ></td>
 
                 <td>
-                  <input type="reset" name="button3" value="Vider le formulaire" ></td>
+                  <br>
+                  <input type="reset" name="button3" value="Vider le formulaire" class="btn btn-secondary" ></td>
               </tr>
           </table>
         </form>
@@ -119,7 +122,7 @@
 
 
 
-
+</div>
 
 
 

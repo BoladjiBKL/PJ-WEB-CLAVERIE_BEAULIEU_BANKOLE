@@ -68,52 +68,55 @@
 
 </nav>
 
-<br>
+<div id="global">
 
 <br>
 
-<h2>L'Additioneur de vêtements</h2>
+<br>
+
+<h2>Ajouter un vêtement</h2>
 			<form action="ajouter_vetement.php" method="post">
 					<table>
 							<tr>
 								<td>Nom:</td>
-								<td><input type="text" name="nom"></td>
+								<td><input type="text" name="nom" class="form-control"></td>
 							</tr>
 							<tr>
 								<td>Taille:</td>
-								<td><input type="number" name="taille"></td>
+								<td><input type="number" name="taille" class="form-control"></td>
 							</tr>
 							<tr>
 								<td>Description:</td>
-								<td><textarea name="description"></textarea></td>
+								<td><textarea name="description" class="form-control"></textarea></td>
 							</tr>
 							<tr>
 								<td>URL image:</td>
-								<td><input type="text" name="urlimg"></td>
+								<td><input type="text" name="urlimg" class="form-control"></td>
 							</tr>
 							<tr>
 								<td>Prix:</td>
-								<td><input type="number" step="any" name="prix"></td>
+								<td><input type="number" step="any" name="prix" class="form-control"></td>
 							</tr>
 							<tr>
 							<tr>
 								<td>Mail:</td>
-								<td><input type="text" name="mail"></td>
+								<td><input type="text" name="mail" class="form-control"></td>
 							</tr>
 							<tr>
-								<td>
+								<td><br>
 
- 								<input type="submit" name="button2" value="Ajouter"></td>
+ 								<input type="submit" name="button2" value="Ajouter" class="btn btn-secondary" ></td>
 
 
-								<td>
-									<input type="reset" name="button3" value="Vider le formulaire" ></td>
+								<td><br>
+
+									<input type="reset" name="button3" value="Vider le formulaire" class="btn btn-secondary"></td>
 							</tr>
 					</table>
 				</form>
 
 
-
+</div>
 
 
 
