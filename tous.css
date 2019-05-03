@@ -118,3 +118,17 @@ h2{
     height: 200px;
     
 }
+
+
+/*compte admin*/
+
+.gerer_vendeur{
+    float: left;
+    margin-right: 200px;
+}
+
+
+.gerer_article{
+    float: left;
+
+}

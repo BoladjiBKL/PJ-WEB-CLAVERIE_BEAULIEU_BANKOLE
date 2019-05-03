@@ -114,7 +114,8 @@
 
       <tr>
 
-        <td> Type d'article   <br><select name="Type" size="1">
+        <td> Type d'article <br>  <br><select name="Type" size="1" class="form-control">
+          <br>
               <option value="Livres"> Livres</option>
 
               <option value="Vetements"> Vetements </option>
@@ -126,7 +127,7 @@
 
       <tr>
 
-        <td> Action à réaliser  <br><select name="Action" size="1">
+        <td> Action à réaliser  <br><select name="Action" size="1" class="form-control">
               <option value="Ajouter"> Ajouter</option>
 
               <option value="Supprimer"> Supprimer</option>

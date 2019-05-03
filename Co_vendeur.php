@@ -74,28 +74,30 @@
 
 
 	<h3> <em>Connexion Vendeur</em></h3>
+  <br>
   <form action="verif_co_vendeur.php" method="post">
     
     <table id="maTable">
 
       <tr>
-        <td> Email :</td>
-        <td><input type="text" name="mailvend"></td>
+        <td > Email :</td>
+        <td><input type="text" name="mailvend" class="form-control" placeholder="Email"></td>
       </tr>
       <tr>
         <td> Pseudo :</td>
-        <td><input type="text" name="pseudo"></td>
+        <td><input type="text" name="pseudo" class="form-control" placeholder="Pseudo"></td>
       </tr>
 
-    
-
-               <td> <input type="submit"  name="Connexion">  
- <!-- class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Connexion -->
+               <td> <br>
+                <input type="submit"  name="Connexion" class="btn btn-secondary">  
+ 
           </td>
         </tr>
     </table>
   </form>
 </div>
+
+
 
  <footer class="footer">
 

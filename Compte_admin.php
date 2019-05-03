@@ -76,48 +76,52 @@
 <div id="global">
 
   <h3 class=""> <em>Compte Admin</em></h3>
+        <br/> <br/>
   
-      
-      
+        <div class="gerer_vendeur">
 
+         <h4>Gerer les vendeurs :</h4>  <br/> <br/>
 
-         Gerer les vendeurs: <br/> <br/>
-               <td colspan="1"> <a href="formulaire_ajouter_vendeur.php"><input type="button" value="Ajouter vendeur"></a> <a href="formulaire_supprimer_vendeur.php"> <input type="button" value="Supprimer vendeur"><a/><br/> <br/>
-           
+               <td colspan="1"> 
+                <a href="formulaire_ajouter_vendeur.php"> <input type="button" value="Ajouter vendeur" class="btn btn-secondary"></a>
+                &nbsp; 
+                <a href="formulaire_supprimer_vendeur.php"> <input type="button" value="Supprimer vendeur" class="btn btn-secondary"> <a/>
+                <br/> <br/><br/> <br/>
+
+                </div>
+         <div class="gerer_article"> 
          
+        <h4>Gerer les articles :</h4>  <br/> 
+
+        <form action="GestionCompteVendeur.php" method="post" >
   
 
-  <form action="GestionCompteVendeur.php" method="post">
-    
-  
-  
+           <tr>
 
-      <tr>
+        <td> Type d'article   <br><br><select name="Type" size="1" class="form-control">
 
-        <td> Type d'article   <br><select name="Type" size="1">
               <option value="Livres"> Livres</option>
-
               <option value="Vetements"> Vetements </option>
               <option value="Sport et Loisir"> Sport et Loisir </option>
               <option value="Musique"> Musique </option>
-              </select> <br><br>
-              </td>
+              </select> 
+              <br>        </td>
       </tr> 
 
       <tr>
 
-        <td> Action à réaliser  <br><select name="Action" size="1">
+        <td> Action à réaliser  <br><br><select name="Action" size="1" class="form-control">
               <option value="Ajouter"> Ajouter</option>
 
               <option value="Supprimer"> Supprimer</option>
             
               </select> 
-              </td> <br><br>
+              </td> <br>
       </tr> 
   
      
             <tr colspan="2">
-          <td> <input type="submit" name="Soumettre">
+          <td> <input type="submit" name="Soumettre" class="btn btn-secondary">
           </td>
 
         </tr>
@@ -126,8 +130,11 @@
       <tr>
         
           </form>
+
+      </div> 
 </div>
 
+<br/> <br/><br/> <br/><br/> <br/><br/> <br/>
 
 
  <footer class="footer">

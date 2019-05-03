@@ -74,23 +74,25 @@
 
   <h3> <em>Connexion Admin</em></h3>
   <form action="verif_co_admin.php" method="post">
+    <br>
 
     <table id="maTable">
 
 
       <tr>
         <td> Email :</td>
-        <td><input type="text" name="mailadmin"></td>
+        <td><input type="text" name="mailadmin" class="form-control" placeholder="Email"></td>
       </tr>
 
       <tr>
-        <td>Password :</td>
-        <td><input type="Password" name="mdpadmin"></td>
+        <td>Mot de passe :</td>
+        <td><input type="Password" name="mdpadmin" class="form-control" placeholder="Mot de passe"></td>
       </tr>
 
             <tr >
+
           
-               <td> <input type="submit" name="Connexion">  
+               <td> <br> <input type="submit" name="Connexion" class="btn btn-secondary">  
 
           </td>
         </tr>
