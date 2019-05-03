@@ -6,6 +6,8 @@ $numcarte= isset($_POST["numcarte"])? $_POST["numcarte"] : "";
 $nomcarte= isset($_POST["nomcarte"])? $_POST["nomcarte"] : "";
 $datecarte= isset($_POST["datecarte"])? $_POST["datecarte"] : "";
 $codecarte= isset($_POST["codecarte"])? $_POST["codecarte"] : "";
+$error  ="";
+$drapeau =0;
 
 $bdd = new PDO('mysql:host=localhost;dbname=ECEAmazon;charset=utf8', 'root', 'root');
 
@@ -21,9 +23,7 @@ $verf->execute(array(
 
 $donnees= $verf->fetch();
 
-$bdd->exec("INSERT INTO bestsellers SELECT * FROM panier");
 
-$bdd->exec("DELETE FROM panier ");
 
 
 if ($typepaie=="") {
@@ -65,14 +65,31 @@ if(strlen($codecarte)!=3)
 
 
 
-if($donnees)
-{
-$error.="ok";
-}
 
-if($error=="" && $drapeau==0)
+
+if(($donnees) && $error=="" && $drapeau==0)
 {
-	 header('Location: Paiement_panier.php');
+	$bdd->exec("INSERT INTO bestsellers SELECT * FROM panier");
+
+$bdd->exec("DELETE FROM panier ");
+	 header('Location: Confirmation_commande.php');
+}
+else if((!$donnees) && $error=="" && $drapeau==0)
+{
+		?>
+<!DOCTYPE html>
+		<html>
+		<head>
+			<title>redirection</title>
+			<script type="text/javascript">
+		   alert("Les informations bancaires ne correspondent pas")
+			document.location.href="Paiement_panier.php";
+		</script>
+		</head>
+		<body onLoad="setTimeout('RedirectionJavascript()', 200)">
+		</body>
+		</html>
+<?php
 }
 else
 {

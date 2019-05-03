@@ -4,12 +4,14 @@
 $nom = isset($_POST["nom"])? $_POST["nom"] : "";
 $taille = isset($_POST["taille"])? $_POST["taille"] : "";
 $mail = isset($_POST["mail"])? $_POST["mail"] : "";
+$error  ="";
+$drapeau =0;
 
 $bdd = new PDO('mysql:host=localhost;dbname=ECEAmazon;charset=utf8', 'root', 'root');
 
-$bdd->exec("DELETE FROM vetement WHERE nom LIKE '%$nom%' AND taille LIKE '%$taille%' AND mail LIKE '%$mail%' ");
 
-$verf= $bdd->prepare('SELECT count(*) FROM vetement WHERE nom= :nom AND taille= :taille AND mail= :mail');
+
+$verf= $bdd->prepare('SELECT * FROM vetement WHERE nom= :nom AND taille= :taille AND mail= :mail');
 $verf->execute(array(
 	'nom' => $nom,
 	'taille'=> $taille,
@@ -39,7 +41,7 @@ if ($mail=="") {
 
 
 
-if($error=="" && $drapeau==0 && $donnees!=0)
+if(($donnees) && $error=="" && $drapeau==0 )
 {
 	//header('Location: formulaire_ajouter_vetement.php');
 			?>
@@ -57,9 +59,10 @@ if($error=="" && $drapeau==0 && $donnees!=0)
 		</body>
 		</html>
 <?php
+$bdd->exec("DELETE FROM vetement WHERE nom LIKE '%$nom%' AND taille LIKE '%$taille%' AND mail LIKE '%$mail%' ");
 }
 
-else if($error=="" && $drapeau==0)
+else if((!$donnees) && $error=="" && $drapeau==0)
 {
 	
 	
@@ -78,8 +81,6 @@ else if($error=="" && $drapeau==0)
 		<body onLoad="setTimeout('RedirectionJavascript()', 200)">
 		</body>
 		</html>
-	
-
 
 <?php
 }
@@ -93,7 +94,7 @@ else {
 			<script type="text/javascript">
 		
 			  var msg='<?php echo $error; ?>';
-			alert(msg);  
+			 alert(msg);  
 
 			document.location.href="formulaire_supprimer_vetement.php";
 		</script>

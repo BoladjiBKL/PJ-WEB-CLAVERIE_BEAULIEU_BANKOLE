@@ -13,28 +13,19 @@ $description = isset($_POST["description"])? $_POST["description"] : "";
 $error  ="";
 $drapeau =0;
 
+
 $bdd = new PDO('mysql:host=localhost;dbname=ECEAmazon;charset=utf8', 'root', 'root');
 
-$verf= $bdd->prepare('SELECT * FROM livre WHERE mail= :mail');
+$verf= $bdd->prepare('SELECT * FROM vendeur WHERE mailvend= :mail');
 $verf->execute(array(
 	'mail' => $mail,
 ));
+
 
 $donnees=$verf->fetch();
 
 
 
-$req = $bdd->prepare('INSERT INTO livre(titre, auteur, annee, edition, description,urlimg, prix, mail) VALUES(:titre, :auteur, :annee, :edition, :description, :urlimg, :prix, :mail)');
-$req->execute(array(
-	'titre' => $titre,
-	'auteur' => $auteur,
-	'annee' => $annee,
-	'edition' => $edition,
-	'description'=> $description,
-	'urlimg'=> $urlimg,
-	'prix' => $prix,
-	'mail' => $mail,
-	));
 
 
 if ($titre=="") {
@@ -81,12 +72,12 @@ if ($mail=="") {
 }
 if($donnees)
 {
-	
-$error.="Ce mail est deja utilisé. Reprennez avec une autre adresse mail";
+	$good.="Livre bien ajouté";
+
 }
 
 
-if($error=="" && $drapeau==0)
+if(($donnees) && $error=="" && $drapeau==0)
 {
 	//header('Location: formulaire_ajouter_livre.php');
 			?>
@@ -96,7 +87,36 @@ if($error=="" && $drapeau==0)
 			<title>redirection</title>
 			<script type="text/javascript">
 		    
-			alert("livre bien ajouté"); 
+			alert("Livre bien ajouté"); 
+			document.location.href="formulaire_ajout_livre.php";
+		</script>
+		</head>
+		<body onLoad="setTimeout('RedirectionJavascript()', 200)">
+		</body>
+		</html>
+<?php
+
+$req = $bdd->prepare('INSERT INTO livre(titre, auteur, annee, edition, description,urlimg, prix, mail) VALUES(:titre, :auteur, :annee, :edition, :description, :urlimg, :prix, :mail)');
+$req->execute(array(
+	'titre' => $titre,
+	'auteur' => $auteur,
+	'annee' => $annee,
+	'edition' => $edition,
+	'description'=> $description,
+	'urlimg'=> $urlimg,
+	'prix' => $prix,
+	'mail' => $mail,
+	));
+}
+else if(!($donnees) && $error=="" && $drapeau==0)
+{
+		?>
+<!DOCTYPE html>
+		<html>
+		<head>
+			<title>redirection</title>
+			<script type="text/javascript">
+		   alert("Adresse mail non valide")
 			document.location.href="formulaire_ajout_livre.php";
 		</script>
 		</head>
@@ -105,7 +125,23 @@ if($error=="" && $drapeau==0)
 		</html>
 <?php
 }
-
+else if(!($donnees) && $error=="" && $drapeau==0)
+{
+		?>
+<!DOCTYPE html>
+		<html>
+		<head>
+			<title>redirection</title>
+			<script type="text/javascript">
+		   alert("Adresse mail non valide")
+			document.location.href="formulaire_ajout_livre.php";
+		</script>
+		</head>
+		<body onLoad="setTimeout('RedirectionJavascript()', 200)">
+		</body>
+		</html>
+<?php
+}
 else
 {
 		?>
