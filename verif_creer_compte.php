@@ -18,6 +18,7 @@ $datecarte= isset($_POST["datecarte"])? $_POST["datecarte"] : "";
 $codecarte= isset($_POST["codecarte"])? $_POST["codecarte"] : "";
 
 
+
 $error  ="";
 $drapeau =0;
 
@@ -63,18 +64,35 @@ if ($adresse2=="") {
 	$error.=" Deuxième adresse vide";
 	$drapeau+=1;
 }
+
 if ($ville=="") {
 	$error.=" Ville vide";
 	$drapeau+=1;
 }
+
+if( !ctype_alpha($ville) && $ville!="")
+{
+	$error.="La ville doit avoir que des lettres";
+}
+
+
+
+
 if ($codepost=="") {
 	$error.=" Code postal vide";
 	$drapeau+=1;
 }
+
+
 if ($pays=="") {
 	$error.=" Pays vide";
 	$drapeau+=1;
 }
+if( !ctype_alpha($pays) && $pays!="")
+{
+	$error.="Le pays doit avoir que des lettres";
+}
+
 if ($tel=="") {
 	$error.=" tel vide";
 	$drapeau+=1;
@@ -91,10 +109,17 @@ if ($nomcarte=="") {
 	$error.=" Nomcarte vide";
 	$drapeau+=1;
 }
+
+if( !ctype_alpha($nomcarte) && $nomcarte!="")
+{
+	$error.="La nom de la carte doit avoir que des lettres";
+}
 if ($datecarte=="") {
 	$error.=" datecarte vide";
 	$drapeau+=1;
 }
+
+
 if ($codecarte=="") {
 	$error.=" Codecarte vide";
 	$drapeau+=1;
@@ -128,8 +153,6 @@ else
 		</html>
 <?php
 }
-
-
 
 
 
