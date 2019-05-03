@@ -98,7 +98,7 @@
 
 
 
-     <div class="info_client">
+     <div class="info_client rounded border border-dark ">
 
       <h3> Informations de livraison :</h3>
       <br /><br />
@@ -123,7 +123,7 @@
 
 
 
-    <div class="info_paiement">
+    <div class="info_paiement rounded border border-dark">
 
       <h3> Informations de paiement :</h3>
       <br /><br />

@@ -96,9 +96,9 @@
   <h3> <em>Compte Vendeur</em></h3>
   <br>
 
-  <div class="profil_vendeur">
+  <div class="profil_vendeur rounded border border-dark">
 
-    <img class="photo_profil" src="<?php echo $donnees['urlprofil']; ?>" > <br>
+    <img class="photo_profil rounded-circle " src="<?php echo $donnees['urlprofil']; ?>"> <br>
     <?php echo $donnees['nom']; ?>
 
     
@@ -111,10 +111,10 @@
     
     <table id="maTable">
   
-
       <tr>
 
-        <td> Type d'article   <br><select name="Type" size="1">
+        <td> Type d'article <br>  <br><select name="Type" size="1" class="form-control">
+          <br>
               <option value="Livres"> Livres</option>
 
               <option value="Vetements"> Vetements </option>
@@ -122,21 +122,23 @@
               <option value="Musique"> Musique </option>
               </select> <br><br>
               </td>
+
       </tr> 
 
       <tr>
 
-        <td> Action à réaliser  <br><select name="Action" size="1">
+        <td> Action à réaliser  <br><br><select name="Action" size="1" class="form-control">
               <option value="Ajouter"> Ajouter</option>
 
               <option value="Supprimer"> Supprimer</option>
             
               </select> 
               </td>
+
       </tr> 
 
             <tr colspan="2">
-          <td> <input type="submit" name="Soumettre">
+          <td> <br><input type="submit" name="Soumettre" class="btn btn-secondary">
           </td>
         </tr>
 
@@ -148,19 +150,19 @@
 
           <br><br><br>
 
-
+          <div class="modif_img_vendeur">
           <!--formulaire modification image profil -->
           
           <form action="modifier_photo_profil.php" method="post">
             <table>
               <tr>
-        <td>Lien d'image photo de profil  :</td>
-        <td><input type="text" name="urlprofil"></td>
+        <td>Lien d'image photo de profil  : </td>
+        <td><input type="text" name="urlprofil" class="form-control"></td>
              </tr>
 
 
         
-          <td> <input type="submit" name="Ajouterprofil" value="Ajouter photo profil">
+          <td> <input type="submit" name="Ajouterprofil" value="Ajouter photo profil" class="btn btn-secondary">
           </td>
           </table>
           </form>
@@ -173,14 +175,22 @@
             <table>
               <tr>
         <td>Lien d'image photo de fond  :</td>
-        <td><input type="text" name="urlfond"></td>
+        <td><input type="text" name="urlfond" class="form-control"></td>
              </tr>    
         
-          <td> <input type="submit" name="Ajouterfond" value="Ajouter photo fond">
+          <td> <input type="submit" name="Ajouterfond" value="Ajouter photo fond" class="btn btn-secondary">
           </td>
           </table>
           </form>
 
+          </div>
+
+          <br><br><br>
+          <br><br><br>
+          <br><br><br>
+          <br><br><br>
+          <br><br><br>
+          <br><br><br>
           <br><br><br>
           <br><br><br>
     

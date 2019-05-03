@@ -1,8 +1,5 @@
 
 
-
-
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -105,28 +102,24 @@ while ($donnees = $reponse->fetch())
 
    <div class="objet_panier">
 
-    <strong> <?php echo $donnees['titre']; ?> </strong> <strong><?php echo $donnees['nom']; ?> </strong>
+    <strong> <?php echo $donnees['titre']; ?> </strong> <strong><?php echo $donnees['nom']; ?> </strong> </em> <?php echo $donnees['artiste']; ?> &nbsp; <?php echo $donnees['auteur']; ?>
     <br /><br />
 
     <img class='image' src="<?php echo $donnees['urlimg'];?>" /> <br><br>
 
-    <?php echo $donnees['artiste']; ?> <?php echo $donnees['auteur']; ?>
-    <br />
+     Description : <em><?php echo $donnees['description']; ?> 
+     
+    <br>
 
 
 
-    <?php echo $donnees['label']; ?> <?php echo $donnees['taille']; ?> <?php echo $donnees['edition']; ?>
-    <br />
-
-
-    Description : <em><?php echo $donnees['description']; ?></em> <br />
 
     Prix : <?php echo $donnees['prix']; ?> &euro;<br />
 
-    Année : <?php echo $donnees['annee']; ?>
-    <br />
+    Mail du vendeur : <a href="mailto:<?php echo $donnees['mail']; ?>">  <?php echo $donnees['mail']; ?> </a>
 
-    Mail du vendeur : <a href="mailto:<?php echo $donnees['mail']; ?>"> <?php echo $donnees['mail']; ?> </a><br /><br /><br />
+    
+    <br />
 
       </div>
 

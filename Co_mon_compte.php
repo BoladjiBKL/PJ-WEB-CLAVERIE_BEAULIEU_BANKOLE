@@ -72,6 +72,7 @@
 
 
 <h3> <em>Connexion Compte</em></h3>
+<br>
   <form action="verif_co_compte.php" method="post">
     
     <table id="maTable">
@@ -79,12 +80,12 @@
 
       <tr>
         <td> Login (email):</td>
-        <td><input type="text" name="mailacheteur"></td>
+        <td><input type="text" name="mailacheteur" class="form-control" placeholder="Email" ></td>
       </tr>
 
       <tr>
-        <td>Password :</td>
-        <td><input type="Password" name="mdp"></td>
+        <td>Mot de passe :</td>
+        <td><input type="Password" name="mdp" class="form-control" placeholder="Mot de passe"></td>
       </tr>
 
       <tr>
@@ -95,7 +96,8 @@
             <tr >
           <td>  
              <!--bouton connexion compte client -->
-  <input type="submit" name="Connexion"> 
+             <br>
+              <input type="submit" name="Connexion" class="btn btn-secondary"> 
           </td>
         </tr>
     </table>

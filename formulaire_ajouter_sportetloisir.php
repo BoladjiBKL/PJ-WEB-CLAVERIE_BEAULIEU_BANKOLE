@@ -70,55 +70,57 @@
 
 </nav>
 
-<br>
+  <div id="global">
 
-<br>
+  
+ 
+  <br>
 
-<h2>L'Additioneur de sports et loisirs</h2>
-      <form action="ajouter_sportetloisir.php" method="post">
-          <table>
-              <tr>
-                <td>Nom:</td>
-                <td><input type="text" name="nom"></td>
-              </tr>
-              <tr>
-                <td>Taille:</td>
-                <td><input type="number" name="taille"></td>
-              </tr>
-              <tr>
-                <td>Description:</td>
-                <td><textarea name="description"></textarea></td>
-              </tr>
-              <tr>
-                <td>URL image:</td>
-                <td><input type="text" name="urlimg"></td>
-              </tr>
-              <tr>
-                <td>Prix:</td>
-                <td><input type="number" step="any" name="prix"></td>
-              </tr>
-              <tr>
-              <tr>
-                <td>Mail:</td>
-                <td><input type="text" name="mail"></td>
-              </tr>
-              <tr>
-                <td>
-                <input type="submit" name="button2" value="Ajouter"></td>
+  <br>
 
-                <td>
-                  <input type="reset" name="button3" value="Vider le formulaire"></td>
+  <h2>Ajouter sports et loisirs</h2>
 
+        <form action="ajouter_sportetloisir.php" method="post">
+            <table>
+                <tr>
+                  <td>Nom:</td>
+                  <td><input type="text" name="nom" class="form-control"></td>
+                </tr>
+                <tr>
+                  <td>Taille:</td>
+                  <td><input type="number" name="taille" class="form-control"></td>
+                </tr>
+                <tr>
+                  <td>Description:</td>
+                  <td><textarea name="description" class="form-control"></textarea></td>
+                </tr>
+                <tr>
+                  <td>URL image:</td>
+                  <td><input type="text" name="urlimg" class="form-control"></td>
+                </tr>
+                <tr>
+                  <td>Prix:</td>
+                  <td><input type="number" step="any" name="prix" class="form-control"></td>
+                </tr>
+                <tr>
+                <tr>
+                  <td>Mail:</td>
+                  <td><input type="text" name="mail" class="form-control"></td>
+                </tr>
+                <tr>
+                  <td>
+                    <br>
 
+                  <input type="submit" name="button2" value="Ajouter" class="btn btn-secondary"></td>
 
+                  <td><br>
+                    <input type="reset" name="button3" value="Vider le formulaire" class="btn btn-secondary"></td>
+                    </table>
+        </form>
+      
+    </div>
 
-
-
-
-
-
-
- <footer class="footer">
+<footer class="footer">
 
 
     <!-- Copyright -->
@@ -127,7 +129,7 @@
     </div>
     <!-- Copyright -->
 
-  </footer>
+</footer>
 
 
 
