@@ -17,6 +17,12 @@ $verf->execute(array(
 
 $donnees=$verf->fetch();
 
+$req = $bdd->prepare('INSERT INTO vendeur(mailvend, pseudo, nom) VALUES(:mailvend, :pseudo, :nom)');
+$req->execute(array(
+	'mailvend' => $mailvend,
+	'pseudo' => $pseudo,
+	'nom' => $nom,
+));
 
 if ($mailvend=="") {
 	$error.="Mail vide";
