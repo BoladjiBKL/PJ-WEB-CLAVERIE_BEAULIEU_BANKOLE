@@ -157,7 +157,7 @@ $donnees=$reponse->fetch();
 
 			<tr>
 				<td>Numero de la carte :</td>
-				<td><input type="int" name="numcarte"></td>
+				<td><input type="number" name="numcarte"></td>
 			</tr>
 
 			<tr>
@@ -173,7 +173,7 @@ $donnees=$reponse->fetch();
 
 			<tr>
 				<td>Code de securité :</td>
-				<td><input type="int" name="codecarte"></td>
+				<td><input type="number" name="codecarte"></td>
 			</tr>
 
 			<br>
