@@ -37,9 +37,10 @@
 
 
         <div class="dropdown">
-          <a class="btn btn-secondary dropdown-toggle"  role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+         <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Catégories
           </a>
+
 
             <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                 <a class="dropdown-item" href="Livres.php" >Livres</a>
@@ -91,12 +92,15 @@
 $bdd = new PDO('mysql:host=localhost;dbname=ECEAmazon;charset=utf8', 'root', 'root');
 
 $reponse = $bdd->query('SELECT DISTINCT * FROM panier');
-
+$somme =0;
 
    // On affiche chaque entrée une à une
 while ($donnees = $reponse->fetch())
 {
-  $somme += $donnees['prix']; /* calcule de la somme des prix. Ecrire <?php echo $somme; ?> pour afficher la somme */
+
+
+  $somme += $donnees['prix']; /*<?php echo $somme;?>  */
+
   ?>
 
    <div class="objet_panier">
@@ -131,13 +135,17 @@ while ($donnees = $reponse->fetch())
 
 $reponse->closeCursor(); // Termine le traitement de la requête
 
+
 ?>
 
-
-
-
-<div class='barre_blanche'>
+<div class="total_panier">
+<?php echo $somme;?>
 </div>
+
+
+
+
+
 
 
 
