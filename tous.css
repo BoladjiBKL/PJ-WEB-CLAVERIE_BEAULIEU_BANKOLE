@@ -8,6 +8,11 @@ html {
 
 }
 
+h2{
+    text-align: center;
+    
+}
+
  
 /*css corps de chaque page*/
 #global{
@@ -15,6 +20,8 @@ html {
 	margin-left: 100px;
 	
 }
+
+
 
 
 

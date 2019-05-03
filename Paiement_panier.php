@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -73,9 +74,11 @@
 <div id="global">
 
 
+
 <?php
 session_start();
 /*session is started if you don't write this line can't use $_Session  global variable*/
+
 
 $bdd = new PDO('mysql:host=localhost;dbname=ECEAmazon;charset=utf8', 'root', 'root');
 $reponse = $bdd->query('SELECT DISTINCT * FROM acheteur WHERE mailacheteur = "'.$_SESSION["newsession"].'"');
@@ -204,3 +207,4 @@ $donnees=$reponse->fetch();
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
 </html>
+

@@ -8,6 +8,8 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="tous.css">
+    <link rel="stylesheet" type="text/css" href="Vetements.css">
+
 
     <title>Accueil</title>
 
@@ -107,27 +109,65 @@
 </div>
 
 <div id="global">
+  <br><br>  
 
-<p>page d'accueil</p>
+<h2> Retrouver nos Best Sellers :</h2>
+<br><br>  
 
 </div>
 
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
+<?php
+
+//best_sellers
+
+$bdd = new PDO('mysql:host=localhost;dbname=ECEAmazon;charset=utf8', 'root', 'root');
+
+$reponse = $bdd->query('SELECT DISTINCT * FROM bestsellers');
+$somme =0;
+
+   // On affiche chaque entrée une à une
+while ($donnees = $reponse->fetch())
+{
+
+
+  $somme += $donnees['prix']; /*<?php echo $somme;?>  */
+
+  ?>
+
+   <div class="objet_panier">
+
+    <strong> <?php echo $donnees['titre']; ?> </strong> <strong><?php echo $donnees['nom']; ?> </strong>
+    <br /><br />
+
+    <img class='image' src="<?php echo $donnees['urlimg'];?>" /> <br>
+
+    <?php echo $donnees['artiste']; ?> <?php echo $donnees['auteur']; ?>
+    <br />
+
+
+
+    <?php echo $donnees['label']; ?> <?php echo $donnees['taille']; ?> <?php echo $donnees['edition']; ?>
+    <br />
+
+
+    Description : <em><?php echo $donnees['description']; ?></em> <br />
+
+    Prix : <?php echo $donnees['prix']; ?> &euro;<br />
+
+    <?php echo $donnees['annee']; ?>
+    <br />
+
+    Mail du vendeur : <a href="mailto:<?php echo $donnees['mail']; ?>"> <?php echo $donnees['mail']; ?> </a><br /><br /><br />
+
+      </div>
+
+<?php
+}
+
+$reponse->closeCursor(); // Termine le traitement de la requête
+
+
+?>
 
 
 
