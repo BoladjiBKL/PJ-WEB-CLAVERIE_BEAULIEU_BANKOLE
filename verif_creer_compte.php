@@ -107,7 +107,7 @@ if($donnees2)
 
 if($error=="" && $drapeau==0)
 {
-	 header('Location: Compte_vendeur.php');
+	 header('Location: Compte_client.php');
 }
 
 else
@@ -120,7 +120,7 @@ else
 			<script type="text/javascript">
 		    var msg='<?php echo $error; ?>';
 			alert(msg); 
-			document.location.href="Creercompte.php";
+			document.location.href="Co_mon_compte.php";
 		</script>
 		</head>
 		<body onLoad="setTimeout('RedirectionJavascript()', 200)">

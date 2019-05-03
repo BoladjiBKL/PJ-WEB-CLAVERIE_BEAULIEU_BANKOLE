@@ -1,10 +1,13 @@
+
+
+
+
+
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Compte client</title>
-
-
-	<!-- Required meta tags -->
+  <title>Compte_client</title>
+  <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -12,10 +15,13 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <link rel="stylesheet" type="text/css" href="tous.css">
+    <link rel="stylesheet" type="text/css" href="Vetements.css">
 </head>
+
+
 <body>
-<!-- barre de navigation -->
-       <nav class="navbar navbar navbar-expand-lg navbar-lightgreen bg-lightgreen">
+    <!-- barre de navigation -->
+    <nav class="navbar navbar navbar-expand-lg navbar-lightgreen bg-lightgreen">
 
   <a class="navbar-brand" href="Accueil.php"><img src="eceamazon.png" height="60px"></a>
 
@@ -28,12 +34,13 @@
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav">
       <li class="nav-item active">
-        
+
 
         <div class="dropdown">
           <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Catégories
           </a>
+
 
             <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                 <a class="dropdown-item" href="Livres.php" >Livres</a>
@@ -56,27 +63,105 @@
       <li class="nav-item">
         <a class="nav-link" href="Co_admin.php">Admin</a>
       </li>
-     
 
-      
+
+
     </ul>
   </div>
-  
+
   <a class="nav-link" href="Panier.php"><img src="panier.png"></a>
+
 </nav>
 
 <br>
 
 <br>
+
 <div id="global">
-
-
-	<p>compte client a éditer</p>
-
+  <h2> Compte client :</h2>
+  <br><br>
 </div>
 
 
+
+
+<?php
+
+  session_start();
+  $_SESSION["newsession"];
+
+ 
+  
+
+  $bdd = new PDO('mysql:host=localhost;dbname=ECEAmazon;charset=utf8', 'root', 'root');
+
+  $reponse = $bdd->query('SELECT * FROM acheteur WHERE mailacheteur ="'.$_SESSION["newsession"].'" ');
+
+   $donnees = $reponse->fetch();
+
+?>
+
+
+
+     <div class="info_client">
+
+      <strong>Nom</strong> : <?php echo $donnees['nom']; ?> &nbsp;&nbsp; <strong>Prénom</strong> : <?php echo $donnees['prenom']; ?> <br /><br />
+
+      Email : <?php echo $donnees['mailacheteur']; ?> <br /><br />
+
+      Telephone : +(33) <?php echo $donnees['tel']; ?> <br /><br />
+
+      Mot de passe : **** <?php echo substr($donnees['mdp'],-1); ?> <br /> <br />
+
+      Adresse 1 : <?php echo $donnees['adresse1']; ?> <br /><br />
+
+      Adresse 2 : <?php echo $donnees['adresse2']; ?> <br /><br />
+
+      Code postal : <?php echo $donnees['codepost']; ?> <br /><br />
+
+      Ville : <?php echo $donnees['ville']; ?> <br /><br />
+
+      Pays : <?php echo $donnees['pays']; ?> <br /><br />
+
+      <h2> Informations de paiement :</h2>
+      <br /><br /><br /><br />
+
+
+      Type de paiment : <?php echo $donnees['typepaie']; ?> <br /><br />
+
+      Numero de la carte : <?php echo $donnees['numcarte']; ?>
+
+
+
+
+
+
+
+
+      
+    <br>
+
+
+      </div>
+
+
+      
+      <?php
+
+
+$reponse->closeCursor(); // Termine le traitement de la requête
+
+?>
+
+
+
+
+
+
+
+
  <footer class="footer">
+
 
     <!-- Copyright -->
     <div class="footer-copyright text-center py-3">© 2019 Copyright:
@@ -85,9 +170,10 @@
     <!-- Copyright -->
 
   </footer>
+
+
+
   <!-- Footer -->
-
-
 <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -95,3 +181,11 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
 </html>
+
+
+
+
+
+
+
+

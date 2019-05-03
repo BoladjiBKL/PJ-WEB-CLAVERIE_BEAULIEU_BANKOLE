@@ -127,12 +127,16 @@
 
       </div>
 
+      <?php
+}
+
+$reponse->closeCursor(); // Termine le traitement de la requête
+
+?>
 
 
 
 
-<div class='barre_blanche'>
-</div>
 
 
 
@@ -165,9 +169,4 @@
 
 
 
-<?php
-}
 
-$reponse->closeCursor(); // Termine le traitement de la requête
-
-?>

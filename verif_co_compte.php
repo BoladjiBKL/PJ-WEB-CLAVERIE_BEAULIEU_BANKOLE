@@ -77,6 +77,8 @@ if ($mdp =="") {
 
 if($donnees)
 {
+	session_start();
+	$_SESSION["newsession"]=$mailacheteur;
 	header('Location: Compte_client.php');
 }
 
