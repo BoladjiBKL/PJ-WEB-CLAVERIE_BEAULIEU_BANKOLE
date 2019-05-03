@@ -25,7 +25,10 @@ if ($mailacheteur=="" && $mdp=="")
 			<title>redirection</title>
 			<script type="text/javascript">
 			alert("Mail et mot de passe vides");
-			document.location.href="Co_mon_compte.php";
+
+			document.location.href="Co_acheteur_panier.php";
+
+
 		</script>
 		</head>
 		<body onLoad="setTimeout('RedirectionJavascript()', 200)">
@@ -44,7 +47,9 @@ if ($mailacheteur=="") {
 			<title>redirection</title>
 			<script type="text/javascript">
 			alert("Mail vide");
-			document.location.href="Co_mon_compte.php";
+
+			document.location.href="Co_acheteur_panier.php";
+
 		</script>
 		</head>
 		<body onLoad="setTimeout('RedirectionJavascript()', 200)">
@@ -63,7 +68,9 @@ if ($mdp =="") {
 			<title>redirection</title>
 			<script type="text/javascript">
 			alert("Mot de passe vide");
-			document.location.href="Co_mon_compte.php";
+
+			document.location.href="Co_acheteur_panier.php";
+
 		</script>
 		</head>
 		<body onLoad="setTimeout('RedirectionJavascript()', 200)">
@@ -77,7 +84,11 @@ if ($mdp =="") {
 
 if($donnees)
 {
-	header('Location: Compte_client.php');
+
+	session_start();
+	$_SESSION["newsession"]=$mailacheteur;
+	header('Location: Paiement_panier.php');
+
 }
 
 else
@@ -89,7 +100,9 @@ else
 			<title>redirection</title>
 			<script type="text/javascript">
 			alert("Votre compte n'existe pas");
-			document.location.href="Co_mon_compte.php";
+
+			document.location.href="Co_acheteur_panier.php";
+
 		</script>
 		</head>
 		<body onLoad="setTimeout('RedirectionJavascript()', 200)">
