@@ -17,12 +17,7 @@ $verf->execute(array(
 
 $donnees=$verf->fetch();
 
-$req = $bdd->prepare('INSERT INTO vendeur(mailvend, pseudo, nom) VALUES(:mailvend, :pseudo, :nom)');
-$req->execute(array(
-	'mailvend' => $mailvend,
-	'pseudo' => $pseudo,
-	'nom' => $nom,
-));
+
 
 if ($mailvend=="") {
 	$error.="Mail vide";
@@ -41,14 +36,27 @@ if ($nom=="") {
 	$drapeau+=1;
 
 }
-if($donnees)
+if($error=="" && $drapeau==0 && ($donnees))
 {
-	
-$error.="Ce mail est deja utilisé. Reprennez avec une autre adresse mail";
+	//header('Location: formulaire_ajouter_vendeur.php');
+			?>
+<!DOCTYPE html>
+		<html>
+		<head>
+			<title>redirection</title>
+			<script type="text/javascript">
+		    
+			alert("Ce vendeur existe deja"); 
+			document.location.href="formulaire_ajouter_vendeur.php";
+		</script>
+		</head>
+		<body onLoad="setTimeout('RedirectionJavascript()', 200)">
+		</body>
+		</html>
+<?php
 }
 
-
-if($error=="" && $drapeau==0)
+if($error=="" && $drapeau==0 && (!$donnees))
 {
 	//header('Location: formulaire_ajouter_vendeur.php');
 			?>
@@ -66,6 +74,12 @@ if($error=="" && $drapeau==0)
 		</body>
 		</html>
 <?php
+$req = $bdd->prepare('INSERT INTO vendeur(mailvend, pseudo, nom) VALUES(:mailvend, :pseudo, :nom)');
+$req->execute(array(
+	'mailvend' => $mailvend,
+	'pseudo' => $pseudo,
+	'nom' => $nom,
+));
 }
 
 else

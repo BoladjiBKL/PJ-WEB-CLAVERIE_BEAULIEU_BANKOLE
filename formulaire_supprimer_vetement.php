@@ -78,7 +78,7 @@
           <table>
               <tr>
                 <td>Nom:</td>
-                <td><input type="text" name="Nom"></td>
+                <td><input type="text" name="nom"></td>
               </tr>
               <tr>
                 <td>Taille:</td>

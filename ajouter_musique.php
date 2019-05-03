@@ -13,28 +13,17 @@ $mail = isset($_POST["mail"])? $_POST["mail"] : "";
 $description = isset($_POST["description"])? $_POST["description"] : "";
 $error  ="";
 $drapeau =0;
+$good ="";
 
 $bdd = new PDO('mysql:host=localhost;dbname=ECEAmazon;charset=utf8', 'root', 'root');
 
-$verf= $bdd->prepare('SELECT * FROM musique WHERE mail= :mail');
+$verf= $bdd->prepare('SELECT * FROM vendeur WHERE mailvend= :mail');
 $verf->execute(array(
 	'mail' => $mail,
 ));
 
 $donnees=$verf->fetch();
 
-
-$req = $bdd->prepare('INSERT INTO musique(titre, artiste, annee, label, description,urlimg, prix, mail) VALUES(:titre, :artiste, :annee, :label, :description,:urlimg, :prix, :mail)');
-$req->execute(array(
-	'titre' => $titre,
-	'artiste' => $artiste,
-	'annee' => $annee,
-	'label' => $label,
-	'description'=> $description,
-	'urlimg' => $urlimg,
-	'prix' => $prix,
-	'mail' => $mail,
-	));
 
 
 if ($titre=="") {
@@ -79,14 +68,14 @@ if ($mail=="") {
 	$drapeau+=1;
 
 }
-if($donnees)
-{
-	
-$error.="Ce mail est deja utilisé. Reprennez avec une autre adresse mail";
-}
 
 
-if($error=="" && $drapeau==0)
+
+
+
+
+
+if(($donnees) && $error=="" && $drapeau==0)
 {
 	//header('Location: formulaire_ajouter_musique.php');
 			?>
@@ -96,7 +85,38 @@ if($error=="" && $drapeau==0)
 			<title>redirection</title>
 			<script type="text/javascript">
 		    
-			alert("musique bien ajouté"); 
+			alert("Musique bien ajoutée"); 
+			document.location.href="formulaire_ajout_musique.php";
+		</script>
+		</head>
+		<body onLoad="setTimeout('RedirectionJavascript()', 200)">
+		</body>
+		</html>
+<?php
+
+$req = $bdd->prepare('INSERT INTO musique(titre, artiste, annee, label, description,urlimg, prix, mail) VALUES(:titre, :artiste, :annee, :label, :description,:urlimg, :prix, :mail)');
+$req->execute(array(
+	'titre' => $titre,
+	'artiste' => $artiste,
+	'annee' => $annee,
+	'label' => $label,
+	'description'=> $description,
+	'urlimg' => $urlimg,
+	'prix' => $prix,
+	'mail' => $mail,
+	));
+
+}
+
+else if(!($donnees) && $error=="" && $drapeau==0)
+{
+		?>
+<!DOCTYPE html>
+		<html>
+		<head>
+			<title>redirection</title>
+			<script type="text/javascript">
+		   alert("Adresse mail non valide")
 			document.location.href="formulaire_ajout_musique.php";
 		</script>
 		</head>
@@ -105,9 +125,9 @@ if($error=="" && $drapeau==0)
 		</html>
 <?php
 }
+else{
 
-else
-{
+
 		?>
 <!DOCTYPE html>
 		<html>
