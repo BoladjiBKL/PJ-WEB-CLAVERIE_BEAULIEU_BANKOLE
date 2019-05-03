@@ -161,7 +161,7 @@
 
 			<tr>
 				<td>Date d'expiration</td>
-				<td><input type="text" name="datecarte"></td>
+				<td><input type="month" name="datecarte"></td>
 				
 			</tr> 
 
