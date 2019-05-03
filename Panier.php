@@ -91,12 +91,13 @@
 $bdd = new PDO('mysql:host=localhost;dbname=ECEAmazon;charset=utf8', 'root', 'root');
 
 $reponse = $bdd->query('SELECT DISTINCT * FROM panier');
-
+$somme =0;
 
    // On affiche chaque entrée une à une
 while ($donnees = $reponse->fetch())
 {
-  $somme += $donnees['prix'];
+
+  $somme += $donnees['prix']; /*<?php echo $somme;?>  */
 
   ?>
 
@@ -132,13 +133,17 @@ while ($donnees = $reponse->fetch())
 
 $reponse->closeCursor(); // Termine le traitement de la requête
 
+
 ?>
 
-
-
-
-<div class='barre_blanche'>
+<div class="total_panier">
+<?php echo $somme;?>
 </div>
+
+
+
+
+
 
 
 
