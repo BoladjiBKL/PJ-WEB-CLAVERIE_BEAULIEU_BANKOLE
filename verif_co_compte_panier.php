@@ -85,9 +85,12 @@ if ($mdp =="") {
 if($donnees)
 {
 
+
+
 	session_start();
 	$_SESSION["newsession"]=$mailacheteur;
 	header('Location: Paiement_panier.php');
+
 
 }
 
