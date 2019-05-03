@@ -14,8 +14,6 @@ $bdd->exec("INSERT INTO bestsellers SELECT * FROM panier");
 
 $bdd->exec("DELETE FROM panier ");
 
-echo "bonjour";
-
 session_start();
 
 unset($_SESSION["newsession"]);
