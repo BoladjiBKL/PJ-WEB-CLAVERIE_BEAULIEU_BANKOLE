@@ -97,7 +97,7 @@ while ($donnees = $reponse->fetch())
 {
   ?>
 
-   <div class="objet">
+   <div class="objet rounded border border-dark">
 
     <strong><?php echo $donnees['nom']; ?> </strong>  <br /><br />
 

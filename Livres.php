@@ -101,7 +101,7 @@
   {
     ?>
 
-     <div class="objet">
+     <div class="objet rounded border border-dark">
 
       <strong><?php echo $donnees['titre']; ?></strong><br /><br />
 

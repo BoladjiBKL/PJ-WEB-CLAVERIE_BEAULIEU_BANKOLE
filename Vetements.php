@@ -98,7 +98,7 @@
 
     ?>
 
-     <div class="objet">
+     <div class="objet rounded border border-dark">
 
       <strong>Nom</strong> : <?php echo $donnees['nom']; ?><br /><br />
 

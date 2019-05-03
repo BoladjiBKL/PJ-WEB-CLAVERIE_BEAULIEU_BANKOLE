@@ -100,7 +100,7 @@ while ($donnees = $reponse->fetch())
 
   ?>
 
-   <div class="objet_panier">
+   <div class="objet_panier rounded border border-dark">
 
     <strong> <?php echo $donnees['titre']; ?> </strong> <strong><?php echo $donnees['nom']; ?> </strong> </em> <?php echo $donnees['artiste']; ?> &nbsp; <?php echo $donnees['auteur']; ?>
     <br /><br />
@@ -131,10 +131,10 @@ $reponse->closeCursor(); // Termine le traitement de la requête
 
 ?>
 
-<div class="total_panier">
+<div class="total_panier rounded border border-dark">
   Total du panier : <?php echo $somme;?> &euro;
   <br><br>
-  <a href="Co_acheteur_panier.php" class="btn btn-outline-dark">Passer ma commande</a>
+  <a href="Co_acheteur_panier.php" class="btn btn-dark">Passer ma commande</a>
   
 
 </div>
