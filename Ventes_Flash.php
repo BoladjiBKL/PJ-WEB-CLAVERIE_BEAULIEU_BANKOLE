@@ -77,6 +77,18 @@
 
 <br>
 
+<div class="test_vente_flash ">
+
+<br><br>
+<br><br>
+<br><br>
+<br><br>
+<br><br>
+<br><br>
+<br><br><br><br><br><br><br><br><br><br>
+
+</div>
+
 <div id="global">
   <h2> Best Sellers :</h2>
   <br><br>
