@@ -83,55 +83,55 @@
 		<table id="maTable">
 			<tr>
 				<td>E-mail :</td>
-				<td><input type="text" name="mailacheteur" class="form-control"></td>
+				<td><input type="text" name="mailacheteur" class="form-control" placeholder="Email"></td>
 			</tr>
 
 
 			<tr>
 				<td>Mot de passe :</td>
-				<td><input type="Password" name="mdp" class="form-control"></td>
+				<td><input type="Password" name="mdp" class="form-control" placeholder="Mot de passe"></td>
 			</tr>
 
 			<tr>
 				<td>Nom :</td>
-				<td><input type="text" name="nom" class="form-control"></td>
+				<td><input type="text" name="nom" class="form-control" placeholder="Nom"></td>
 			</tr>
 
 			<tr>
 				<td>Prenom :</td>
-				<td><input type="text" name="prenom" class="form-control"></td>
+				<td><input type="text" name="prenom" class="form-control" placeholder="Email" ></td>
 			</tr>
 
 			<tr>
 				<td>Adresse 1:</td>
-				<td><input type="text" name="adresse1" class="form-control"></td>
+				<td><input type="text" name="adresse1" class="form-control" placeholder="Adresse 1" ></td>
 			</tr>
 
 			<tr>
 				<td>Adresse 2:</td>
-				<td><input type="text" name="adresse2" class="form-control"></td>
+				<td><input type="text" name="adresse2" class="form-control" placeholder="Adresse 2"></td>
 			</tr>
 
 			<tr>
 				<td>Code postal :</td>
-				<td><input type="number" name="codepost" class="form-control"></td>
+				<td><input type="number" name="codepost" class="form-control" placeholder="Code postal" ></td>
 			</tr>
 
 				<tr>
 				<td>Telephone :</td>
-				<td><input type="number" name="tel" class="form-control"></td>
+				<td><input type="number" name="tel" class="form-control" placeholder=" Telephone"></td>
 			</tr>
 
 
 
 			<tr>
 				<td>Ville :</td>
-				<td><input type="text" name="ville" class="form-control"></td>
+				<td><input type="text" name="ville" class="form-control" placeholder="Ville"></td>
 			</tr>
 
 			<tr>
 				<td>Pays :</td>
-				<td><input type="text" name="pays" class="form-control"></td>
+				<td><input type="text" name="pays" class="form-control" placeholder="Pays"></td>
 			</tr>
 
 			</table>
@@ -159,7 +159,7 @@
 
 			<tr>
 				<td>Numero de la carte :</td>
-				<td><input type="number" name="numcarte" class="form-control"></td>
+				<td><input type="number" name="numcarte" class="form-control" placeholder="----------------" ></td>
 			</tr>
 
 			<tr>
@@ -169,13 +169,13 @@
 
 			<tr>
 				<td>Date d'expiration</td>
-				<td><input type="text" name="datecarte" class="form-control"></td>
+				<td><input type="text" name="datecarte" class="form-control" placeholder="Mois/Année"></td>
 
 			</tr>
 
 			<tr>
 				<td>Code de securité :</td>
-				<td><input type="number" name="codecarte" class="form-control"></td>
+				<td><input type="number" name="codecarte" class="form-control" placeholder="Code situé au dos de votre carte"></td>
 			</tr>
 
 			<br>

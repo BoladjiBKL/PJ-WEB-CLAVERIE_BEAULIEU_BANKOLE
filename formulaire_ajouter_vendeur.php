@@ -92,9 +92,9 @@
 
               <tr>
                 <td> <br>
-                <input type="submit" name="button2" value="Ajouter" class="btn btn-secondary">
+                <input type="submit" name="button2" value="Ajouter" class="btn btn-secondary">&nbsp;
               </td>
-
+              
                 <td> <br>
                   <input type="reset" name="button3" value="Vider le formulaire" class="btn btn-secondary"></td>
               </tr>
