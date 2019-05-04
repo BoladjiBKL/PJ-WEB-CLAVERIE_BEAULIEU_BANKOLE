@@ -83,11 +83,11 @@
 		<table id="maTable">
 			<tr>
 				<td>E-mail :</td>
-<<<<<<< HEAD
+
 				<td><input type="text" name="mailacheteur" class="form-control" placeholder="Email"></td>
-=======
+
 				<td><input type="email" name="mailacheteur" class="form-control"></td>
->>>>>>> 259ca9992f321348c37442657133eacc356aee89
+
 			</tr>
 
 
