@@ -79,7 +79,7 @@
           <table>
               <tr>
                 <td>Email:</td>
-                <td><input type="text" name="mailvend" class="form-control"></td>
+                <td><input type="email" name="mailvend" class="form-control"></td>
               </tr>
               <tr>
                 <td>Pseudo:</td>
