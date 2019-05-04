@@ -23,7 +23,7 @@ $donnees=$verf->fetch();
 
 
 if ($nom=="") {
-	$error.="nom vide";
+	$error.=" nom vide";
 	$error.='\n';
 	$drapeau+=1;
 

@@ -29,7 +29,7 @@ $donnees=$verf->fetch();
 
 
 if ($titre=="") {
-	$error.="titre vide";
+	$error.=" titre vide";
 	$drapeau+=1;
 
 }

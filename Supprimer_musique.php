@@ -22,7 +22,7 @@ $donnees=$verf->fetch();
 
 
 if ($titre=="") {
-	$error.="titre vide";
+	$error.=" titre vide";
 	$error.='\n';
 	$drapeau+=1;
 

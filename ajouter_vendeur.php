@@ -20,7 +20,7 @@ $donnees=$verf->fetch();
 
 
 if ($mailvend=="") {
-	$error.="Mail vide";
+	$error.=" Mail vide";
 	$error.='\n';
 	$drapeau+=1;
 
