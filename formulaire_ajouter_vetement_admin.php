@@ -1,10 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Compte admin</title>
-
-
-	<!-- Required meta tags -->
+  <title>Formulaire_ajouter_vetement</title>
+  <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -12,13 +10,13 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <link rel="stylesheet" type="text/css" href="tous.css">
+    <link rel="stylesheet" type="text/css" href="Vetements.css">
 </head>
 
 
 <body>
-
-<!-- barre de navigation -->
-       <nav class="navbar navbar navbar-expand-lg navbar-lightgreen bg-lightgreen">
+    <!-- barre de navigation -->
+    <nav class="navbar navbar navbar-expand-lg navbar-lightgreen bg-lightgreen">
 
   <a class="navbar-brand" href="Accueil.php"><img src="eceamazon.png" height="60px"></a>
 
@@ -37,6 +35,7 @@
           <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Catégories
           </a>
+
 
             <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                 <a class="dropdown-item" href="Livres.php" >Livres</a>
@@ -66,78 +65,67 @@
   </div>
 
   <a class="nav-link" href="Panier.php"><img src="panier.png"></a>
+
 </nav>
-
-<br>
-
-<br>
-
 
 <div id="global">
 
-  <h3 class=""> <em>Compte Admin</em></h3>
-        <br/> <br/>
+<br>
 
-        <div class="gerer_vendeur">
+<br>
 
-         <h4>Gerer les vendeurs :</h4>  <br/> <br/>
+<h2>Ajouter un vêtement</h2>
+			<form action="ajouter_vetement_admin.php" method="post">
+					<table>
+							<tr>
+								<td>Nom:</td>
+								<td><input type="text" name="nom" class="form-control"></td>
+							</tr>
+							<tr>
+								<td>Taille:</td>
+								<td><input type="number" name="taille" class="form-control"></td>
+							</tr>
+							<tr>
+								<td>Description:</td>
+								<td><textarea name="description" class="form-control"></textarea></td>
+							</tr>
+							<tr>
+								<td>URL image:</td>
+								<td><input type="text" name="urlimg" class="form-control"></td>
+							</tr>
+							<tr>
+								<td>Prix:</td>
+								<td><input type="number" step="any" name="prix" class="form-control"></td>
+							</tr>
+							<tr>
+							<tr>
+								<td>Mail:</td>
+								<td><input type="text" name="mail" class="form-control"></td>
+							</tr>
+							<tr>
+								<td><br>
 
-               <td colspan="1">
-                <a href="formulaire_ajouter_vendeur.php"> <input type="button" value="Ajouter vendeur" class="btn btn-secondary"></a>
-                &nbsp;
-                <a href="formulaire_supprimer_vendeur.php"> <input type="button" value="Supprimer vendeur" class="btn btn-secondary"> <a/>
-                <br/> <br/><br/> <br/>
-
-                </div>
-         <div class="gerer_article">
-
-        <h4>Gerer les articles :</h4>  <br/>
-
-        <form action="GestionCompteAdmin.php" method="post" >
-
-
-           <tr>
-
-        <td> Type d'article   <br><br><select name="Type" size="1" class="form-control">
-
-              <option value="Livres"> Livres</option>
-              <option value="Vetements"> Vetements </option>
-              <option value="Sport et Loisir"> Sport et Loisir </option>
-              <option value="Musique"> Musique </option>
-              </select>
-              <br>        </td>
-      </tr>
-
-      <tr>
-
-        <td> Action à réaliser  <br><br><select name="Action" size="1" class="form-control">
-              <option value="Ajouter"> Ajouter</option>
-
-              <option value="Supprimer"> Supprimer</option>
-
-              </select>
-              </td> <br>
-      </tr>
+ 								<input type="submit" name="button2" value="Ajouter" class="btn btn-secondary" ></td>
 
 
-            <tr colspan="2">
-          <td> <input type="submit" name="Soumettre" class="btn btn-secondary">
-          </td>
+								<td><br>
 
-        </tr>
+									<input type="reset" name="button3" value="Vider le formulaire" class="btn btn-secondary"></td>
+							</tr>
+					</table>
+				</form>
 
 
-      <tr>
-
-          </form>
-
-      </div>
 </div>
 
-<br/> <br/><br/> <br/><br/> <br/><br/> <br/>
+
+
+
+
 
 
  <footer class="footer">
+
 
     <!-- Copyright -->
     <div class="footer-copyright text-center py-3">© 2019 Copyright:
@@ -146,9 +134,10 @@
     <!-- Copyright -->
 
   </footer>
+
+
+
   <!-- Footer -->
-
-
 <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

@@ -6,7 +6,7 @@
 
     $from = "admin@wampserver.invalid";
 
-    $to = "beaulieu1paul@gmail.com";
+    $to = "mathieu.claverie@edu.ece.fr";
 
     $subject = "PUTAIN CA MARCHE ";
 
@@ -16,5 +16,5 @@
 
     mail($to,$subject,$message, $headers);
 
-    echo "     L'email a été envoyé.";
+    echo "     L'email a été envoyé correctememnt.";
 ?>
