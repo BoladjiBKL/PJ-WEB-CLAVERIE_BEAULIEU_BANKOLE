@@ -28,38 +28,46 @@ $donnees= $verf->fetch();
 
 if ($typepaie=="") {
 	$error.=" Type de paye vide";
+	$error.='\n';
 	$drapeau+=1;
 }
 if ($numcarte=="") {
 	$error.=" Numcarte vide";
+	$error.='\n';
 	$drapeau+=1;
 }
 if(strlen($numcarte)!=16)
 {
 	$error.="Le numéro de carte doit contenir 16 chiffres";
+	$error.='\n';
 }
 if ($nomcarte=="") {
 	$error.=" Nomcarte vide";
+	$error.='\n';
 	$drapeau+=1;
 }
 
 if( !ctype_alpha($nomcarte) && $nomcarte!="")
 {
 	$error.="La nom de la carte doit avoir que des lettres";
+	$error.='\n';
 }
 if ($datecarte=="") {
 	$error.=" datecarte vide";
+	$error.='\n';
 	$drapeau+=1;
 }
 
 
 if ($codecarte=="") {
 	$error.=" Codecarte vide";
+	$error.='\n';
 	$drapeau+=1;
 }
 if(strlen($codecarte)!=3)
 {
 	$error.="Le numéro de carte doit contenir 3 chiffres";
+	$error.='\n';
 }
 
 
@@ -82,7 +90,7 @@ else if((!$donnees) && $error=="" && $drapeau==0)
 		<head>
 			<title>redirection</title>
 			<script type="text/javascript">
-		   alert("Les informations bancaires ne correspondent pas")
+		   alert("Les informations bancaires ne correspondent pas");
 			document.location.href="Paiement_panier.php";
 		</script>
 		</head>
@@ -99,7 +107,7 @@ else
 		<head>
 			<title>redirection</title>
 			<script type="text/javascript">
-		    var msg='<?php echo $error; ?>';
+		    var msg='<?php echo nl2br($error); ?>';
 			alert(msg); 
 			document.location.href="Paiement_panier.php";
 		</script>

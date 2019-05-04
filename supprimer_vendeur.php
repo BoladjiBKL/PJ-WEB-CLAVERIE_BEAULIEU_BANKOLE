@@ -23,6 +23,7 @@ $donnees=$verf->fetch();
 
 if ($mailvend=="") {
 	$error.="Mail vide";
+	$error.='\n';
 	$drapeau+=1;
 
 }
@@ -30,11 +31,13 @@ if ($mailvend=="") {
 
 if ($pseudo=="") {
 	$error.=" Pseudo vide";
+	$error.='\n';
 	$drapeau+=1;
 }
 
 if ($nom=="") {
 	$error.=" Nom vide";
+	$error.='\n';
 	$drapeau+=1;
 
 }
@@ -95,7 +98,7 @@ else {
 			<title>redirection</title>
 			<script type="text/javascript">
 		
-			  var msg='<?php echo $error; ?>';
+			  var msg='<?php echo nl2br($error); ?>';
 			alert(msg);  
 
 			document.location.href="formulaire_supprimer_vendeur.php";

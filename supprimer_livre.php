@@ -24,6 +24,7 @@ $donnees=$verf->fetch();
 
 if ($titre=="") {
 	$error.="titre vide";
+	$error.='\n';
 	$drapeau+=1;
 
 }
@@ -31,11 +32,13 @@ if ($titre=="") {
 
 if ($auteur=="") {
 	$error.=" auteur vide";
+	$error.='\n';
 	$drapeau+=1;
 }
 
 if ($mail=="") {
 	$error.=" mail vide";
+	$error.='\n';
 	$drapeau+=1;
 
 }
@@ -96,7 +99,7 @@ else {
 			<title>redirection</title>
 			<script type="text/javascript">
 		
-			  var msg='<?php echo $error; ?>';
+			  var msg='<?php echo nl2br($error); ?>';
 			alert(msg);  
 
 			document.location.href="formulaire_supprimer_livre.php";

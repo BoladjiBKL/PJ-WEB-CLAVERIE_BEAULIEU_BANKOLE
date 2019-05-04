@@ -22,6 +22,7 @@ $donnees=$verf->fetch();
 
 if ($nom=="") {
 	$error.="nom vide";
+	$error.='\n';
 	$drapeau+=1;
 
 }
@@ -29,11 +30,13 @@ if ($nom=="") {
 
 if ($taille=="") {
 	$error.=" taille vide";
+	$error.='\n';
 	$drapeau+=1;
 }
 
 if ($mail=="") {
 	$error.=" mail vide";
+	$error.='\n';
 	$drapeau+=1;
 
 }
@@ -94,7 +97,7 @@ else {
 			<title>redirection</title>
 			<script type="text/javascript">
 		
-			  var msg='<?php echo $error; ?>';
+			  var msg='<?php echo nl2br($error); ?>';
 			alert(msg);  
 
 			document.location.href="formulaire_supprimer_sportetloisir.php";
