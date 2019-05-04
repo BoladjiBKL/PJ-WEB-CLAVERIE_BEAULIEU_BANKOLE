@@ -6,7 +6,7 @@
 
     $from = "admin@wampserver.invalid";
 
-    $to = "mathieu.claverie@edu.ece.fr";
+    $to = "beaulieu1paul@gmail.com";
 
     $subject = "PUTAIN CA MARCHE ";
 
