@@ -22,8 +22,8 @@
   $_SESSION["mailvendeur"];
 
 
- 
- 
+
+
 
   $bdd = new PDO('mysql:host=localhost;dbname=ECEAmazon;charset=utf8', 'root', 'root');
 
@@ -50,7 +50,7 @@
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav">
       <li class="nav-item active">
-        
+
 
         <div class="dropdown">
           <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -59,7 +59,7 @@
 
             <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                 <a class="dropdown-item" href="Livres.php" >Livres</a>
-                <a class="dropdown-item" href="Vetements.php">Vétements</a>
+                <a class="dropdown-item" href="Vetements.php">Vêtements</a>
                 <a class="dropdown-item" href="Sport&Loisir.php">Sports et Loisir</a>
                 <a class="dropdown-item" href="Musique.php">Musique</a>
                </div>
@@ -78,12 +78,12 @@
       <li class="nav-item">
         <a class="nav-link" href="Co_admin.php">Admin</a>
       </li>
-     
 
-      
+
+
     </ul>
   </div>
-  
+
   <a class="nav-link" href="Panier.php"><img src="panier.png"></a>
 </nav>
 
@@ -91,7 +91,7 @@
 
 <br>
 
-<div id="global"> 
+<div id="global">
 
   <h3> <em>Compte Vendeur</em></h3>
   <br>
@@ -101,16 +101,16 @@
     <img class="photo_profil rounded-circle " src="<?php echo $donnees['urlprofil']; ?>"> <br>
     <?php echo $donnees['nom']; ?>
 
-    
+
   </div>
 
 
 
-  
+
   <form action="GestionCompteVendeur.php" method="post">
-    
+
     <table id="maTable">
-  
+
       <tr>
 
         <td> Type d'article <br>  <br><select name="Type" size="1" class="form-control">
@@ -123,7 +123,7 @@
               </select> <br><br>
               </td>
 
-      </tr> 
+      </tr>
 
       <tr>
 
@@ -131,11 +131,11 @@
               <option value="Ajouter"> Ajouter</option>
 
               <option value="Supprimer"> Supprimer</option>
-            
-              </select> 
+
+              </select>
               </td>
 
-      </tr> 
+      </tr>
 
             <tr colspan="2">
           <td> <br><input type="submit" name="Soumettre" class="btn btn-secondary">
@@ -152,7 +152,7 @@
 
           <div class="modif_img_vendeur">
           <!--formulaire modification image profil -->
-          
+
           <form action="modifier_photo_profil.php" method="post">
             <table>
               <tr>
@@ -161,7 +161,7 @@
              </tr>
 
 
-        
+
           <td> <input type="submit" name="Ajouterprofil" value="Ajouter photo profil" class="btn btn-secondary">
           </td>
           </table>
@@ -170,14 +170,14 @@
           <br><br>
 
           <!--formulaire modification background -->
-          
+
           <form action="modifier_photo_fond.php" method="post">
             <table>
               <tr>
         <td>Lien d'image photo de fond  :</td>
         <td><input type="text" name="urlfond" class="form-control"></td>
-             </tr>    
-        
+             </tr>
+
           <td> <input type="submit" name="Ajouterfond" value="Ajouter photo fond" class="btn btn-secondary">
           </td>
           </table>
@@ -193,14 +193,14 @@
           <br><br><br>
           <br><br><br>
           <br><br><br>
-    
-   
-    
 
 
- 
 
-  
+
+
+
+
+
 
 </div>
 

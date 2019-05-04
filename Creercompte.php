@@ -30,7 +30,7 @@
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav">
       <li class="nav-item active">
-        
+
 
         <div class="dropdown">
           <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -39,7 +39,7 @@
 
             <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                 <a class="dropdown-item" href="Livres.php" >Livres</a>
-                <a class="dropdown-item" href="Vetements.php">Vétements</a>
+                <a class="dropdown-item" href="Vetements.php">Vêtements</a>
                 <a class="dropdown-item" href="Sport&Loisir.php">Sports et Loisir</a>
                 <a class="dropdown-item" href="Musique.php">Musique</a>
                </div>
@@ -58,12 +58,12 @@
       <li class="nav-item">
         <a class="nav-link" href="Co_admin.php">Admin</a>
       </li>
-     
 
-      
+
+
     </ul>
   </div>
-  
+
   <a class="nav-link" href="Panier.php"><img src="panier.png"></a>
 </nav>
 
@@ -79,7 +79,7 @@
 
 	<div class="info_creer">
 	<form action="verif_creer_compte.php" method="post">
-		
+
 		<table id="maTable">
 			<tr>
 				<td>E-mail :</td>
@@ -140,10 +140,10 @@
 
 			<div class="info_pai_creer">
 			<h4> Renseigner vos informations de paiement : </h4>
-            
 
 
-            
+
+
 
             <table id="maTable2">
 			<tr>
@@ -170,13 +170,13 @@
 			<tr>
 				<td>Date d'expiration</td>
 				<td><input type="text" name="datecarte" class="form-control"></td>
-				
-			</tr> 
+
+			</tr>
 
 			<tr>
-				<td>Code de securité :</td> 
+				<td>Code de securité :</td>
 				<td><input type="number" name="codecarte" class="form-control"></td>
-			</tr> 
+			</tr>
 
 			<br>
             <tr colspan="2">
