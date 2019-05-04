@@ -80,7 +80,7 @@
               <tr>
                 <td>Nom:</td>
 
-                <td><input type="text" name="nom"></td>
+                <td><input type="text" name="nom" class="form-control"></td>
 
               </tr>
               <tr>
