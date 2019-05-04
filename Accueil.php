@@ -139,7 +139,7 @@ while ($donnees = $reponse->fetch())
     <strong> <?php echo $donnees['titre']; ?> </strong> <strong><?php echo $donnees['nom']; ?> </strong>
     <br /><br />
 
-    <img class='image' src="<?php echo $donnees['urlimg'];?>" /> <br>
+    <img class='image' src="<?php echo $donnees['urlimg'];?>" /> <br><br>
 
 
 
