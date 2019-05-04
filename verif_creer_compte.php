@@ -38,36 +38,43 @@ $donnees2=$verf2->fetch();
 
 if ($mailacheteur=="") {
 	$error.="Mail vide";
+	$error.= '<br>';
 	$drapeau+=1;
 
 }
 
 if ($nom=="") {
 	$error.=" Nom vide";
+	$error.= '<br>';
 	$drapeau+=1;
 }
 if ($prenom=="") {
 	$error.=" Prénom vide";
+	$error.= '<br>';
 	$drapeau+=1;
 }
 if ($mdp=="") {
 	$error.=" Mot de passe vide";
+	$error.= '<br>';
 	$drapeau+=1;
 }
 if ($adresse1=="") {
 	$error.=" Première adresse vide";
+	$error.= '<br>';
 	$drapeau+=1;
 }
 
 
 if ($ville=="") {
 	$error.=" Ville vide";
+	$error.= '<br>';
 	$drapeau+=1;
 }
 
 if( !ctype_alpha($ville) && $ville!="")
 {
 	$error.="La ville doit avoir que des lettres";
+	$error.= '<br>';
 }
 
 
@@ -75,62 +82,75 @@ if( !ctype_alpha($ville) && $ville!="")
 
 if ($codepost=="") {
 	$error.=" Code postal vide";
+	$error.= '<br>';
 	$drapeau+=1;
 }
 
 
 if ($pays=="") {
 	$error.=" Pays vide";
+	$error.= '<br>';
 	$drapeau+=1;
 }
 if( !ctype_alpha($pays) && $pays!="")
 {
 	$error.="Le pays doit avoir que des lettres";
+	$error.= '<br>';
 }
 
 if ($tel=="") {
 	$error.=" tel vide";
+	$error.= '<br>';
 	$drapeau+=1;
 }
 if ($typepaie=="") {
 	$error.=" Type de paye vide";
+	$error.= '<br>';
 	$drapeau+=1;
 }
 if ($numcarte=="") {
 	$error.=" Numcarte vide";
+	$error.= '<br>';
 	$drapeau+=1;
 }
 if(strlen($numcarte)!=16)
 {
 	$error.="Le numéro de carte doit contenir 16 chiffres";
+	$error.= '<br>';
 }
 if ($nomcarte=="") {
 	$error.=" Nomcarte vide";
+	$error.= '<br>';
 	$drapeau+=1;
 }
 
 if( !ctype_alpha($nomcarte) && $nomcarte!="")
 {
 	$error.="Le nom de la carte doit avoir que des lettres";
+	$error.= '<br>';
 }
 if ($datecarte=="") {
 	$error.=" datecarte vide";
+	$error.= '<br>';
 	$drapeau+=1;
 }
 
 
 if ($codecarte=="") {
 	$error.=" Codecarte vide";
+	$error.= '<br>';
 	$drapeau+=1;
 }
 if(strlen($codecarte)!=3)
 {
 	$error.="Le numéro de carte doit contenir 3 chiffres";
+	$error.= '<br>';
 }
 
 if($donnees2)
 {
 	$error.="Ce mail est deja utilisé. Reprennez avec une autre adresse mail";
+	$error.= '<br>';
 }
 
 if($error=="" && $drapeau==0)
@@ -161,16 +181,30 @@ else
 		?>
 <!DOCTYPE html>
 		<html>
+
 		<head>
-			<title>redirection</title>
-			<script type="text/javascript">
-		    var msg='<?php echo $error; ?>';
-			alert(msg);
-			document.location.href="Creercompte.php";
-		</script>
+        <link rel=”stylesheet” href=”Page_erreur.css” type=”text/css” />
+	
 		</head>
-		<body onLoad="setTimeout('RedirectionJavascript()', 200)">
+		<body style=" position: relative; background-color: white;  ">
+        <div style="  position: relative; background-color: #007179; font-size: 100%; 
+ color: navy; 
+ text-align: center;
+ ">
+				<?php
+		echo '<p style="color : #f89c33;">'.$error. '</p>';
+		echo '<br>';
+         ?>
+		 <td colspan="1">
+                <a href="Creercompte.php"> <input type="button" value="Retour" class="btn btn-secondary"></a>
+                &nbsp;
+         </td>
+         
+		</div> <br> <br> <br>
+
+		<h2 style="  position: relative; font-style: oblique; text-align: center;text-decoration: underline black; color: red; "> <em > OOPS </em></h2>
 		</body>
+		
 		</html>
 <?php
 }
