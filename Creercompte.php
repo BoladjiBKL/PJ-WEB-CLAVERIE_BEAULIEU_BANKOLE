@@ -83,7 +83,7 @@
 		<table id="maTable">
 			<tr>
 				<td>E-mail :</td>
-				<td><input type="text" name="mailacheteur" class="form-control"></td>
+				<td><input type="email" name="mailacheteur" class="form-control"></td>
 			</tr>
 
 

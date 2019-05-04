@@ -81,7 +81,7 @@
 
       <tr>
         <td > Email :</td>
-        <td><input type="text" name="mailvend" class="form-control" placeholder="Email"></td>
+        <td><input type="email" name="mailvend" class="form-control" placeholder="Email"></td>
       </tr>
       <tr>
         <td> Pseudo :</td>
