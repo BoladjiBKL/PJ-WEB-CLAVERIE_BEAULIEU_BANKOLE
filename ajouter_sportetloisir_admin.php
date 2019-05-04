@@ -25,6 +25,7 @@ $donnees=$verf->fetch();
 
 if ($nom=="") {
 	$error.="nom vide";
+	$error.='\n';
 	$drapeau+=1;
 
 }
@@ -32,27 +33,32 @@ if ($nom=="") {
 
 if ($taille=="") {
 	$error.=" taille vide";
+	$error.='\n';
 	$drapeau+=1;
 }
 
 
 if ($description=="") {
 	$error.=" description vide";
+	$error.='\n';
 	$drapeau+=1;
 
 }
 if ($urlimg=="") {
 	$error.=" urlimg vide";
+	$error.='\n';
 	$drapeau+=1;
 
 }
 if ($prix=="") {
 	$error.=" prix vide";
+	$error.='\n';
 	$drapeau+=1;
 
 }
 if ($mail=="") {
 	$error.=" mail vide";
+	$error.='\n';
 	$drapeau+=1;
 
 }
@@ -93,7 +99,7 @@ else if(!($donnees) && $error=="" && $drapeau==0)
 		<head>
 			<title>redirection</title>
 			<script type="text/javascript">
-		   alert("Adresse mail non valide")
+		   alert("Adresse mail non valide");
 			document.location.href="formulaire_ajouter_sportetloisir_admin.php";
 		</script>
 		</head>
@@ -111,7 +117,7 @@ else
 		<head>
 			<title>redirection</title>
 			<script type="text/javascript">
-		    var msg='<?php echo $error; ?>';
+		    var msg='<?php echo n2lbr($error); ?>';
 			alert(msg);
 			document.location.href="formulaire_ajouter_sportetloisir_admin.php";
 		</script>

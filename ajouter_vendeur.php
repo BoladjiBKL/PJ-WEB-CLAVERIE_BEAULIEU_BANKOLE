@@ -21,6 +21,7 @@ $donnees=$verf->fetch();
 
 if ($mailvend=="") {
 	$error.="Mail vide";
+	$error.='\n';
 	$drapeau+=1;
 
 }
@@ -28,11 +29,13 @@ if ($mailvend=="") {
 
 if ($pseudo=="") {
 	$error.=" Pseudo vide";
+	$error.='\n';
 	$drapeau+=1;
 }
 
 if ($nom=="") {
 	$error.=" Nom vide";
+	$error.='\n';
 	$drapeau+=1;
 
 }
@@ -90,7 +93,7 @@ else
 		<head>
 			<title>redirection</title>
 			<script type="text/javascript">
-		    var msg='<?php echo $error; ?>';
+		    var msg='<?php echo n2lbr ($error); ?>';
 			alert(msg); 
 			document.location.href="formulaire_ajouter_vendeur.php";
 		</script>

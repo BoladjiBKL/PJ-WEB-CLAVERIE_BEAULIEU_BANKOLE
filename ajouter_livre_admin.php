@@ -37,44 +37,47 @@ if ($titre=="") {
 
 if ($auteur=="") {
 	$error.=" auteur vide";
+		$error.='\n';
 	$drapeau+=1;
 }
 
 if ($annee=="") {
 	$error.=" année vide";
+		$error.='\n';
 	$drapeau+=1;
 
 }
 if ($edition=="") {
 	$error.=" edition vide";
+		$error.='\n';
 	$drapeau+=1;
 
 }
 if ($description=="") {
 	$error.=" description vide";
+		$error.='\n';
 	$drapeau+=1;
 
 }
 if ($urlimg=="") {
 	$error.=" urlimg vide";
+		$error.='\n';
 	$drapeau+=1;
 
 }
 if ($prix=="") {
 	$error.=" prix vide";
+		$error.='\n';
 	$drapeau+=1;
 
 }
 if ($mail=="") {
 	$error.=" mail vide";
+		$error.='\n';
 	$drapeau+=1;
 
 }
-if($donnees)
-{
-	$good.="Livre bien ajouté";
 
-}
 
 
 if(($donnees) && $error=="" && $drapeau==0)
@@ -116,7 +119,7 @@ else if(!($donnees) && $error=="" && $drapeau==0)
 		<head>
 			<title>redirection</title>
 			<script type="text/javascript">
-		   alert("Adresse mail non valide")
+		   alert("Adresse mail non valide");
 			document.location.href="formulaire_ajout_livre_admin.php";
 		</script>
 		</head>
@@ -150,7 +153,7 @@ else
 		<head>
 			<title>redirection</title>
 			<script type="text/javascript">
-		    var msg='<?php echo $error; ?>';
+		    var msg='<?php echo nl2br($error); ?>';
 			alert(msg);
 			document.location.href="formulaire_ajout_livre_admin.php";
 		</script>

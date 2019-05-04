@@ -28,6 +28,7 @@ $donnees=$verf->fetch();
 
 if ($titre=="") {
 	$error.="titre vide";
+	$error.='\n';
 	$drapeau+=1;
 
 }
@@ -35,36 +36,43 @@ if ($titre=="") {
 
 if ($artiste=="") {
 	$error.=" artiste vide";
+	$error.='\n';
 	$drapeau+=1;
 }
 
 if ($annee=="") {
 	$error.=" année vide";
+	$error.='\n';
 	$drapeau+=1;
 
 }
 if ($label=="") {
 	$error.=" label vide";
+	$error.='\n';
 	$drapeau+=1;
 
 }
 if ($description=="") {
 	$error.=" description vide";
+	$error.='\n';
 	$drapeau+=1;
 
 }
 if ($urlimg=="") {
 	$error.=" urlimg vide";
+	$error.='\n';
 	$drapeau+=1;
 
 }
 if ($prix=="") {
 	$error.=" prix vide";
+	$error.='\n';
 	$drapeau+=1;
 
 }
 if ($mail=="") {
 	$error.=" mail vide";
+	$error.='\n';
 	$drapeau+=1;
 
 }
@@ -134,7 +142,7 @@ else{
 		<head>
 			<title>redirection</title>
 			<script type="text/javascript">
-		    var msg='<?php echo $error; ?>';
+		    var msg='<?php echo nl2br($error); ?>';
 			alert(msg); 
 			document.location.href="formulaire_ajout_musique.php";
 		</script>
