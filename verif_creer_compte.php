@@ -125,7 +125,7 @@ if ($codecarte=="") {
 }
 if(strlen($codecarte)!=3)
 {
-	$error="Le numéro de carte doit contenir 3 chiffres";
+	$error.="Le numéro de carte doit contenir 3 chiffres";
 }
 
 if($donnees2)
