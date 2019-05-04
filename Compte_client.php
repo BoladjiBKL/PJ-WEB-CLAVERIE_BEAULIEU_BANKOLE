@@ -39,7 +39,7 @@
 
             <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                 <a class="dropdown-item" href="Livres.php" >Livres</a>
-                <a class="dropdown-item" href="Vetements.php">Vétements</a>
+                <a class="dropdown-item" href="Vetements.php">Vêtements</a>
                 <a class="dropdown-item" href="Sport&Loisir.php">Sports et Loisir</a>
                 <a class="dropdown-item" href="Musique.php">Musique</a>
                </div>
@@ -85,8 +85,8 @@
   session_start();
   $_SESSION["newsession"];
 
- 
-  
+
+
 
   $bdd = new PDO('mysql:host=localhost;dbname=ECEAmazon;charset=utf8', 'root', 'root');
 
@@ -137,17 +137,17 @@
 
       Date d'expiration : <?php echo $donnees['datecarte']; ?> <br /><br />
 
-      
-   
+
+
 
       </div>
 
 
 
-      
 
 
-      
+
+
       <?php
 
 
@@ -155,10 +155,10 @@
 
   ?>
     <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-    <br /><br /><br /><br /><br /><br /><br /><br /><br /> 
-   
+    <br /><br /><br /><br /><br /><br /><br /><br /><br />
 
-   
+
+
 
 
 
@@ -191,11 +191,3 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
 </html>
-
-
-
-
-
-
-
-
