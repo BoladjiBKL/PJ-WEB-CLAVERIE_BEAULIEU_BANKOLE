@@ -122,7 +122,7 @@
 
 $bdd = new PDO('mysql:host=localhost;dbname=ECEAmazon;charset=utf8', 'root', 'root');
 
-$reponse = $bdd->query('SELECT DISTINCT * FROM bestsellers');
+$reponse = $bdd->query('SELECT DISTINCT * FROM bestsellers LIMIT 4');
 $somme =0;
 
    // On affiche chaque entrée une à une

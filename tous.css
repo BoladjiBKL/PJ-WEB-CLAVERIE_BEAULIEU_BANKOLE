@@ -30,6 +30,7 @@ h2{
 #global{
 	margin-top: 20px;
 	margin-left: 100px;
+    margin-right: 100px;
 	
 }
 
@@ -147,4 +148,14 @@ h2{
 .info_creer{
     float: left;
     margin-right: 300px;
+}
+
+/*confirmation commande*/
+
+.confirm{
+    text-align: center;
+    margin-right: 200px;
+    margin-left: 200px;
+   
+
 }
