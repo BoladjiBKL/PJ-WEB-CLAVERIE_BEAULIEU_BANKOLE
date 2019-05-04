@@ -73,9 +73,23 @@
 
 </nav>
 
-<br>
+<br><br>
+<br><br><br>
 
-<br>
+<div class="test background-image: url("livre.png");">
+
+<br><br>
+<br><br>
+<br><br>
+<br><br>
+<br><br>
+<br><br>
+<br><br><br><br>
+
+</div>
+
+
+
 
 <div id="global">
   <h2> Livres :</h2>

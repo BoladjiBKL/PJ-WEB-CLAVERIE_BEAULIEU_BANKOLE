@@ -159,3 +159,15 @@ h2{
    
 
 }
+
+
+/*Background*/
+
+.test{
+    
+    background-attachment:fixed;
+    background-repeat:no-repeat;
+    background-position:300% 0%;
+    background-position:center center;
+    background-size: 100%;
+}
