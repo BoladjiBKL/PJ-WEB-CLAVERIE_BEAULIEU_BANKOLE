@@ -69,7 +69,7 @@
 </nav>
 
 <div id="global">
-</div>
+
 
 <br>
 
@@ -101,7 +101,7 @@
           </table>
         </form>
 
-
+</div>
 
 
  <footer class="footer">
