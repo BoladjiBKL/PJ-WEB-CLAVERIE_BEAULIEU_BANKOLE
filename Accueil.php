@@ -111,8 +111,8 @@
 <br><br>
 <br><br><br>
 
-<div class="test" background-image="3.png">
-   
+<div class="test ">
+  
 
 <br><br>
 <br><br>
