@@ -80,7 +80,7 @@
 
       <tr>
         <td> Login (email):</td>
-        <td><input type="text" name="mailacheteur" class="form-control" placeholder="Email" ></td>
+        <td><input type="email" name="mailacheteur" class="form-control" placeholder="Email" ></td>
       </tr>
 
       <tr>

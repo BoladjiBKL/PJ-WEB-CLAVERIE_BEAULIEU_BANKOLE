@@ -89,7 +89,7 @@
               </tr>
               <tr>
                 <td>Mail:</td>
-                <td><input type="text" name="mail" class="form-control"></td>
+                <td><input type="email" name="mail" class="form-control"></td>
               </tr>
               <tr>
                 <td><br>

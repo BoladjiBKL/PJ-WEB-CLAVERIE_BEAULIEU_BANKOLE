@@ -81,7 +81,7 @@
 
       <tr>
         <td> Email :</td>
-        <td><input type="text" name="mailadmin" class="form-control" placeholder="Email"></td>
+        <td><input type="email" name="mailadmin" class="form-control" placeholder="Email"></td>
       </tr>
 
       <tr>

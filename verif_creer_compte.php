@@ -102,7 +102,7 @@ if ($numcarte=="") {
 }
 if(strlen($numcarte)!=16)
 {
-	$error="Le numéro de carte doit contenir 16 chiffres";
+	$error.="Le numéro de carte doit contenir 16 chiffres";
 }
 if ($nomcarte=="") {
 	$error.=" Nomcarte vide";
@@ -111,7 +111,7 @@ if ($nomcarte=="") {
 
 if( !ctype_alpha($nomcarte) && $nomcarte!="")
 {
-	$error.="La nom de la carte doit avoir que des lettres";
+	$error.="Le nom de la carte doit avoir que des lettres";
 }
 if ($datecarte=="") {
 	$error.=" datecarte vide";
@@ -125,7 +125,7 @@ if ($codecarte=="") {
 }
 if(strlen($codecarte)!=3)
 {
-	$error="Le numéro de carte doit contenir 3 chiffres";
+	$error.="Le numéro de carte doit contenir 3 chiffres";
 }
 
 if($donnees2)
