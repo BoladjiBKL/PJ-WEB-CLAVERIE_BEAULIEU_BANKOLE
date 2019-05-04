@@ -33,24 +33,7 @@ $verf2->execute(array(
 $donnees2=$verf2->fetch();
 
 
-$req = $bdd->prepare('INSERT INTO acheteur(mailacheteur, nom, prenom, mdp, adresse1,adresse2, ville, codepost, pays, tel, typepaie, numcarte, nomcarte, datecarte, codecarte) VALUES(:mailacheteur, :nom, :prenom, :mdp, :adresse1, :adresse2, :ville, :codepost,  :pays, :tel, :typepaie, :numcarte, :nomcarte, :datecarte, :codecarte)');
-$req->execute(array(
-	'mailacheteur' => $mailacheteur,
-	'nom' => $nom,
-	'prenom' => $prenom,
-	'mdp' => $mdp,
-	'adresse1'=> $adresse1,
-	'adresse2'=> $adresse2,
-	'ville' => $ville,
-	'codepost' => $codepost,
-	'pays' => $pays,
-	'tel' => $tel,
-	'typepaie' => $typepaie,
-	'numcarte' => $numcarte,
-	'nomcarte' => $nomcarte,
-	'datecarte' => $datecarte,
-	'codecarte' => $codecarte,
-	));
+
 
 
 if ($mailacheteur=="") {
@@ -152,6 +135,24 @@ if($donnees2)
 
 if($error=="" && $drapeau==0)
 {
+	$req = $bdd->prepare('INSERT INTO acheteur(mailacheteur, nom, prenom, mdp, adresse1,adresse2, ville, codepost, pays, tel, typepaie, numcarte, nomcarte, datecarte, codecarte) VALUES(:mailacheteur, :nom, :prenom, :mdp, :adresse1, :adresse2, :ville, :codepost,  :pays, :tel, :typepaie, :numcarte, :nomcarte, :datecarte, :codecarte)');
+	$req->execute(array(
+		'mailacheteur' => $mailacheteur,
+		'nom' => $nom,
+		'prenom' => $prenom,
+		'mdp' => $mdp,
+		'adresse1'=> $adresse1,
+		'adresse2'=> $adresse2,
+		'ville' => $ville,
+		'codepost' => $codepost,
+		'pays' => $pays,
+		'tel' => $tel,
+		'typepaie' => $typepaie,
+		'numcarte' => $numcarte,
+		'nomcarte' => $nomcarte,
+		'datecarte' => $datecarte,
+		'codecarte' => $codecarte,
+		));
 	 header('Location: Co_mon_compte.php');
 }
 
@@ -164,7 +165,7 @@ else
 			<title>redirection</title>
 			<script type="text/javascript">
 		    var msg='<?php echo $error; ?>';
-			alert(msg); 
+			alert(msg);
 			document.location.href="Creercompte.php";
 		</script>
 		</head>
