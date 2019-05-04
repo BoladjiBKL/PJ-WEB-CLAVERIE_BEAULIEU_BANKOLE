@@ -1,0 +1,285 @@
+-- phpMyAdmin SQL Dump
+-- version 4.8.4
+-- https://www.phpmyadmin.net/
+--
+-- Hôte : 127.0.0.1:3306
+-- Généré le :  sam. 04 mai 2019 à 13:36
+-- Version du serveur :  5.7.24
+-- Version de PHP :  7.2.14
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Base de données :  `eceamazon`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `acheteur`
+--
+
+DROP TABLE IF EXISTS `acheteur`;
+CREATE TABLE IF NOT EXISTS `acheteur` (
+  `mailacheteur` varchar(100) NOT NULL,
+  `nom` varchar(100) NOT NULL,
+  `prenom` varchar(100) NOT NULL,
+  `mdp` varchar(100) NOT NULL,
+  `adresse1` varchar(100) NOT NULL,
+  `adresse2` varchar(100) DEFAULT NULL,
+  `ville` varchar(100) NOT NULL,
+  `codepost` int(11) NOT NULL,
+  `pays` varchar(100) NOT NULL,
+  `tel` int(11) NOT NULL,
+  `typepaie` varchar(100) NOT NULL,
+  `numcarte` bigint(20) NOT NULL,
+  `nomcarte` varchar(100) NOT NULL,
+  `datecarte` varchar(100) NOT NULL,
+  `codecarte` int(11) NOT NULL,
+  PRIMARY KEY (`mailacheteur`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Déchargement des données de la table `acheteur`
+--
+
+INSERT INTO `acheteur` (`mailacheteur`, `nom`, `prenom`, `mdp`, `adresse1`, `adresse2`, `ville`, `codepost`, `pays`, `tel`, `typepaie`, `numcarte`, `nomcarte`, `datecarte`, `codecarte`) VALUES
+('beaulieu1paul@gmail.com', 'Beaulieu', 'Paul', '123', '32 rue de plaisance', '', 'LA GARENNE COLOMBES', 92250, 'France', 761927158, 'Visa', 1231231231231231, 'Paul', '02/20', 123);
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `administrateur`
+--
+
+DROP TABLE IF EXISTS `administrateur`;
+CREATE TABLE IF NOT EXISTS `administrateur` (
+  `mailadmin` varchar(100) NOT NULL,
+  `mdpadmin` varchar(100) NOT NULL,
+  PRIMARY KEY (`mailadmin`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Déchargement des données de la table `administrateur`
+--
+
+INSERT INTO `administrateur` (`mailadmin`, `mdpadmin`) VALUES
+('beaulieu1paul@gmail.com', ' ');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `bestsellers`
+--
+
+DROP TABLE IF EXISTS `bestsellers`;
+CREATE TABLE IF NOT EXISTS `bestsellers` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nom` varchar(100) DEFAULT NULL,
+  `taille` int(11) DEFAULT NULL,
+  `titre` varchar(100) DEFAULT NULL,
+  `auteur` varchar(100) DEFAULT NULL,
+  `edition` varchar(100) DEFAULT NULL,
+  `artiste` varchar(100) DEFAULT NULL,
+  `annee` int(11) DEFAULT NULL,
+  `label` varchar(100) DEFAULT NULL,
+  `description` mediumtext,
+  `urlimg` mediumtext,
+  `prix` float DEFAULT NULL,
+  `mail` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8;
+
+--
+-- Déchargement des données de la table `bestsellers`
+--
+
+INSERT INTO `bestsellers` (`id`, `nom`, `taille`, `titre`, `auteur`, `edition`, `artiste`, `annee`, `label`, `description`, `urlimg`, `prix`, `mail`) VALUES
+(12, NULL, NULL, 't\'choupi à l\'école', 'Thierry Courtin', 'nathan', NULL, 2010, NULL, 'Livre enfant ', 'https://static.fnac-static.com/multimedia/Images/FR/NR/77/23/1e/1975159/1540-1/tsp20190213120113/T-choupi-a-l-ecole.jpg', 5, 'beaulieu1paul@gmail.com'),
+(13, 'Smoking', 42, NULL, NULL, NULL, NULL, NULL, NULL, 'trés beau smoking', 'data:image/webp;base64,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', 150, 'beaulieu1paul@gmail.com'),
+(14, 'Robe Gala', 40, NULL, NULL, NULL, NULL, NULL, NULL, 'Robe de gala verte', 'https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQm1_r-ivcezF7GnEdsr04lpcsK2J_ORj6IhRQUva3G2mfbdz_3OXcWUM3w-YRgq3DeUABbuNBLR43xREFfV76iIYwVLEXpX6vb0XUwl00j--pNdQHNwVdD&usqp=CAc', 200, 'beaulieu1paul@gmail.com'),
+(19, 'Veste de costume Armand Thierry', 42, NULL, NULL, NULL, NULL, NULL, NULL, 'Costume Bleu Electrique', 'https://cdn.armandthiery.fr/products_images/prod_8994/h_veste-de-costume-confort-elettrico-per-l-uomo-BLEU-front-45.jpg', 150, 'paul.beaulieu@jeece.fr'),
+(20, NULL, NULL, 'Abbey Road ', NULL, NULL, 'The Beatles ', 1969, 'Apple', 'Onzième album original publié par les Beatles ', 'data:image/jpeg;base64,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', 15, 'beaulieu1paul@gmail.com ');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `livre`
+--
+
+DROP TABLE IF EXISTS `livre`;
+CREATE TABLE IF NOT EXISTS `livre` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `titre` varchar(100) NOT NULL,
+  `auteur` varchar(100) DEFAULT NULL,
+  `annee` int(11) DEFAULT NULL,
+  `edition` varchar(100) DEFAULT NULL,
+  `description` text,
+  `urlimg` mediumtext,
+  `prix` float DEFAULT NULL,
+  `mail` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+
+--
+-- Déchargement des données de la table `livre`
+--
+
+INSERT INTO `livre` (`id`, `titre`, `auteur`, `annee`, `edition`, `description`, `urlimg`, `prix`, `mail`) VALUES
+(1, 'Antigone', 'Anouilh', 1946, 'Rakuten', 'Antigone est une pièce en un acte de Jean Anouilh représentée pour la première fois au théâtre de l\'Atelier à Paris le 4 février 1944', 'data:image/png;base64,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', 5, 'beaulieu1paul@gmail.com'),
+(2, 't\'choupi à l\'école livre', 'Thierry Courtin', 2010, 'nathan', 'Livre enfant', 'https://static.fnac-static.com/multimedia/Images/FR/NR/77/23/1e/1975159/1540-1/tsp20190213120113/T-choupi-a-l-ecole.jpg', 5, 'beaulieu1paul@gmail.com'),
+(4, 'T\'choupi rentre à l\'école', 'Thierry Courtin', 2011, 'nathan', 'Livre enfant', 'https://static.fnac-static.com/multimedia/Images/FR/NR/8a/26/04/272010/1540-1/tsp20180306120637/T-choupi-rentre-a-l-ecole.jpg', 5, 'beaulieu1paul@gmail.com'),
+(5, 'T\'choupi va au cirque', 'Thierry Courtin', 2010, 'nathan', 'Livre enfant', 'https://images-na.ssl-images-amazon.com/images/I/51ev7Kx-t0L._SX480_BO1,204,203,200_.jpg', 5, 'beaulieu1paul@gmail.com'),
+(6, 'Petit Ours Brun au cirque', 'Marie Aubinais ', 2005, 'bayard jeunesse', 'Livre enfant', 'https://images-na.ssl-images-amazon.com/images/I/51eP4zHBdfL._SX492_BO1,204,203,200_.jpg', 5, 'beaulieu1paul@gmail.com'),
+(7, 'Le trône de fer : L\'intégrale, tome 1', 'George R.R. Martin', 2010, 'J\'ai lu', 'Très bon livre', 'https://images-na.ssl-images-amazon.com/images/I/41gxTRrS4JL._SX340_BO1,204,203,200_.jpg', 17, 'beaulieu1paul@gmail.com');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `musique`
+--
+
+DROP TABLE IF EXISTS `musique`;
+CREATE TABLE IF NOT EXISTS `musique` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `titre` varchar(100) DEFAULT NULL,
+  `artiste` varchar(100) DEFAULT NULL,
+  `annee` int(11) DEFAULT NULL,
+  `label` varchar(100) DEFAULT NULL,
+  `description` text,
+  `urlimg` mediumtext,
+  `prix` float DEFAULT NULL,
+  `mail` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+
+--
+-- Déchargement des données de la table `musique`
+--
+
+INSERT INTO `musique` (`id`, `titre`, `artiste`, `annee`, `label`, `description`, `urlimg`, `prix`, `mail`) VALUES
+(1, 'Highway To Hell', 'ACDC', 1979, 'Atlantic records', 'Album des plus grandes chanson du groupe', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRjVJ5NWvbp37OrFQxxA6QfEEv1_qsir0POTln7paTcdc6gBTj', 20, 'beaulieu1paul@gmail.com'),
+(2, 'Nevrmind', 'Nirvana', 1991, '	DGC Records', 'Musique culte de nirvana dont Smells Like Teen Spirit et Come as You Are.', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPGS1LIy0dmPxeZPeMIinytrsBSBXjOkluiYQ41at7A9XE28Bhud0', 20, 'beaulieu1paul@gmail.com'),
+(3, 'The Dark Side of the Moon', 'Pink Floyd', 1973, 'EMI', 'Huitième album studio du groupe de rock progressif britannique Pink Floyd', 'https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcTsvBzb8t6-4FXqPq3xRlZDFK0LbOfTwGfsV7jxHv7axjz-PyF2x3OnQ7U1QUNwUWdLXwTeuWmB00BkPTFqSde36XmEoNWsGkquwIOhlkVuePyKJ7jHzubC&usqp=CAc', 25, 'beaulieu1paul@gmail.com'),
+(4, 'Abbey Road', 'The Beatles', 1969, 'Apple', 'Onzième album original publié par les Beatles', 'data:image/jpeg;base64,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', 15, 'beaulieu1paul@gmail.com');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `panier`
+--
+
+DROP TABLE IF EXISTS `panier`;
+CREATE TABLE IF NOT EXISTS `panier` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nom` varchar(100) DEFAULT NULL,
+  `taille` int(11) DEFAULT NULL,
+  `titre` varchar(100) DEFAULT NULL,
+  `auteur` varchar(100) DEFAULT NULL,
+  `edition` varchar(100) DEFAULT NULL,
+  `artiste` varchar(100) DEFAULT NULL,
+  `annee` int(11) DEFAULT NULL,
+  `label` varchar(100) DEFAULT NULL,
+  `description` mediumtext,
+  `urlimg` mediumtext,
+  `prix` float DEFAULT NULL,
+  `mail` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `sportetloisir`
+--
+
+DROP TABLE IF EXISTS `sportetloisir`;
+CREATE TABLE IF NOT EXISTS `sportetloisir` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nom` varchar(100) DEFAULT NULL,
+  `taille` int(11) DEFAULT NULL,
+  `description` text,
+  `urlimg` mediumtext,
+  `prix` float DEFAULT NULL,
+  `mail` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+
+--
+-- Déchargement des données de la table `sportetloisir`
+--
+
+INSERT INTO `sportetloisir` (`id`, `nom`, `taille`, `description`, `urlimg`, `prix`, `mail`) VALUES
+(1, 'Trampoline', 430, 'diamètre 430', 'data:image/jpeg;base64,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', 120, 'beaulieu1paul@gmail.com'),
+(2, 'Ballon ', 30, 'Ballon signé par Griezman', 'https://medias.oas.io/medias/2017/02/04/19/a4f4df4ae3267fb1b73117ebc8f73d53-o.jpg', 200, 'beaulieu1paul@gmail.com'),
+(3, 'Ballon de handball', 30, 'Ballon T.3 Molten IHF Officiel championnat du monde de handball 2017', 'https://www.casalsport.com/img/W/CAS/ST/H7/40/H740/H740_ST.jpg', 80, 'beaulieu1paul@gmail.com'),
+(4, 'Raquette ', 5, 'Babolat Pure Drive 2017', 'https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcT8t7bBc1ldXbo-fROwQlKOjGqeZf-ThrKn9wvP98eF4LVRLKkXmYHg15fQ5t1y8JAQqyHRdUYQjONKyvJqZaJf2kannRftlGsvnPdR33NY_6Oh0cZmgfw&usqp=CAc', 120, 'beaulieu1paul@gmail.com'),
+(5, 'PISCINE AUTOPORTÉE ', 5, 'EASY SET Ø396X84 INTEX', 'https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcTaTwV2A063l2gnbAYEdixcD5FMRWVWY04sTmbhp-U_CE47KggN20uHfbp5VuctVYGDLmLodgdEFiHOeYX-XayUh5f-IRIqB-Q8i8OFcNjkMOF7XCrELglT2Q&usqp=CAc', 100, 'beaulieu1paul@gmail.com'),
+(6, 'Crampon de foot', 45, 'Multi-terrain', 'https://c.static-nike.com/a/images/t_PDP_1280_v1/f_auto/pz30fs7xjzeey0udbw5t/chaussure-de-football-multi-terrains-a-crampons-mercurial-superfly-6-academy-mg-BrxGM9.jpg', 100, 'beaulieu1paul@gmail.com');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `vendeur`
+--
+
+DROP TABLE IF EXISTS `vendeur`;
+CREATE TABLE IF NOT EXISTS `vendeur` (
+  `mailvend` varchar(100) NOT NULL,
+  `pseudo` varchar(100) NOT NULL,
+  `nom` varchar(100) NOT NULL,
+  `urlprofil` mediumtext,
+  `urlfond` mediumtext,
+  PRIMARY KEY (`mailvend`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Déchargement des données de la table `vendeur`
+--
+
+INSERT INTO `vendeur` (`mailvend`, `pseudo`, `nom`, `urlprofil`, `urlfond`) VALUES
+('paul.beaulieu@jeece.fr', 'Paul', 'Paul Beaulieu', 'http://fr.web.img5.acsta.net/pictures/19/01/03/17/21/1289778.jpg', NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `vetement`
+--
+
+DROP TABLE IF EXISTS `vetement`;
+CREATE TABLE IF NOT EXISTS `vetement` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nom` varchar(100) DEFAULT NULL,
+  `taille` int(11) DEFAULT NULL,
+  `description` text,
+  `urlimg` mediumtext,
+  `prix` float DEFAULT NULL,
+  `mail` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=45 DEFAULT CHARSET=utf8;
+
+--
+-- Déchargement des données de la table `vetement`
+--
+
+INSERT INTO `vetement` (`id`, `nom`, `taille`, `description`, `urlimg`, `prix`, `mail`) VALUES
+(38, 'Robe Deer&Doe', 38, 'Robe verte', 'https://shop.deer-and-doe.fr/487-large_default/patron-robe-bleuet.jpg', 150, 'paul.beaulieu@jeece.fr'),
+(39, 'Robe Jennyfer', 38, 'Robe décolté V noire', 'https://www.jennyfer.com/dw/image/v2/AAQC_PRD/on/demandware.static/-/Sites-jennyfer-catalog-master/default/dwd601ee80/images/10021476C060_81_G.jpg?sw=498', 70, 'paul.beaulieu@jeece.fr'),
+(40, 'Veste de costume Armand Thierry', 42, 'Costume Bleu Electrique', 'https://cdn.armandthiery.fr/products_images/prod_8994/h_veste-de-costume-confort-elettrico-per-l-uomo-BLEU-front-45.jpg', 150, 'paul.beaulieu@jeece.fr'),
+(42, 'Costume Assos', 42, 'Costume rouge', 'https://images.asos-media.com/products/next-veste-de-costume-slim-en-laine-bordeaux/9927488-1-red?$n_480w$&wid=476', 200, 'paul.beaulieu@jeece.fr'),
+(43, 'Chaussure ', 42, 'Modèle Richelieu marron', 'https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcQ1a1Uem-QEzPCsvTj0ek9krFZWJBspUUZNnVOZkhiKcRJBzg44zxKqVjSrvaeAO7cWsMyyg9ZuhLZ0FREIfUMnKFeIWOfNQ1ovf2tDC3J691Bs4vvzJVM-&usqp=CAc', 120, 'beaulieu1paul@gmail.com'),
+(44, 'Escarpins', 38, 'Vernis bleu nuit', 'data:image/jpeg;base64,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', 150, 'beaulieu1paul@gmail.com');
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
