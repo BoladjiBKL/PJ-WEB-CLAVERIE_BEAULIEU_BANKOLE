@@ -1,8 +1,3 @@
-
-
-
-
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -76,6 +71,19 @@
 <br>
 
 <br>
+
+
+<div class="test_vetement ">
+
+<br><br>
+<br><br>
+<br><br>
+<br><br>
+<br><br>
+<br><br>
+<br><br><br><br><br><br><br><br><br><br>
+
+</div>
 
 <div id="global">
   <h2> Vêtements :</h2>

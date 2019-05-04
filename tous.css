@@ -182,3 +182,36 @@ h2{
     background-position:center center;
     background-size: 100%;
 }
+
+.test_vetement{
+    background-image: url("vetement.png");
+    background-attachment:fixed;
+    background-repeat:no-repeat;
+    background-position:300% 0%;
+    background-position:center center;
+    background-size: 100%;
+
+}
+
+
+.test_sport{
+    background-image: url("sport.png");
+    background-attachment:fixed;
+    background-repeat:no-repeat;
+    background-position:300% 0%;
+    background-position:center center;
+    background-size: 100%;
+
+}
+
+
+.test_musique{
+    background-image: url("musique.png");
+    background-attachment:fixed;
+    background-repeat:no-repeat;
+    background-position:300% 0%;
+    background-position:center center;
+    background-size: 100%;
+
+}
+
