@@ -44,7 +44,7 @@
 
             <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                 <a class="dropdown-item" href="Livres.php" >Livres</a>
-                <a class="dropdown-item" href="Vetements.php">Vétements</a>
+                <a class="dropdown-item" href="Vetements.php">Vêtements</a>
                 <a class="dropdown-item" href="Sport&Loisir.php">Sports et Loisir</a>
                 <a class="dropdown-item" href="Musique.php">Musique</a>
                </div>
@@ -110,21 +110,17 @@ while ($donnees = $reponse->fetch())
 
     <img class='image' src="<?php echo $donnees['urlimg'];?>" /> <br>
 
-    <?php echo $donnees['artiste']; ?> <?php echo $donnees['auteur']; ?>
-    <br />
 
 
 
-    <?php echo $donnees['label']; ?> <?php echo $donnees['taille']; ?> <?php echo $donnees['edition']; ?>
-    <br />
+
 
 
     Description : <em><?php echo $donnees['description']; ?></em> <br />
 
     Prix : <?php echo $donnees['prix']; ?> &euro;<br />
 
-    <?php echo $donnees['annee']; ?>
-    <br />
+
 
     Mail du vendeur : <a href="mailto:<?php echo $donnees['mail']; ?>"> <?php echo $donnees['mail']; ?> </a><br /><br /><br />
 

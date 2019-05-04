@@ -28,7 +28,7 @@
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav">
       <li class="nav-item active">
-        
+
 
         <div class="dropdown">
           <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -37,7 +37,7 @@
 
             <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                 <a class="dropdown-item" href="Livres.php" >Livres</a>
-                <a class="dropdown-item" href="Vetements.php">Vétements</a>
+                <a class="dropdown-item" href="Vetements.php">Vêtements</a>
                 <a class="dropdown-item" href="Sport&Loisir.php">Sports et Loisir</a>
                 <a class="dropdown-item" href="Musique.php">Musique</a>
                </div>
@@ -56,12 +56,12 @@
       <li class="nav-item">
         <a class="nav-link" href="Co_admin.php">Admin</a>
       </li>
-     
 
-      
+
+
     </ul>
   </div>
-  
+
   <a class="nav-link" href="Panier.php"><img src="panier.png"></a>
 </nav>
 
@@ -74,7 +74,7 @@
 
 	<h3> <em>Creer un compte</em></h3>
 	<form action="CreercompteVendeur.php" method="post">
-		
+
 		<table id="maTable">
 
 

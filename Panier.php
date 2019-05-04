@@ -41,7 +41,7 @@
 
             <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                 <a class="dropdown-item" href="Livres.php" >Livres</a>
-                <a class="dropdown-item" href="Vetements.php">Vétements</a>
+                <a class="dropdown-item" href="Vetements.php">Vêtements</a>
                 <a class="dropdown-item" href="Sport&Loisir.php">Sports et Loisir</a>
                 <a class="dropdown-item" href="Musique.php">Musique</a>
                </div>
@@ -107,8 +107,8 @@ while ($donnees = $reponse->fetch())
 
     <img class='image' src="<?php echo $donnees['urlimg'];?>" /> <br><br>
 
-     Description : <em><?php echo $donnees['description']; ?> 
-     
+     Description : <em><?php echo $donnees['description']; ?>
+
     <br>
 
 
@@ -118,7 +118,7 @@ while ($donnees = $reponse->fetch())
 
     Mail du vendeur : <a href="mailto:<?php echo $donnees['mail']; ?>">  <?php echo $donnees['mail']; ?> </a>
 
-    
+
     <br />
 
       </div>
@@ -135,7 +135,7 @@ $reponse->closeCursor(); // Termine le traitement de la requête
   Total du panier : <?php echo $somme;?> &euro;
    <br><br>
   <a href="Co_acheteur_panier.php" class="btn btn-dark">Passer ma commande</a>
-  
+
 
 </div>
 <br><br><br><br><br><br><br><br><br><br><br><br><br>
