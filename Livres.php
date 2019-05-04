@@ -74,9 +74,9 @@
 </nav>
 
 <br><br>
-<br><br><br>
 
-<div class="test background-image: url("livre.png");">
+
+<div class="test_livre ">
 
 <br><br>
 <br><br>
