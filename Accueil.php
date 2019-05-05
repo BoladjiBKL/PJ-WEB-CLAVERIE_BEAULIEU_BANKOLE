@@ -129,7 +129,7 @@
 <div id="global">
   
 
-<h2> Retrouver nos Best Sellers :</h2>
+<h2> Retrouvez nos Best Sellers :</h2>
 <br><br>
 
 </div>
