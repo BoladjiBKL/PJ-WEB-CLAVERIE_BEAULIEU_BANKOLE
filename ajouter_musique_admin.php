@@ -142,7 +142,7 @@ else{
 		<head>
 			<title>redirection</title>
 			<script type="text/javascript">
-		    var msg='<?php echo n2lbr($error); ?>';
+		    var msg='<?php echo nl2br($error); ?>';
 			alert(msg);
 			document.location.href="formulaire_ajout_musique_admin.php";
 		</script>
