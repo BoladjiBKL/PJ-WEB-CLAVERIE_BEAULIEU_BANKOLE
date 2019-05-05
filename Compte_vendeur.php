@@ -35,11 +35,13 @@
 
 
 
-<body background="<?php echo $donnees['urlfond']; ?>">
-<!-- barre de navigation -->
-       <nav class="navbar navbar navbar-expand-lg navbar-lightgreen bg-lightgreen">
+<body background="<?php echo $donnees['urlfond']; ?>" >
 
-  <a class="navbar-brand" href="Accueil.php"><img src="eceamazon.png" height="60px"></a>
+
+<!-- barre de navigation -->
+       <nav class="navbar navbar navbar-expand-lg navbar-lightgreen bg-lightgreen ">
+
+  <a class="navbar-brand" href="Accueil.php"><img src="eceamazon1.png" height="60px"></a>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
