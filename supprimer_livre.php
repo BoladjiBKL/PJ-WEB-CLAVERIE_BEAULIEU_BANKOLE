@@ -11,7 +11,7 @@ $bdd = new PDO('mysql:host=localhost;dbname=ECEAmazon;charset=utf8', 'root', 'ro
 
 
 
-
+// on vérifie que l'objet que l'on souhaite supprimer existe bien
 $verf= $bdd->prepare('SELECT * FROM livre WHERE titre= :titre AND auteur= :auteur AND mail= :mail');
 $verf->execute(array(
 	'titre' => $titre,
@@ -54,8 +54,8 @@ if($error=="" && $drapeau==0 && ($donnees))
 		<head>
 			<title>redirection</title>
 			<script type="text/javascript">
-		    
-			alert("livre bien supprimé"); 
+
+			alert("livre bien supprimé");
 			document.location.href="formulaire_supprimer_livre.php";
 		</script>
 		</head>
@@ -63,44 +63,45 @@ if($error=="" && $drapeau==0 && ($donnees))
 		</body>
 		</html>
 <?php
+//on supprime l'objet
 $bdd->exec("DELETE FROM livre WHERE titre LIKE '%$titre%' AND auteur LIKE '%$auteur%' AND mail LIKE '%$mail%' ");
 }
 
 else if($error=="" && $drapeau==0 && (!$donnees))
 {
-	
-	
+
+
 		?>
-	
+
 <!DOCTYPE html>
 		<html>
 		<head>
 			<title>redirection</title>
 			<script type="text/javascript">
-		  
-            alert("Ce livre n'existe pas"); 
+
+            alert("Ce livre n'existe pas");
 			document.location.href="formulaire_supprimer_livre.php";
 		</script>
 		</head>
 		<body onLoad="setTimeout('RedirectionJavascript()', 200)">
 		</body>
 		</html>
-	
+
 
 
 <?php
 }
 else {
 			?>
-	
+
 <!DOCTYPE html>
 		<html>
 		<head>
 			<title>redirection</title>
 			<script type="text/javascript">
-		
+
 			  var msg='<?php echo nl2br($error); ?>';
-			alert(msg);  
+			alert(msg);
 
 			document.location.href="formulaire_supprimer_livre.php";
 		</script>
@@ -108,7 +109,7 @@ else {
 		<body onLoad="setTimeout('RedirectionJavascript()', 200)">
 		</body>
 		</html>
-	
+
 
 
 <?php

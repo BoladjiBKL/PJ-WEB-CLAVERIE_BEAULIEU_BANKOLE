@@ -81,6 +81,7 @@
 
 
     <?php
+    // on appelle la variable globale qui contient le mail du client qui a passé commande
   session_start();
   $_SESSION["newsession"];
     ini_set( 'display_errors', 1 );
@@ -96,7 +97,8 @@
     $message = "Merci pour votre commande ! Nous vous la livrerons dans les meilleurs delais ! A bientot sur ECE Amazon ";
 
     $headers = "De:" . $from;
-
+// on envoie un mail de confiration au client. ATTENTION : selon les FAI et les boites mail, il se peut que le client recoive le mail dans les spam, voir ne le recoit pas du tout.
+// malhereusement, nous avons pas trouvé de solution à ce problème.
     mail($to,$subject,$message, $headers);
 
 

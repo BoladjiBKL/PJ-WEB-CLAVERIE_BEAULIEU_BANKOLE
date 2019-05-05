@@ -8,7 +8,7 @@ $error  ="";
 $drapeau =0;
 $bdd = new PDO('mysql:host=localhost;dbname=ECEAmazon;charset=utf8', 'root', 'root');
 
-
+// vérifie que l'objet que l'on souhaite supprimer existe bien dans la bdd
 
 $verf= $bdd->prepare('SELECT * FROM sportetloisir WHERE nom= :nom AND taille= :taille AND mail= :mail');
 $verf->execute(array(
@@ -20,7 +20,7 @@ $verf->execute(array(
 $donnees=$verf->fetch();
 
 
-if ($nom=="") { 
+if ($nom=="") {
 	$error.=" nom vide";
 	$error.='\n';
 	$drapeau+=1;
@@ -52,8 +52,8 @@ if($error=="" && $drapeau==0 && ($donnees))
 		<head>
 			<title>redirection</title>
 			<script type="text/javascript">
-		    
-			alert("sportetloisir bien supprimé"); 
+
+			alert("sportetloisir bien supprimé");
 			document.location.href="formulaire_supprimer_sportetloisir.php";
 		</script>
 		</head>
@@ -66,39 +66,39 @@ $bdd->exec("DELETE FROM sportetloisir WHERE nom LIKE '%$nom%' AND taille LIKE '%
 
 else if($error=="" && $drapeau==0 && (!$donnees))
 {
-	
-	
+
+
 		?>
-	
+
 <!DOCTYPE html>
 		<html>
 		<head>
 			<title>redirection</title>
 			<script type="text/javascript">
-		  
-            alert("Ce sportetloisir n'existe pas"); 
+
+            alert("Ce sportetloisir n'existe pas");
 			document.location.href="formulaire_supprimer_sportetloisir.php";
 		</script>
 		</head>
 		<body onLoad="setTimeout('RedirectionJavascript()', 200)">
 		</body>
 		</html>
-	
+
 
 
 <?php
 }
 else {
 			?>
-	
+
 <!DOCTYPE html>
 		<html>
 		<head>
 			<title>redirection</title>
 			<script type="text/javascript">
-		
+
 			  var msg='<?php echo nl2br($error); ?>';
-			alert(msg);  
+			alert(msg);
 
 			document.location.href="formulaire_supprimer_sportetloisir.php";
 		</script>
@@ -106,7 +106,7 @@ else {
 		<body onLoad="setTimeout('RedirectionJavascript()', 200)">
 		</body>
 		</html>
-	
+
 
 
 <?php

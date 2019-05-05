@@ -8,6 +8,7 @@ $error  ="";
 $drapeau =0;
 
 $bdd = new PDO('mysql:host=localhost;dbname=ECEAmazon;charset=utf8', 'root', 'root');
+// on vérifie que la personne souhaitant payer son panier possède bien un compte
 $verf= $bdd->prepare('SELECT * FROM acheteur WHERE mailacheteur= :mailacheteur AND mdp= :mdp');
 $verf->execute(array(
 	'mailacheteur' => $mailacheteur,
@@ -15,6 +16,7 @@ $verf->execute(array(
 ));
 
 $donnees= $verf->fetch();
+// on vérifie que la personne a bien rempli les champs du formulaire
 
 if ($mailacheteur=="" && $mdp=="")
 {
@@ -88,7 +90,9 @@ if($donnees)
 
 
 	session_start();
+	// on recupère sur une variable globale le mail de la personne souhaitant payer ses achats
 	$_SESSION["newsession"]=$mailacheteur;
+	// on la redirige vers l'interface de paiement
 	header('Location: Paiement_panier.php');
 
 

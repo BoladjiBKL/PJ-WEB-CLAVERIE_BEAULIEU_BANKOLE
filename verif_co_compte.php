@@ -8,6 +8,7 @@ $error  ="";
 $drapeau =0;
 
 $bdd = new PDO('mysql:host=localhost;dbname=ECEAmazon;charset=utf8', 'root', 'root');
+// on verifie que la personne possède bien un compte dans la bdd
 $verf= $bdd->prepare('SELECT * FROM acheteur WHERE mailacheteur= :mailacheteur AND mdp= :mdp');
 $verf->execute(array(
 	'mailacheteur' => $mailacheteur,
@@ -15,7 +16,7 @@ $verf->execute(array(
 ));
 
 $donnees= $verf->fetch();
-
+// on vérifie que la personne a correctement rempli les champs du formulaire
 if ($mailacheteur=="" && $mdp=="")
 {
 		?>
@@ -51,11 +52,11 @@ if ($mailacheteur=="") {
 		</body>
 		</html>
 <?php
-	
+
 }
 
 if ($mdp =="") {
-	
+
 	?>
 <!DOCTYPE html>
 		<html>
@@ -78,7 +79,9 @@ if ($mdp =="") {
 if($donnees)
 {
 	session_start();
+	// on réupère le mail de la personne accèdant à son compte sur une variable globale
 	$_SESSION["newsession"]=$mailacheteur;
+	// on la redirige vers sa page de profil
 	header('Location: Compte_client.php');
 }
 

@@ -3,8 +3,7 @@
 $Type=isset($_POST["Type"])?$_POST["Type"]:"";
 $Action=isset($_POST["Action"])?$_POST["Action"]:"";
 
-
-
+// selon ce que l'utilisateur a choisi comme option sur la page préédente, il est dirigé vers  la page qui l'intéresse
 
 
    if ($Type=="Livres" && $Action=="Ajouter")

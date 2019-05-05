@@ -10,7 +10,7 @@ $error  ="";
 $drapeau =0;
 
 $bdd = new PDO('mysql:host=localhost;dbname=ECEAmazon;charset=utf8', 'root', 'root');
-
+// on vérifie que les infos bancaires sont bien celles de l'acheteur
 $verf= $bdd->prepare('SELECT * FROM acheteur WHERE mailacheteur= :mailacheteur AND typepaie= :typepaie AND numcarte= :numcarte AND nomcarte= :nomcarte AND datecarte= :datecarte AND codecarte= :codecarte');
 $verf->execute(array(
 	'mailacheteur' => $mailacheteur,
@@ -24,7 +24,7 @@ $verf->execute(array(
 $donnees= $verf->fetch();
 
 
-
+// on vérifie que les champs ont été corectememt remplis
 
 if ($typepaie=="") {
 	$error.=" Type de paye vide";
@@ -108,7 +108,7 @@ else
 			<title>redirection</title>
 			<script type="text/javascript">
 		    var msg='<?php echo nl2br($error); ?>';
-			alert(msg); 
+			alert(msg);
 			document.location.href="Paiement_panier.php";
 		</script>
 		</head>

@@ -9,6 +9,7 @@ $drapeau =0;
 
 $bdd = new PDO('mysql:host=localhost;dbname=ECEAmazon;charset=utf8', 'root', 'root');
 
+// vérifie que l'objet que l'on souhaite supprimer existe bien dans la bdd
 
 
 $verf= $bdd->prepare('SELECT * FROM vetement WHERE nom= :nom AND taille= :taille AND mail= :mail');
@@ -53,8 +54,8 @@ if(($donnees) && $error=="" && $drapeau==0 )
 		<head>
 			<title>redirection</title>
 			<script type="text/javascript">
-		    
-			alert("vetement bien supprimé"); 
+
+			alert("vetement bien supprimé");
 			document.location.href="formulaire_supprimer_vetement.php";
 		</script>
 		</head>
@@ -62,22 +63,23 @@ if(($donnees) && $error=="" && $drapeau==0 )
 		</body>
 		</html>
 <?php
+// on supprime l'objet
 $bdd->exec("DELETE FROM vetement WHERE nom LIKE '%$nom%' AND taille LIKE '%$taille%' AND mail LIKE '%$mail%' ");
 }
 
 else if((!$donnees) && $error=="" && $drapeau==0)
 {
-	
-	
+
+
 		?>
-	
+
 <!DOCTYPE html>
 		<html>
 		<head>
 			<title>redirection</title>
 			<script type="text/javascript">
-		  
-            alert("Ce vetement n'existe pas"); 
+
+            alert("Ce vetement n'existe pas");
 			document.location.href="formulaire_supprimer_vetement.php";
 		</script>
 		</head>
@@ -89,15 +91,15 @@ else if((!$donnees) && $error=="" && $drapeau==0)
 }
 else {
 			?>
-	
+
 <!DOCTYPE html>
 		<html>
 		<head>
 			<title>redirection</title>
 			<script type="text/javascript">
-		
+
 			  var msg='<?php echo nl2br($error); ?>';
-			 alert(msg);  
+			 alert(msg);
 
 			document.location.href="formulaire_supprimer_vetement.php";
 		</script>
@@ -105,7 +107,7 @@ else {
 		<body onLoad="setTimeout('RedirectionJavascript()', 200)">
 		</body>
 		</html>
-	
+
 
 
 <?php

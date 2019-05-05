@@ -24,7 +24,7 @@ $drapeau =0;
 
 $bdd = new PDO('mysql:host=localhost;dbname=ECEAmazon;charset=utf8', 'root', 'root');
 
-
+// on vérifie que la personne n' a pas déja un compte avec la même adresse mail
 $verf2= $bdd->prepare('SELECT * FROM acheteur WHERE mailacheteur= :mailacheteur');
 $verf2->execute(array(
 	'mailacheteur' => $mailacheteur,
@@ -33,7 +33,7 @@ $verf2->execute(array(
 $donnees2=$verf2->fetch();
 
 
-
+//on vérifie que la personne a bien rempli les champs du formulaire
 
 
 if ($mailacheteur=="") {
@@ -157,6 +157,7 @@ if($donnees2)
 
 if($error=="" && $drapeau==0)
 {
+	// on créer le compte dans la bdd
 	$req = $bdd->prepare('INSERT INTO acheteur(mailacheteur, nom, prenom, mdp, adresse1,adresse2, ville, codepost, pays, tel, typepaie, numcarte, nomcarte, datecarte, codecarte) VALUES(:mailacheteur, :nom, :prenom, :mdp, :adresse1, :adresse2, :ville, :codepost,  :pays, :tel, :typepaie, :numcarte, :nomcarte, :datecarte, :codecarte)');
 	$req->execute(array(
 		'mailacheteur' => $mailacheteur,

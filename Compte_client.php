@@ -81,7 +81,7 @@
 
 
 <?php
-
+//lancement de la variable globale qui contient l'adresse du mail de la personne actuellement connectéé
   session_start();
   $_SESSION["newsession"];
 
@@ -89,7 +89,7 @@
 
 
   $bdd = new PDO('mysql:host=localhost;dbname=ECEAmazon;charset=utf8', 'root', 'root');
-
+// on affiche les informations de la personne connectée
   $reponse = $bdd->query('SELECT * FROM acheteur WHERE mailacheteur ="'.$_SESSION["newsession"].'" ');
 
    $donnees = $reponse->fetch();
@@ -130,7 +130,7 @@
 
 
       Type de paiment : <?php echo $donnees['typepaie']; ?> <br /><br />
-
+        <!-- on affiche partiellement les infos bancaires sensibles -->
       Numero de la carte :  ************** <?php echo substr($donnees['numcarte'],-4); ?> <br /><br />
 
       Titulaire de la carte : <?php echo $donnees['nomcarte']; ?> <br /><br />
