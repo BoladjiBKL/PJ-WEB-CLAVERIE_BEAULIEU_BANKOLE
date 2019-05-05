@@ -13,7 +13,7 @@ $drapeau =0;
 
 
 $bdd = new PDO('mysql:host=localhost;dbname=ECEAmazon;charset=utf8', 'root', 'root');
-
+// on vérifie que le mail éxiste bien
 $verf= $bdd->prepare('SELECT * FROM vendeur WHERE mailvend= :mail');
 $verf->execute(array(
 	'mail' => $mail,
@@ -21,7 +21,7 @@ $verf->execute(array(
 
 $donnees=$verf->fetch();
 
-
+//on vérifie que les champs du formulaire ont été  correctememnt remplis
 if ($nom=="") {
 	$error.=" nom vide";
 	$error.='\n';
@@ -70,8 +70,8 @@ if($donnees && $error=="" && $drapeau==0)
 		<head>
 			<title>redirection</title>
 			<script type="text/javascript">
-		    
-			alert("vetement bien ajouté"); 
+
+			alert("vetement bien ajouté");
 			document.location.href="formulaire_ajouter_vetement.php";
 		</script>
 		</head>
@@ -79,7 +79,7 @@ if($donnees && $error=="" && $drapeau==0)
 		</body>
 		</html>
 <?php
-
+// on ajoute l'objet à la bdd
 $req = $bdd->prepare('INSERT INTO vetement(nom, taille, description,urlimg, prix, mail) VALUES(:nom, :taille, :description,:urlimg, :prix, :mail)');
 $req->execute(array(
 	'nom' => $nom,
@@ -117,7 +117,7 @@ else
 			<title>redirection</title>
 			<script type="text/javascript">
 		    var msg='<?php echo nl2br($error); ?>';
-			alert(msg); 
+			alert(msg);
 			document.location.href="formulaire_ajouter_vetement.php";
 		</script>
 		</head>
@@ -127,4 +127,3 @@ else
 <?php
 }
 ?>
-

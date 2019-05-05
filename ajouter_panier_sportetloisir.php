@@ -11,7 +11,7 @@ $prix = isset($_POST["prix"])? $_POST["prix"] : "";
 $id = isset($_POST["id"])? $_POST["id"] : "";
 
 $bdd = new PDO('mysql:host=localhost;dbname=ECEAmazon;charset=utf8', 'root', 'root');
-
+// on ajoute l'objet au panier
 $req = $bdd->prepare('INSERT INTO panier(nom, taille, description, urlimg, prix, mail) VALUES(:nom, :taille, :description, :urlimg, :prix, :mail)');
 $req->execute(array(
 	'nom' => $nom,
@@ -23,7 +23,7 @@ $req->execute(array(
 
 ));
 
-
+// on supprime l'objet de sa table pour qu'il ne soit plus disponible a la vente
 $bdd->exec("DELETE FROM sportetloisir WHERE id LIKE '%$id%'");
 
 header('Location:Sport&Loisir.php');

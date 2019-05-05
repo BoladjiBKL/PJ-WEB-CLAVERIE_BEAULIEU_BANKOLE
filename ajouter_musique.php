@@ -2,7 +2,6 @@
 
 <?php
 //recuperer les données venant de la page HTML
-//le parametre de $_POST = "name" de <input> de votre page HTML
 $titre = isset($_POST["titre"])? $_POST["titre"] : "";
 $artiste = isset($_POST["artiste"])? $_POST["artiste"] : "";
 $annee = isset($_POST["annee"])? $_POST["annee"] : "";
@@ -16,7 +15,7 @@ $drapeau =0;
 $good ="";
 
 $bdd = new PDO('mysql:host=localhost;dbname=ECEAmazon;charset=utf8', 'root', 'root');
-
+// on vérifie que le mail existe bien dans la bdd
 $verf= $bdd->prepare('SELECT * FROM vendeur WHERE mailvend= :mail');
 $verf->execute(array(
 	'mail' => $mail,
@@ -25,7 +24,7 @@ $verf->execute(array(
 $donnees=$verf->fetch();
 
 
-
+//on vérifie que la personne a bien rempli les champs du formulaire
 if ($titre=="") {
 	$error.=" titre vide";
 	$error.='\n';
@@ -92,8 +91,8 @@ if(($donnees) && $error=="" && $drapeau==0)
 		<head>
 			<title>redirection</title>
 			<script type="text/javascript">
-		    
-			alert("Musique bien ajoutée"); 
+
+			alert("Musique bien ajoutée");
 			document.location.href="formulaire_ajout_musique.php";
 		</script>
 		</head>
@@ -101,7 +100,7 @@ if(($donnees) && $error=="" && $drapeau==0)
 		</body>
 		</html>
 <?php
-
+// on ajoute l'objet à la bdd
 $req = $bdd->prepare('INSERT INTO musique(titre, artiste, annee, label, description,urlimg, prix, mail) VALUES(:titre, :artiste, :annee, :label, :description,:urlimg, :prix, :mail)');
 $req->execute(array(
 	'titre' => $titre,
@@ -143,7 +142,7 @@ else{
 			<title>redirection</title>
 			<script type="text/javascript">
 		    var msg='<?php echo nl2br($error); ?>';
-			alert(msg); 
+			alert(msg);
 			document.location.href="formulaire_ajout_musique.php";
 		</script>
 		</head>

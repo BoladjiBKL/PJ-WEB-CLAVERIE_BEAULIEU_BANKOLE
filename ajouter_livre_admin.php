@@ -1,7 +1,6 @@
 
 <?php
 //recuperer les données venant de la page HTML
-//le parametre de $_POST = "name" de <input> de votre page HTML
 $titre = isset($_POST["titre"])? $_POST["titre"] : "";
 $auteur = isset($_POST["auteur"])? $_POST["auteur"] : "";
 $annee = isset($_POST["annee"])? $_POST["annee"] : "";
@@ -15,7 +14,7 @@ $drapeau =0;
 
 
 $bdd = new PDO('mysql:host=localhost;dbname=ECEAmazon;charset=utf8', 'root', 'root');
-
+//on cherche si le mail existe dans la bdd
 $verf= $bdd->prepare('SELECT * FROM administrateur WHERE mailadmin= :mail');
 $verf->execute(array(
 	'mail' => $mail,
@@ -26,7 +25,7 @@ $donnees=$verf->fetch();
 
 
 
-
+//on vérifie que l'utilisteur a correctememnt rempli les champs du formulaire
 
 if ($titre=="") {
 	$error.=" titre vide";
@@ -98,7 +97,7 @@ if(($donnees) && $error=="" && $drapeau==0)
 		</body>
 		</html>
 <?php
-
+//on ajoute l'objet a la bdd
 $req = $bdd->prepare('INSERT INTO livre(titre, auteur, annee, edition, description,urlimg, prix, mail) VALUES(:titre, :auteur, :annee, :edition, :description, :urlimg, :prix, :mail)');
 $req->execute(array(
 	'titre' => $titre,

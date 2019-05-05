@@ -2,7 +2,6 @@
 
 <?php
 //recuperer les données venant de la page HTML
-//le parametre de $_POST = "name" de <input> de votre page HTML
 $titre = isset($_POST["titre"])? $_POST["titre"] : "";
 $artiste = isset($_POST["artiste"])? $_POST["artiste"] : "";
 $annee = isset($_POST["annee"])? $_POST["annee"] : "";
@@ -16,7 +15,7 @@ $drapeau =0;
 $good ="";
 
 $bdd = new PDO('mysql:host=localhost;dbname=ECEAmazon;charset=utf8', 'root', 'root');
-
+//on vérifie que le mail existe bien dans la bdd
 $verf= $bdd->prepare('SELECT * FROM administrateur WHERE mailadmin= :mail');
 $verf->execute(array(
 	'mail' => $mail,
@@ -24,7 +23,7 @@ $verf->execute(array(
 
 $donnees=$verf->fetch();
 
-
+//on vérifie que la personne a bien rempli les champs du formulaire
 
 if ($titre=="") {
 	$error.=" titre vide";
@@ -101,7 +100,7 @@ if(($donnees) && $error=="" && $drapeau==0)
 		</body>
 		</html>
 <?php
-
+//on ajoute l'objet a la bdd
 $req = $bdd->prepare('INSERT INTO musique(titre, artiste, annee, label, description,urlimg, prix, mail) VALUES(:titre, :artiste, :annee, :label, :description,:urlimg, :prix, :mail)');
 $req->execute(array(
 	'titre' => $titre,

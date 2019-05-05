@@ -1,7 +1,7 @@
 
 <?php
 //recuperer les données venant de la page HTML
-//le parametre de $_POST = "name" de <input> de votre page HTML
+
 $titre = isset($_POST["titre"])? $_POST["titre"] : "";
 $auteur = isset($_POST["auteur"])? $_POST["auteur"] : "";
 $annee = isset($_POST["annee"])? $_POST["annee"] : "";
@@ -15,7 +15,7 @@ $drapeau =0;
 
 
 $bdd = new PDO('mysql:host=localhost;dbname=ECEAmazon;charset=utf8', 'root', 'root');
-
+//on verifie que le mail exite bien dans la bdd
 $verf= $bdd->prepare('SELECT * FROM vendeur WHERE mailvend= :mail');
 $verf->execute(array(
 	'mail' => $mail,
@@ -26,7 +26,7 @@ $donnees=$verf->fetch();
 
 
 
-
+//on vérifie que la personne a bien rempli les champs du formulaire
 
 if ($titre=="") {
 	$error.=" titre vide";
@@ -91,8 +91,8 @@ if(($donnees) && $error=="" && $drapeau==0)
 		<head>
 			<title>redirection</title>
 			<script type="text/javascript">
-		    
-			alert("Livre bien ajouté"); 
+
+			alert("Livre bien ajouté");
 			document.location.href="formulaire_ajout_livre.php";
 		</script>
 		</head>
@@ -100,7 +100,7 @@ if(($donnees) && $error=="" && $drapeau==0)
 		</body>
 		</html>
 <?php
-
+//on ajoute l'objet a la bdd
 $req = $bdd->prepare('INSERT INTO livre(titre, auteur, annee, edition, description,urlimg, prix, mail) VALUES(:titre, :auteur, :annee, :edition, :description, :urlimg, :prix, :mail)');
 $req->execute(array(
 	'titre' => $titre,
@@ -140,7 +140,7 @@ else
 			<title>redirection</title>
 			<script type="text/javascript">
 		    var msg='<?php echo nl2br($error); ?>';
-			alert(msg); 
+			alert(msg);
 			document.location.href="formulaire_ajout_livre.php";
 		</script>
 		</head>
